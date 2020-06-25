@@ -10,14 +10,14 @@
 
 ## Education
 
-**修士 (工学)**, 2020/04 - 2022/03 (予定)
-[筑波大学理工情報生命学術院システム情報工学研究群情報理工学位プログラム](https://www.cs.tsukuba.ac.jp/)
-指導教員: [馬場雪乃](http://yukinobaba.jp/)
+**修士 (工学)**, 2020/04 - 2022/03 (予定)  
+[筑波大学理工情報生命学術院システム情報工学研究群情報理工学位プログラム](https://www.cs.tsukuba.ac.jp/)  
+指導教員: [馬場雪乃](http://yukinobaba.jp/)  
 
-**学士 (情報工学)**, 2016/04 - 2020/03
-[筑波大学情報学群情報科学類](https://www.coins.tsukuba.ac.jp/)
-卒業論文: 「教師なし機械教示」
-指導教員: [馬場雪乃](http://yukinobaba.jp/)
+**学士 (情報工学)**, 2016/04 - 2020/03  
+[筑波大学情報学群情報科学類](https://www.coins.tsukuba.ac.jp/)  
+卒業論文: 「教師なし機械教示」  
+指導教員: [馬場雪乃](http://yukinobaba.jp/)  
 
 ## Research
 
