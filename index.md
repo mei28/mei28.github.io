@@ -23,6 +23,12 @@
 
 <!-- ## Awards -->
 
+## Publications
+
+- **Iterative Machine Teaching without Teachers**  
+Mingzhe Yang, Yukino Baba.  
+|[arXiv](https://arxiv.org/abs/2006.15339)|
+
 ## Work Experience
 
 - リサーチアシスタント, 筑波大学: 2020/04 - 現在
