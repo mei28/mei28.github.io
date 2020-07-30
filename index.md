@@ -66,8 +66,8 @@ Mingzhe Yang, Yukino Baba.
 ## Github Stats
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api?username=mei28&count_private=true&show_icons=true&theme=vue" />
+  <img align="left" src="https://github-readme-stats.vercel.app/api?username=mei28&count_private=true&show_icons=true&theme=buefy" />
 </a>
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=vue" />
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=buefy" />
 </a>
