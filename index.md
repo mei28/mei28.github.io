@@ -55,10 +55,19 @@ Mingzhe Yang, Yukino Baba.
 
 - SKYLock: RaspberryPiと自作アンドロイドアプリを組み合わせて利用する，スマートロック＋インターホンのアプリケーションです．  
 
-  |[ DESIGNSPARK ](https://www.rs-online.com/designspark/skylock-jp)|[ Github ](https://github.com/mei28/SKY_LOCK)|
+  \|[ DESIGNSPARK ](https://www.rs-online.com/designspark/skylock-jp)\|[ Github ](https://github.com/mei28/SKY_LOCK)\|
 
 ## Qualifications
 
 - 普通自動車免許 取得, 2016/09
 - 基本情報技術者 合格, 2017/04
 - CGエンジニア検定ベーシック 合格, 2017/12
+
+## Github Stats
+
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="left" src="https://github-readme-stats.vercel.app/api?username=mei28&count_private=true&show_icons=true&theme=vue" />
+</a>
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=vue" />
+</a>
