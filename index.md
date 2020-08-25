@@ -71,9 +71,11 @@ Mingzhe Yang, Yukino Baba.
 
 ## Github Stats
 
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api?username=mei28&count_private=true&show_icons=true&theme=buefy" />
-</a>
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=buefy" />
-</a>
+![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=buefy)
+
+![Top Languages Card (Compact layout)](https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=buefy)
+
+
+## Qiita Stats
+
+[![My Qiita posts](https://qiita-badge.apiapi.app/s/mei28/posts.svg)](http://qiita.com/mei28) [![My Qiita contributions](https://qiita-badge.apiapi.app/s/mei28/contributions.svg)](http://qiita.com/mei28) [![My Qiita followers](https://qiita-badge.apiapi.app/s/mei28/followers.svg)](http://qiita.com/mei28)
