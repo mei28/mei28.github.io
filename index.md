@@ -8,6 +8,14 @@
 - 産業技術総合研究所 テクニカルスタッフ
 - mail : mingzhe.yang [at] hcomp.cs.tsukuba.ac.jp
 
+## Accounts
+
+- [GitHub](https://github.com/mei28)
+- [Qiita](https://qiita.com/mei28)
+- [Kaggle](https://www.kaggle.com/me1kaggle)
+- [AtCoder](https://atcoder.jp/users/mei28)
+- [Speaker Deck](https://speakerdeck.com/mei28)
+
 ## Education
 
 **修士 (工学)**, 2020/04 - 2022/03 (予定)  
@@ -62,6 +70,9 @@ Mingzhe Yang, Yukino Baba.
 - PocketMentor: 既存のTODOアプリとは違い，ユーザのモチベーションを刺激してやることを消化するように促すことで有意義な休日の実現を目指します．  
 
   \|[ 公式TwitterBot ](https://twitter.com/MentorPocket)\|[ Github ](https://github.com/enpitut2020/PocketMentor)\|
+
+## Speaker Deck
+
 
 ## Qualifications
 
