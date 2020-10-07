@@ -71,8 +71,6 @@ Mingzhe Yang, Yukino Baba.
 
   \|[ 公式TwitterBot ](https://twitter.com/MentorPocket)\|[ Github ](https://github.com/enpitut2020/PocketMentor)\|
 
-## Speaker Deck
-
 
 ## Qualifications
 
