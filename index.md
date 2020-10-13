@@ -8,7 +8,7 @@
 - 産業技術総合研究所 テクニカルスタッフ
 - mail : mingzhe.yang [at] hcomp.cs.tsukuba.ac.jp
 
-## Accounts
+### Accounts
 
 - [GitHub](https://github.com/mei28)
 - [Qiita](https://qiita.com/mei28)
@@ -46,11 +46,6 @@ Mingzhe Yang, Yukino Baba.
   - [重度運動機能障害者支援のためのジェスチャインタフェースの研究開発](http://gesture-interface.jp/gesture-interface/)
   - [市民と共に進める災害医療救護訓練プログラムの実装](http://www.disaster-medutainment.jp/)
 
-## Activities
-
-- ボランティアスタッフ, Unite Tokyo2019: 2019/09
-- 留学生チューター, 筑波大学: 2019/04 - 2019/09
-
 ## Applications
 
 産総研のプロジェクトで開発しているアプリケーション
@@ -71,19 +66,31 @@ Mingzhe Yang, Yukino Baba.
 
   \|[ 公式TwitterBot ](https://twitter.com/MentorPocket)\|[ Github ](https://github.com/enpitut2020/PocketMentor)\|
 
+## OSS Contribute
+
+- [spacy-course](https://github.com/ines/spacy-course)
+  - 日本語モデルの実装に伴い，コンテンツの変更を行いました．
+- [spaCy-ja](https://github.com/spaCy-ja)
+  - spaCyの日本語コミュニティの発起チームのメンバーです．
+
+## Activities
+
+- スタッフ, つくばSKIPアカデミー: 2018, 2019/02
+- ボランティアスタッフ, Unite Tokyo2019: 2019/09
+- 留学生チューター, 筑波大学: 2019/04 - 2019/09
 
 ## Qualifications
 
 - 普通自動車免許 取得, 2016/09
 - 基本情報技術者 合格, 2017/04
 - CGエンジニア検定ベーシック 合格, 2017/12
+- 実践的ITカリキュラム 修了, 2021/03予定
 
 ## Github Stats
 
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=buefy)
 
 ![Top Languages Card (Compact layout)](https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=buefy)
-
 
 ## Qiita Stats
 
