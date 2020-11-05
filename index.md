@@ -86,6 +86,10 @@ Mingzhe Yang, Yukino Baba.
 - CGエンジニア検定ベーシック 合格, 2017/12
 - 実践的ITカリキュラム 修了, 2021/03予定
 
+### 
+
+- 深層生成モデル サマースクール'20 修了, 2020/10
+
 ## Github Stats
 
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=buefy)
