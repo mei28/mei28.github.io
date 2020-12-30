@@ -72,6 +72,8 @@ Mingzhe Yang, Yukino Baba.
   - 日本語モデルの実装に伴い，コンテンツの変更を行いました．
 - [spaCy-ja](https://github.com/spaCy-ja)
   - spaCyの日本語コミュニティの発起チームのメンバーです．
+- [tabnet](https://github.com/dreamquark-ai/tabnet)
+  - tabnetの実装を行なっているOSSです．
 
 ## Activities
 
