@@ -29,7 +29,6 @@
 
 <!-- ## Research -->
 
-<!-- ## Awards -->
 
 ## Publications
 
@@ -40,12 +39,26 @@ Mingzhe Yang, Yukino Baba.
 ## Work Experience
 
 - リサーチアシスタント, 筑波大学: 2020/04 - 現在
-  - 人間の認知バイアスの除去する手法について研究しています．
+  - 行動経済学に基づく個人的・集団的評価の数理モデルの開発
+    - 人間の認知バイアスの影響を軽減する手法について研究しています．
 
 - テクニカルスタッフ, 産業技術総合研究所: 2018/07 - 現在
   - [重度運動機能障害者支援のためのジェスチャインタフェースの研究開発](http://gesture-interface.jp/gesture-interface/)
   - [市民と共に進める災害医療救護訓練プログラムの実装](http://www.disaster-medutainment.jp/)
 
+## Presentations
+
+- [2020年度 enPiT ビジネスシステムデザイン分野ワークショップ](https://enpit.cs.ehime-u.ac.jp/bizsysdws2020/), 2021/02
+
+- [AgilePBL祭り2021](https://agilepbl.org/), 2021/03
+
+
+## Awards
+
+- [ 2020年度 enPiT 筑波大ワークショップ ](https://enpit.coins.tsukuba.ac.jp/tsukubaws2020/)
+
+  作品名: [Hobeeeeee!!](https://hobeeeeee.netlify.app/)
+  優秀賞, **最優秀賞**, **情報理工学位プログラムリーダー特別表彰**, 2021/01
 ## Applications
 
 産総研のプロジェクトで開発しているアプリケーション
@@ -58,13 +71,18 @@ Mingzhe Yang, Yukino Baba.
 
 - SKYLock: RaspberryPiと自作アンドロイドアプリを組み合わせて利用する，スマートロック＋インターホンのアプリケーションです．  
 
-  \|[ DESIGNSPARK ](https://www.rs-online.com/designspark/skylock-jp)\|[ Github ](https://github.com/mei28/SKY_LOCK)\|
+  \|[ DESIGNSPARK ](https://www.rs-online.com/designspark/skylock-jp)\|[ GitHub ](https://github.com/mei28/SKY_LOCK)\|
 
 [enPiT](https://enpit.coins.tsukuba.ac.jp/)で開発しているアプリケーション
 
+- Hobeeeeee!!: 新しく趣味を見つけたい・広めたい人向けのWebサービスです．既存の趣味とは違い，知らないであろう趣味について知ることができます．
+
+  \|[ Hobeeeeee!! ](https://hobeeeeee.netlify.app/)\|[ GitHub ](https://github.com/enpitut2020/Hobeeeeee)\|
+
 - PocketMentor: 既存のTODOアプリとは違い，ユーザのモチベーションを刺激してやることを消化するように促すことで有意義な休日の実現を目指します．  
 
-  \|[ 公式TwitterBot ](https://twitter.com/MentorPocket)\|[ Github ](https://github.com/enpitut2020/PocketMentor)\|
+  \|[ 公式TwitterBot ](https://twitter.com/MentorPocket)\|[ GitHub ](https://github.com/enpitut2020/PocketMentor)\|
+
 
 ## OSS Contribute
 
@@ -86,13 +104,15 @@ Mingzhe Yang, Yukino Baba.
 - 普通自動車免許 取得, 2016/09
 - 基本情報技術者 合格, 2017/04
 - CGエンジニア検定ベーシック 合格, 2017/12
+- 日本語能力試験N1 合格, 2020/12
 - 実践的ITカリキュラム 修了, 2021/03予定
+
 
 ---
 
 - 深層生成モデル サマースクール'20 修了, 2020/10
 
-## Github Stats
+## GitHub Stats
 
 ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=buefy)
 
