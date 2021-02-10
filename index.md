@@ -59,6 +59,7 @@ Mingzhe Yang, Yukino Baba.
 
   作品名: [Hobeeeeee!!](https://hobeeeeee.netlify.app/)  
   優秀賞, **最優秀賞**, **情報理工学位プログラムリーダー特別表彰**, 2021/01
+
 ## Applications
 
 産総研のプロジェクトで開発しているアプリケーション
