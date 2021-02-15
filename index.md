@@ -58,7 +58,8 @@ Mingzhe Yang, Yukino Baba.
 - [ 2020年度 enPiT 筑波大ワークショップ ](https://enpit.coins.tsukuba.ac.jp/tsukubaws2020/)  
 
   作品名: [Hobeeeeee!!](https://hobeeeeee.netlify.app/)  
-  優秀賞, **最優秀賞**, **情報理工学位プログラムリーダー特別表彰**, 2021/01
+  優秀賞, **最優秀賞**, **情報理工学位プログラムリーダー特別表彰**, 2021/01  
+  \|[ slide ](https://speakerdeck.com/mei28/cheng-guo-fa-biao-hui-seeeeee-d)\|
 
 ## Applications
 
