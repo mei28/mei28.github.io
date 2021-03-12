@@ -48,9 +48,11 @@ Mingzhe Yang, Yukino Baba.
 
 ## Presentations
 
-- [2020年度 enPiT ビジネスシステムデザイン分野ワークショップ](https://enpit.cs.ehime-u.ac.jp/bizsysdws2020/), 2021/02
+- [2020年度 enPiT ビジネスシステムデザイン分野ワークショップ](https://enpit.cs.ehime-u.ac.jp/bizsysdws2020/), 2021/02  
+  \|[ poster ](https://speakerdeck.com/mei28/agilepblji-ri-aziyairukai-fa-le-sieyue-etele-sieeeeeee)\|
 
-- [AgilePBL祭り2021](https://agilepbl.org/), 2021/03
+- [AgilePBL祭り2021](https://agilepbl.org/), 2021/03  
+  \|[ slide ](https://speakerdeck.com/mei28/agilepblji-ri-aziyairukai-fa-le-sieyue-etele-sieeeeeee)\|
 
 
 ## Awards
