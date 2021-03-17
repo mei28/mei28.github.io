@@ -48,11 +48,11 @@ Mingzhe Yang, Yukino Baba.
 
 ## Presentations
 
-- [2020年度 enPiT ビジネスシステムデザイン分野ワークショップ](https://enpit.cs.ehime-u.ac.jp/bizsysdws2020/), 2021/02  
-  \|[ slide ](https://speakerdeck.com/mei28/agilepblji-ri-aziyairukai-fa-le-sieyue-etele-sieeeeeee)\|
-
 - [AgilePBL祭り2021](https://agilepbl.org/), 2021/03  
   \|[ slide ](https://speakerdeck.com/mei28/agilepblji-ri-aziyairukai-fa-le-sieyue-etele-sieeeeeee)\|
+
+- [2020年度 enPiT ビジネスシステムデザイン分野ワークショップ](https://enpit.cs.ehime-u.ac.jp/bizsysdws2020/), 2021/02  
+  \|[ slide ](https://speakerdeck.com/mei28/enpitfen-ye-bie-wakusiyotupu)\|
 
 
 ## Awards
@@ -109,7 +109,7 @@ Mingzhe Yang, Yukino Baba.
 - 基本情報技術者 合格, 2017/04
 - CGエンジニア検定ベーシック 合格, 2017/12
 - 日本語能力試験N1 合格, 2020/12
-- 実践的ITカリキュラム 修了, 2021/03予定
+- 実践的ITカリキュラム 修了, 2021/03
 
 
 ---
