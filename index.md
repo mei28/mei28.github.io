@@ -12,7 +12,7 @@
 
 - [GitHub](https://github.com/mei28)
 - [Qiita](https://qiita.com/mei28)
-- [Kaggle](https://www.kaggle.com/me1kaggle)
+- [Kaggle](https://www.kaggle.com/mei2828)
 - [AtCoder](https://atcoder.jp/users/mei28)
 - [Speaker Deck](https://speakerdeck.com/mei28)
 
