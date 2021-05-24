@@ -12,7 +12,7 @@
 
 - [GitHub](https://github.com/mei28)
 - [Qiita](https://qiita.com/mei28)
-- [Kaggle](https://www.kaggle.com/mei2828)
+- [Kaggle](https://www.kaggle.com/mei2828): 🥉1(solo)
 - [AtCoder](https://atcoder.jp/users/mei28)
 - [Speaker Deck](https://speakerdeck.com/mei28)
 
@@ -118,9 +118,9 @@ Mingzhe Yang, Yukino Baba.
 
 ## GitHub Stats
 
-![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=buefy)
+![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=nord)
 
-![Top Languages Card (Compact layout)](https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=buefy)
+![Top Languages Card (Compact layout)](https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=nord)
 
 ## Qiita Stats
 
