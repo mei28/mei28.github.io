@@ -2,7 +2,7 @@
 
 ## Profile
 
-- 筑波大学 大学院 理工情報生命学術院 システム情報工学研究群 情報理工学位プログラム 博士前期課程 1年
+- 筑波大学 大学院 理工情報生命学術院 システム情報工学研究群 情報理工学位プログラム 博士前期課程 2年
 - ヒューマンコンピュテーション研究室
 - 筑波大学 リサーチアシスタント
 - 産業技術総合研究所 テクニカルスタッフ
@@ -62,6 +62,13 @@ Mingzhe Yang, Yukino Baba.
   作品名: [Hobeeeeee!!](https://hobeeeeee.netlify.app/)  
   優秀賞, **最優秀賞**, **情報理工学位プログラムリーダー特別表彰**, 2021/01  
   \|[ slide ](https://speakerdeck.com/mei28/cheng-guo-fa-biao-hui-seeeeee-d)\|
+
+- [NYLE HACKATHON IN TSUKUBA 2021](https://prtimes.jp/main/html/rd/p/000000091.000055900.html)
+
+  作品名: [Chat-gun](https://chat-gun.herokuapp.com/)  
+  **最優秀賞**, 2021/07  
+  \|[ slide ](https://speakerdeck.com/mei28/nyle-hackathon-2021-4adb903b-8b70-45a7-87da-a0b5f00abfed)\|
+  
 
 ## Applications
 
