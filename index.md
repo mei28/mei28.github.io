@@ -2,11 +2,14 @@
 
 ## Profile
 
-- 筑波大学 大学院 理工情報生命学術院 システム情報工学研究群 情報理工学位プログラム 博士後課程 1年
-- ヒューマンコンピュテーション研究室
-- 筑波大学 リサーチアシスタント
+- 東京大学 総合文化研究科 広域科学専攻 広域システム科学系 博士後期課程 1年
+- 東京大学 馬場研究室
+<!-- - 筑波大学 大学院 理工情報生命学術院 システム情報工学研究群 情報理工学位プログラム 博士後課程 1年 -->
+<!-- - ヒューマンコンピュテーション研究室 -->
+<!-- - 筑波大学 リサーチアシスタント -->
 <!-- - 産業技術総合研究所 テクニカルスタッフ -->
-- mail : mingzhe.yang [at] hcomp.cs.tsukuba.ac.jp
+<!-- - mail : mingzhe.yang [at] hcomp.cs.tsukuba.ac.jp -->
+- mail : mingzhe-yang [at] g.ecc.u-tokyo.ac.jp
 
 ### Accounts
 
@@ -18,9 +21,13 @@
 
 ## Education
 
-**博士 (工学)**, 2022/04 - 2025/03 (予定)  
-[筑波大学理工情報生命学術院システム情報工学研究群情報理工学位プログラム](https://www.cs.tsukuba.ac.jp/)  
+**博士 (学術)**, 2022/10 - 2025/09 (予定)  
+[東京大学総合文化研究科広域科学専攻広域システム科学系](https://system.c.u-tokyo.ac.jp/)  
 指導教員: [馬場雪乃](http://yukinobaba.jp/)  
+
+<!-- **博士 (工学)**, 2022/04 - 2025/03 (予定)   -->
+<!-- [筑波大学理工情報生命学術院システム情報工学研究群情報理工学位プログラム](https://www.cs.tsukuba.ac.jp/)   -->
+<!-- 指導教員: [馬場雪乃](http://yukinobaba.jp/)   -->
 
 **修士 (工学)**, 2020/04 - 2022/03  
 [筑波大学理工情報生命学術院システム情報工学研究群情報理工学位プログラム](https://www.cs.tsukuba.ac.jp/)  
@@ -43,7 +50,7 @@ Mingzhe Yang, Yukino Baba.
 
 ## Work Experience
 
-- リサーチアシスタント, 筑波大学: 2020/04 - 現在 
+- リサーチアシスタント, 筑波大学: 2020/04 - 2022/06 
   - 行動経済学に基づく個人的・集団的評価の数理モデルの開発
     - 人間の認知バイアスの影響を軽減する手法について研究しています．
 
@@ -81,6 +88,23 @@ Mingzhe Yang, Yukino Baba.
   \|[ slide ](https://speakerdeck.com/mei28/nyle-hackathon-2021-4adb903b-8b70-45a7-87da-a0b5f00abfed)\|
   
 
+
+
+## OSS Contribute
+
+- [spacy-course](https://github.com/ines/spacy-course)
+  - 日本語モデルの実装に伴い，コンテンツの変更を行いました．
+- [spaCy-ja](https://github.com/spaCy-ja)
+  - spaCyの日本語コミュニティの発起メンバーです．
+- [tabnet](https://github.com/dreamquark-ai/tabnet)
+  - tabnetの実装を行なっているOSSです．
+
+## Activities
+
+- スタッフ, つくばSKIPアカデミー: 2018, 2019/02
+- ボランティアスタッフ, Unite Tokyo2019: 2019/09
+- 留学生チューター, 筑波大学: 2019/04 - 2019/09
+
 ## Applications
 
 産総研のプロジェクトで開発しているアプリケーション
@@ -105,37 +129,21 @@ Mingzhe Yang, Yukino Baba.
 
   \|[ 公式TwitterBot ](https://twitter.com/MentorPocket)\|[ GitHub ](https://github.com/enpitut2020/PocketMentor)\|
 
-
-## OSS Contribute
-
-- [spacy-course](https://github.com/ines/spacy-course)
-  - 日本語モデルの実装に伴い，コンテンツの変更を行いました．
-- [spaCy-ja](https://github.com/spaCy-ja)
-  - spaCyの日本語コミュニティの発起メンバーです．
-- [tabnet](https://github.com/dreamquark-ai/tabnet)
-  - tabnetの実装を行なっているOSSです．
-
-## Activities
-
-- スタッフ, つくばSKIPアカデミー: 2018, 2019/02
-- ボランティアスタッフ, Unite Tokyo2019: 2019/09
-- 留学生チューター, 筑波大学: 2019/04 - 2019/09
-
 ## Qualifications
 
 - 普通自動車免許 取得, 2016/09
 - 基本情報技術者 合格, 2017/04
 - CGエンジニア検定ベーシック 合格, 2017/12
-- 日本語能力試験N1 合格, 2020/12
+- 日本語能力試験N1 満点合格, 2020/12
 - 実践的ITカリキュラム 修了, 2021/03
 
 
-## GitHub Stats
-
-![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=nord)
-
-![Top Languages Card (Compact layout)](https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=nord)
-
-## Qiita Stats
-
-[![My Qiita posts](https://qiita-badge.apiapi.app/s/mei28/posts.svg)](http://qiita.com/mei28) [![My Qiita contributions](https://qiita-badge.apiapi.app/s/mei28/contributions.svg)](http://qiita.com/mei28) [![My Qiita followers](https://qiita-badge.apiapi.app/s/mei28/followers.svg)](http://qiita.com/mei28)
+<!-- ## GitHub Stats -->
+<!---->
+<!-- ![GitHub Stats Card](https://github-readme-stats.vercel.app/api?username=mei28&show_icons=true&count_private=true&theme=nord) -->
+<!---->
+<!-- ![Top Languages Card (Compact layout)](https://github-readme-stats.vercel.app/api/top-langs/?username=mei28&layout=compact&theme=nord) -->
+<!---->
+<!-- ## Qiita Stats -->
+<!---->
+<!-- [![My Qiita posts](https://qiita-badge.apiapi.app/s/mei28/posts.svg)](http://qiita.com/mei28) [![My Qiita contributions](https://qiita-badge.apiapi.app/s/mei28/contributions.svg)](http://qiita.com/mei28) [![My Qiita followers](https://qiita-badge.apiapi.app/s/mei28/followers.svg)](http://qiita.com/mei28) -->
