@@ -1,0 +1,38 @@
+{
+  "name": "mei28.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier -write .",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mei28/mei28.github.io.git"
+  },
+  "keywords": [],
+  "author": "mei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mei28/mei28.github.io/issues"
+  },
+  "homepage": "https://github.com/mei28/mei28.github.io#readme",
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.4",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^13.4.19",
+    "prettier": "^3.0.3"
+  }
+}
