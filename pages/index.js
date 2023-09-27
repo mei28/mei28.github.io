@@ -6,6 +6,8 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import { IoLogoTwitter, IoLogoGithub, IoLogoX } from 'react-icons/io'
+import { FaKaggle } from 'react-icons/fa'
+import { SiSpeakerdeck } from 'react-icons/si'
 import { GridItem } from '../components/grid-item'
 
 const Page = () => {
@@ -73,13 +75,60 @@ const Page = () => {
           <Heading as='h3' variant='section-title'>Contact</Heading>
           <List>
             <ListItem>
-              <Link href='https://twitter.com/_mei28_' target="_blank">
-                <Button variant='ghost' colorScheme='teal' leftIcon=<Icon as={IoLogoTwitter} />> @_mei28_ </Button>
+              <Link href="https://twitter.com/_mei28_" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoTwitter />}
+                >
+                  @_mei28_
+                </Button>
               </Link>
             </ListItem>
             <ListItem>
-              <Link href='https://github.com/mei28' target="_blank">
-                <Button variant='ghost' colorScheme='teal' leftIcon=<Icon as={IoLogoGithub} />> @mei28 </Button>
+              <Link href="https://github.com/mei28" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoGithub />}
+                >
+                  @mei28
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://kaggle.com/mei2828" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<FaKaggle />}
+                >
+                  @mei2828
+                </Button>
+              </Link>
+            </ListItem>
+
+            <ListItem>
+              <Link href="https://speakerdeck.com/mei28" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<SiSpeakerdeck />}
+                >
+                  @mei28
+                </Button>
+              </Link>
+            </ListItem>
+
+            <ListItem>
+              <Link href="https://atcoder.jp/users/mei28" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Image src='/images/ice.png' alt='speakerdeck' boxSize='1em' />}
+                >
+                  @mei28
+                </Button>
               </Link>
             </ListItem>
 

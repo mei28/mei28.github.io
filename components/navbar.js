@@ -1,5 +1,7 @@
 import Logo from './logo';
 import NextLink from 'next/link';
+import { forwardRef } from 'react'
+
 import {
   Container,
   Box,
@@ -37,21 +39,25 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   )
 }
 
+const MenuLink = forwardRef((props, ref) => (
+  <Link ref={ref} as={NextLink} {...props} />
+))
 
-const Navbar = (props) => {
-  const { path } = props;
+const Navbar = props => {
+  const { path } = props
+
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
       bg={useColorModeValue('#ffffff40', '#20202380')}
-      style={{ backdropFilter: 'blur(10px' }}
-      zIndex={1}
+      css={{ backdropFilter: 'blur(10px)' }}
+      zIndex={2}
       {...props}
     >
       <Container
-        display='flex'
+        display="flex"
         p={2}
         maxW="container.md"
         wrap="wrap"
@@ -72,37 +78,42 @@ const Navbar = (props) => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}> Works </LinkItem>
-          <LinkItem href="/posts" path={path}> Posts </LinkItem>
+          <LinkItem href="/works" path={path}>
+            Works
+          </LinkItem>
+          <LinkItem href="/posts" path={path}>
+            Posts
+          </LinkItem>
         </Stack>
 
-        <Box flex={1} algin="right">
+        <Box flex={1} align="right">
           <ThemeToggleButton />
+
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu>
+            <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
-                variant='outline'
+                variant="outline"
                 aria-label="Options"
               />
               <MenuList>
-                <MenuItem as={Link} href="/">
+                <MenuItem as={MenuLink} href="/">
                   About
                 </MenuItem>
-                <MenuItem as={Link} href="/works">
+                <MenuItem as={MenuLink} href="/works">
                   Works
                 </MenuItem>
-                <MenuItem as={Link} href="/posts">
+                <MenuItem as={MenuLink} href="/posts">
                   Posts
                 </MenuItem>
               </MenuList>
             </Menu>
           </Box>
         </Box>
-      </Container >
-    </Box >
+      </Container>
+    </Box>
   )
 }
 
-export default Navbar;
+export default Navbar
