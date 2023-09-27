@@ -1,10 +1,12 @@
 import NextLink from 'next/link'
-import { Container, Box, Heading, Image, useColorModeValue, Link, Button } from "@chakra-ui/react"
+import { Container, Box, Heading, Image, useColorModeValue, Link, Button, SimpleGrid, List, ListItem, Icon } from "@chakra-ui/react"
 import Section from "../components/section"
 import Paragraph from "../components/paragraph"
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
+import { IoLogoTwitter, IoLogoGithub, IoLogoX } from 'react-icons/io'
+import { GridItem } from '../components/grid-item'
 
 const Page = () => {
   return (
@@ -67,8 +69,26 @@ const Page = () => {
           <BioSection> <BioYear>2022</BioYear> enter The University of Tokyo</BioSection>
         </Section>
 
+        <Section delay={0.1}>
+          <Heading as='h3' variant='section-title'>Contact</Heading>
+          <List>
+            <ListItem>
+              <Link href='https://twitter.com/_mei28_' target="_blank">
+                <Button variant='ghost' colorScheme='teal' leftIcon=<Icon as={IoLogoTwitter} />> @_mei28_ </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href='https://github.com/mei28' target="_blank">
+                <Button variant='ghost' colorScheme='teal' leftIcon=<Icon as={IoLogoGithub} />> @mei28 </Button>
+              </Link>
+            </ListItem>
+
+          </List>
+
+        </Section>
       </Container>
-    </Layout>
+
+    </Layout >
   )
 }
 
