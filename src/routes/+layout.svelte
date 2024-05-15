@@ -1,53 +1,49 @@
-<script>
-	import Header from './Header.svelte';
-	import './styles.css';
+<script lang="ts">
+  import "uno.css";
+  import NavMenu from "$lib/components/NavMenu/NavMenu.svelte";
+  import "$lib/index.scss";
+  import { onHydrated, theme } from "$lib/stores/theme";
+  import { onMount } from "svelte";
+
+  // ? moved to +layout.server.ts : will be deleted when we make sure that everything is alright
+  // export const prerender = true;
+
+  onMount(() => onHydrated());
 </script>
 
-<div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+<div class={`body contents ${$theme ? "theme-dark" : "theme-light"}`}>
+  <NavMenu />
+  <div class="content container"><slot /></div>
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
+<style lang="scss">
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0px 0px;
+  }
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+  .body {
+    margin: 0px;
+    background-color: var(--main);
+    color: var(--main-text);
+    font-family: var(--text-f);
+    display: flex;
+    flex-direction: column;
+    transition-duration: 200ms;
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
+    letter-spacing: 1px;
 
-	footer a {
-		font-weight: bold;
-	}
+    min-height: 100vh;
+  }
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+  :global(p) {
+    margin: 0px;
+  }
+
+  :global(h1, h2, h3, h4, h5, h6) {
+    margin: 5px 0px;
+  }
 </style>
+

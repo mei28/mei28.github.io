@@ -3,7 +3,10 @@ import type { Color } from './utils/colors'
 export enum Platform {
   GitHub = 'github',
   Twitter = 'twitter',
+  Kaggle = 'kaggle',
   Email = 'email',
+  Atcoder = 'atcoder',
+  SpeakerDeck = 'speakerdeck',
 }
 
 export type Icon = `i-${string}-${string}`;

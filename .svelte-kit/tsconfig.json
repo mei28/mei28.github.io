@@ -6,6 +6,36 @@
 			],
 			"$lib/*": [
 				"../src/lib/*"
+			],
+			"@data": [
+				"../src/lib/data"
+			],
+			"@data/*": [
+				"../src/lib/data/*"
+			],
+			"@components": [
+				"../src/lib/components"
+			],
+			"@components/*": [
+				"../src/lib/components/*"
+			],
+			"@md": [
+				"../src/lib/md"
+			],
+			"@md/*": [
+				"../src/lib/md/*"
+			],
+			"@stores": [
+				"../src/lib/stores"
+			],
+			"@stores/*": [
+				"../src/lib/stores/*"
+			],
+			"@utils": [
+				"../src/lib/utils"
+			],
+			"@utils/*": [
+				"../src/lib/utils/*"
 			]
 		},
 		"rootDirs": [
