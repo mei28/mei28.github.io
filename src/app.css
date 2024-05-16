@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: 'BIZ+UDPGothic', sans-serif;
+}
+
+h1,h2,h3.bizudp{
+  font-family: 'BIZ+UDPGothic', sans-serif;
+}

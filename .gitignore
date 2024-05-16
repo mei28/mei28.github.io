@@ -1,13 +1,5 @@
-node_modules
-.next
-dist
-.vercel
-.envode_modules
-.next
-dist
-.vercel
-.env
 .DS_Store
+node_modules
 /build
 /.svelte-kit
 /package
@@ -16,3 +8,17 @@ dist
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+
+# Test coverage
+coverage
+*.lcov
+
+# Optional eslint cache
+.eslintcache
+
+# build output
+dist
+.vercel
+
+tmp

@@ -1,36 +1,3 @@
 {
-	"/": [
-		"src/routes/+layout.server.ts",
-		"src/routes/+layout.server.ts"
-	],
-	"/education": [
-		"src/routes/+layout.server.ts"
-	],
-	"/experience": [
-		"src/routes/+layout.server.ts"
-	],
-	"/experience/[slug]": [
-		"src/routes/experience/[slug]/+page.ts",
-		"src/routes/+layout.server.ts"
-	],
-	"/projects": [
-		"src/routes/+layout.server.ts"
-	],
-	"/projects/[slug]": [
-		"src/routes/projects/[slug]/+page.ts",
-		"src/routes/+layout.server.ts"
-	],
-	"/resume": [
-		"src/routes/+layout.server.ts"
-	],
-	"/search": [
-		"src/routes/+layout.server.ts"
-	],
-	"/skills": [
-		"src/routes/+layout.server.ts"
-	],
-	"/skills/[slug]": [
-		"src/routes/skills/[slug]/+page.ts",
-		"src/routes/+layout.server.ts"
-	]
+	"/": []
 }
