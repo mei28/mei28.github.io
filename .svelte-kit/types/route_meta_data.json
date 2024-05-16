@@ -1,14 +1,36 @@
 {
 	"/": [
-		"src/routes/+page.ts"
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
 	],
-	"/about": [
-		"src/routes/about/+page.ts"
+	"/education": [
+		"src/routes/+layout.server.ts"
 	],
-	"/sverdle": [
-		"src/routes/sverdle/+page.server.ts"
+	"/experience": [
+		"src/routes/+layout.server.ts"
 	],
-	"/sverdle/how-to-play": [
-		"src/routes/sverdle/how-to-play/+page.ts"
+	"/experience/[slug]": [
+		"src/routes/experience/[slug]/+page.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/projects": [
+		"src/routes/+layout.server.ts"
+	],
+	"/projects/[slug]": [
+		"src/routes/projects/[slug]/+page.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/resume": [
+		"src/routes/+layout.server.ts"
+	],
+	"/search": [
+		"src/routes/+layout.server.ts"
+	],
+	"/skills": [
+		"src/routes/+layout.server.ts"
+	],
+	"/skills/[slug]": [
+		"src/routes/skills/[slug]/+page.ts",
+		"src/routes/+layout.server.ts"
 	]
 }
