@@ -2,6 +2,7 @@
   import "../app.css";
   import Fotter from "../components/Fotter.svelte";
   import Header from "../components/Header.svelte";
+  import Main from "../components/Main.svelte";
 
   let y;
   let innerHeight = 0;
@@ -30,8 +31,7 @@
   </div>
 
   <Header {y} />
-  <slot />
-  <slot />
+  <Main />
   <Fotter />
 </div>
 
