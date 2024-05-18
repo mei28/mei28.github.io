@@ -1,8 +1,8 @@
 <script>
-  import "../app.css";
   import Fotter from "../components/Fotter.svelte";
   import Header from "../components/Header.svelte";
-  import Main from "../components/Main.svelte";
+  // import Main from "../components/Main.svelte";
+  import "../app.css";
 
   let y;
   let innerHeight = 0;
@@ -14,7 +14,7 @@
 </script>
 
 <div
-  class="relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen"
+  class="container relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen"
 >
   <div
     class={"fixed bottom-0 w-full duration-200 flex p-10 z-{10}" +
@@ -31,7 +31,7 @@
   </div>
 
   <Header {y} />
-  <Main />
+  <slot />
   <Fotter />
 </div>
 
