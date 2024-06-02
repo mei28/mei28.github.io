@@ -5,7 +5,6 @@ import '../styles/Hamburger.css';
 
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -23,7 +22,7 @@ const Nav: React.FC = () => {
           </ul>
         </div>
       </nav>
-      <nav id="hamburger-nav">
+      <nav id="hamburger-nav ">
         <div className="logo">Mingzhe Yang</div>
         <div className="hamburger-menu">
           <div className={`hamburger-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>

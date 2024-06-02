@@ -5,7 +5,7 @@
   height: 80vh;
 }
 
-.section_pic-container {
+.section__pic-container {
   display: flex;
   height: 400px;
   width: 400px;
@@ -13,7 +13,7 @@
 }
 
 .section__text {
-  align: center;
+  align-self: center;
   text-align: center;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .section__text__p2 {
-  font-size: 1.75rm;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
@@ -39,5 +39,5 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  gap; 1rem;
+  gap: 1rem;
 }

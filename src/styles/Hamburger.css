@@ -3,7 +3,7 @@
 }
 
 .hamburger-menu {
-  postion: relative;
+  position: relative;
   display: inline-block;
 }
 
@@ -31,7 +31,7 @@
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3 ease-in-out;
 }
 
 .menu-links a {
