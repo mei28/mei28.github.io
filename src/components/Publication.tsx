@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBookmark, faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 
-import chi24pic from '../assets/publication/chi24.jpeg';
-
 interface Publication {
   image?: any | null;
   icon?: IconDefinition | null;
@@ -17,9 +15,9 @@ interface Publication {
 
 const publications: Publication[] = [
   {
-    image: chi24pic,
+    image: '/src/assets/publication/chi24.jpeg',
     title: 'Fair Machine Guidance to Enhance Fair Decision Making in Biased People',
-    authors: 'Mingzhe Yang, Hiromi Arai, Naomi Yamashita and Yukino Baba',
+    authors: '<span class="highlight-author">Mingzhe Yang</span>, Hiromi Arai, Naomi Yamashita and Yukino Baba',
     info: 'Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI\'24), 2024',
     links: [
       { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3613904.3642627' },
@@ -30,7 +28,7 @@ const publications: Publication[] = [
   {
     image: null,
     title: 'Fair Machine Guidance to Enhance Fair Decision Making',
-    authors: 'Mingzhe Yang',
+    authors: '<span class="highlight-author">Mingzhe Yang</span>',
     info: 'Proceedings of the AAAI Symposium Series, 2024',
     links: [
       { label: 'Paper', url: 'https://ojs.aaai.org/index.php/AAAI-SS/article/view/31255' },
@@ -39,7 +37,7 @@ const publications: Publication[] = [
   {
     image: null,
     title: 'SwipeGANSpace: Swipe-to-Compare Image Generation via Efficient Latent Space Exploration',
-    authors: 'Yuto Nakashima, Mingzhe Yang and Yukino Baba',
+    authors: 'Yuto Nakashima, <span class="highlight-author">Mingzhe Yang</span> and Yukino Baba',
     info: 'Proceedings of the 29th International Conference on Intelligent User Interfaces (IUI\'24), 2024',
     links: [
       { label: 'Paper', url: 'https://dl.acm.org/doi/abs/10.1145/3640543.3645141' },
@@ -48,12 +46,31 @@ const publications: Publication[] = [
   {
     image: null,
     title: '卓球の得点予測における重要要素の分析',
-    authors: '楊明哲, 橋本敦史, 馬家昕, 本田秀仁, 田中 一敏',
+    authors: '<span class="highlight-author">楊明哲</span>, 橋本敦史, 馬家昕, 本田秀仁, 田中 一敏',
     info: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), 2024',
     links: [
-      { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3613904.3642627' },
+      { label: 'Paper', url: '/assets/publication/T5-A-9-02.pdf' },
       { label: 'Slides', url: 'https://speakerdeck.com/mei28/deim2024-zhuo-qiu-node-dian-yu-ce-niokeruzhong-yao-yao-su-nofen-xi' },
-      { label: 'Poster', url: '/src/assets/publication/deim_poster.pdf' } // Updated URL for local PDF
+      { label: 'Poster', url: '/assets/publication/deim_poster.pdf' } // Updated URL for local PDF
+    ]
+  },
+  {
+    image: '/src/assets/publication/MIRU2023_thumnail.jpg',
+    title: '卓球映像からの打球の攻守推定',
+    authors: '<span class="highlight-author">楊明哲</span>, 橋本敦史, 馬家昕, 本田秀仁, 田中 一敏',
+    info: '画像の認識・理解シンポジウム (MIRU2023), 2023',
+    links: [
+      { label: 'Paper', url: '/assets/publication/MIRU2023.pdf' },
+      { label: 'Poster', url: '/assets/publication/MIRU2023_poster.pdf' }
+    ]
+  },
+  {
+    image: null,
+    title: '文献理解のための人間の応答を利用したプロンプト最適化',
+    authors: '今川涼平, 守山慧, <span class="highlight-author">楊明哲</span>, 馬場雪乃',
+    info: '言語処理学会第30回年次大会(NLP2024), 2024',
+    links: [
+      { label: 'Paper', url: '/src/assets/publication/A5-4.pdf' },
     ]
   },
 ];
@@ -78,14 +95,17 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
         <h3 className="publication-title">
           {publication.title}
         </h3>
-        <p className="authors">{publication.authors}</p>
+        <p className="authors" dangerouslySetInnerHTML={{ __html: publication.authors }} />
         <p className="info">{publication.info}</p>
         <div className="btn-container">
           {publication.links.map((link, idx) => (
             <button
               key={idx}
               className="btn btn-color-2 publication-btn"
-              onClick={() => window.open(link.url)}
+              onClick={() => {
+                const url = link.url.startsWith('http') ? link.url : `${process.env.PUBLIC_URL}${link.url}`;
+                window.open(url, '_blank');
+              }}
             >
               {link.label}
             </button>

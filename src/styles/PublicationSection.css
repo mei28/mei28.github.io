@@ -73,6 +73,11 @@
   margin-right: 10px; /* Space between buttons */
 }
 
+.highlight-author {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 /* Media query for small screens */
 @media (max-width: 600px) {
   .publication-item {
