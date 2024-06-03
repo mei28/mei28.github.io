@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutPic from '../assets/about-pic.jpg';
+import aboutPic from '../assets/about/about-pic.jpg';
 import '../styles/AboutSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
