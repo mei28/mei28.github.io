@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/ProjectSection.css'
-import arrowIcon from '../assets/arrow.png';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 const Project: React.FC = () => {
   return (
     <section id="projects">
@@ -83,12 +84,7 @@ const Project: React.FC = () => {
           </div>
         </div>
       </div>
-      <img
-        src={arrowIcon}
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={() => window.location.href = './#contact'}
-      />
+      <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#contact'} />
     </section>
   )
 };

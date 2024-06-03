@@ -1,10 +1,46 @@
 import React from 'react';
 import '../styles/ExperienceSection.css';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import checkmarkIcon from '../assets/checkmark.png';
-import arrowIcon from '../assets/arrow.png';
+
+// Define the Skill interface
+interface Skill {
+  name: string;
+  level: string;
+}
 
 const Experience: React.FC = () => {
+  // Define the frontend and backend skills arrays with the Skill type
+  const frontendSkills: Skill[] = [
+    { name: 'HTML', level: 'Experienced' },
+    { name: 'CSS', level: 'Experienced' },
+    { name: 'SASS', level: 'Intermediate' },
+    { name: 'JavaScript', level: 'Basic' },
+    { name: 'TypeScript', level: 'Basic' },
+    { name: 'Material UI', level: 'Intermediate' }
+  ];
+
+  const backendSkills: Skill[] = [
+    { name: 'PostgreSQL', level: 'Basic' },
+    { name: 'Node JS', level: 'Intermediate' },
+    { name: 'Express JS', level: 'Intermediate' },
+    { name: 'Git', level: 'Intermediate' }
+  ];
+
+  // Define the renderSkills function with the appropriate type
+  const renderSkills = (skills: Skill[]) => (
+    skills.map((skill, index) => (
+      <article key={index}>
+        <img src={checkmarkIcon} alt="Experience icon" className="icon" />
+        <div>
+          <h3>{skill.name}</h3>
+          <p>{skill.level}</p>
+        </div>
+      </article>
+    ))
+  );
+
   return (
     <section id="experience">
       <p className="section__text__p1">Explore My</p>
@@ -14,134 +50,20 @@ const Experience: React.FC = () => {
           <div className="details-container">
             <h2 className="experience-sub-title">Frontend Development</h2>
             <div className="article-container">
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>SASS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+              {renderSkills(frontendSkills)}
             </div>
           </div>
           <div className="details-container">
-            <h2 className="experience-sub-title">Frontend Development</h2>
+            <h2 className="experience-sub-title">Backend Development</h2>
             <div className="article-container">
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src={checkmarkIcon}
-                  alt="Experience icon"
-                  className="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+              {renderSkills(backendSkills)}
             </div>
           </div>
         </div>
       </div>
-      <img
-        src={arrowIcon}
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={() => window.location.href = './#projects'}
-      />
+      <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#projects'} />
     </section>
-
-  )
+  );
 };
 
 export default Experience;

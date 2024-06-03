@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Project from './components/Project';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Publication from './components/Publication';
 
 import './styles/Sections.css';
 import './styles/Icons.css';
@@ -17,6 +18,7 @@ function App() {
       <Nav />
       <Profile />
       <About />
+      <Publication />
       <Experience />
       <Project />
       <Contact />

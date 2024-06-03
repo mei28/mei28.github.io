@@ -48,3 +48,27 @@
   width: 400px;
   margin: auto 0;
 }
+
+.education-item,
+.interest-item {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.education-item h4,
+.interest-item h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.education-item p,
+.interest-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.interest-item li {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}

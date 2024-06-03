@@ -1,0 +1,35 @@
+#publications {
+  position: relative;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.publication-img {
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.publication-title {
+  margin: 1rem;
+  color: black;
+}
+
+.authors {
+  margin: 0.5rem 0;
+  color: gray;
+  font-style: italic;
+}
+
+.info {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.publication-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+}

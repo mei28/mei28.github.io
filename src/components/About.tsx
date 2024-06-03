@@ -1,12 +1,47 @@
 import React from 'react';
-import aboutPic from '../assets/about-pic.png';
-import experienceIcon from '../assets/experience.png';
-import educationIcon from '../assets/education.png';
-import arrowIcon from '../assets/arrow.png';
+import aboutPic from '../assets/about-pic.jpg';
 import '../styles/AboutSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
 import '../styles/Buttons.css';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+
+interface Education {
+  degree: string;
+  period: string;
+  institution: string;
+}
+
+interface Interest {
+  item: string;
+}
+
+const educationDetails: Education[] = [
+  {
+    degree: 'B.Sc. in Information Engineering',
+    period: '2016 - 2020',
+    institution: 'University of Tsukuba'
+  },
+  {
+    degree: 'M.Sc. in Engineering',
+    period: '2020 - 2022',
+    institution: 'University of Tsukuba'
+  },
+  {
+    degree: 'Ph.D. in Arts and Sciences',
+    period: '2022 - now',
+    institution: 'The University of Tokyo'
+  }
+];
+
+const interests: Interest[] = [
+  { item: 'Human-AI Collaboration' },
+  { item: 'Explainable AI' },
+  { item: 'Human-Computer Interaction' }
+];
 
 const About: React.FC = () => {
   return (
@@ -24,37 +59,33 @@ const About: React.FC = () => {
         <div className="about-details-container">
           <div className="about-containers">
             <div className="details-container">
-              <img
-                src={experienceIcon}
-                alt="Experience icon"
-                className="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
+              <FontAwesomeIcon icon={faMagnifyingGlass} className='icon' />
+              <h3>Interests</h3>
+              {interests.map((interest, index) => (
+                <div key={index} className="interest-item">
+                  <li>{interest.item}</li>
+                </div>
+              ))}
             </div>
             <div className="details-container">
-              <img
-                src={educationIcon}
-                alt="Education icon"
-                className="icon"
-              />
+              <FontAwesomeIcon icon={faUserGroup} className='icon' />
               <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+              {educationDetails.map((edu, index) => (
+                <div key={index} className="education-item">
+                  <h4>{edu.degree}</h4>
+                  <p>@{edu.institution}, {edu.period}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="text-container">
-            <p>
-              テキストボックスがかけるよ
+            <p>I am a Ph. D. student at the University of Tokyo in Japan.
             </p>
           </div>
         </div>
       </div>
-      <img
-        src={arrowIcon}
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={() => window.location.href = './#experience'}
-      />
+
+      <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#experience'} />
     </section>
   );
 }
