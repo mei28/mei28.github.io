@@ -34,28 +34,32 @@ const publications: Publication[] = [
 
 const renderPublicationItem = (publication: Publication, index: number): JSX.Element => (
   <div key={index} className="details-container color-container">
-    <div className="article-container">
-      <img
-        src={publication.image}
-        alt={publication.title}
-        className="publication-img"
-      />
-    </div>
-    <h2 className="experience-sub-title publication-title">
-      {publication.title}
-    </h2>
-    <p className="authors">{publication.authors}</p>
-    <p className="info">{publication.info}</p>
-    <div className="btn-container">
-      {publication.links.map((link, idx) => (
-        <button
-          key={idx}
-          className="btn btn-color-2 publication-btn"
-          onClick={() => window.open(link.url)}
-        >
-          {link.label}
-        </button>
-      ))}
+    <div className="publication-item">
+      <div className="image-container">
+        <img
+          src={publication.image}
+          alt={publication.title}
+          className="publication-img"
+        />
+      </div>
+      <div className="text-container">
+        <h2 className="experience-sub-title publication-title">
+          {publication.title}
+        </h2>
+        <p className="authors">{publication.authors}</p>
+        <p className="info">{publication.info}</p>
+        <div className="btn-container">
+          {publication.links.map((link, idx) => (
+            <button
+              key={idx}
+              className="btn btn-color-2 publication-btn"
+              onClick={() => window.open(link.url)}
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 );

@@ -2,19 +2,40 @@
   position: relative;
 }
 
+.experience-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add some space between items */
+}
+
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
+  padding: 20px; /* Add some padding for better layout */
+}
+
+.publication-item {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.image-container {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  margin-right: 20px; /* Space between image and text */
 }
 
 .publication-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 150px; /* Fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.text-container {
+  flex: 1; /* Allow text to take remaining space */
 }
 
 .publication-title {
-  margin: 1rem;
+  margin: 0 0 0.5rem 0;
   color: black;
 }
 
@@ -32,4 +53,5 @@
 .publication-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+  margin-right: 10px; /* Space between buttons */
 }
