@@ -1,5 +1,4 @@
 import React from 'react';
-import profilePic from '../assets/profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faXTwitter, faKaggle, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
 
@@ -44,7 +43,7 @@ const Profile: React.FC = () => {
   return (
     <section id="profile">
       <div className="section__pic-container">
-        <img src={profilePic} alt="profile" />
+        <img src='/assets/profile.png' alt="profile" />
       </div>
       <div className="section__text">
         <p className="section__text__p1">Hello, I'm</p>

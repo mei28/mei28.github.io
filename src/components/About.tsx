@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutPic from '../assets/about/about-pic.jpg';
+import aboutPic from '/assets/about/about-pic.jpg';
 import '../styles/AboutSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
@@ -53,7 +53,7 @@ const About: React.FC = () => {
       <div className="section-container">
         <div className="section__pic-container">
           <img
-            src={aboutPic}
+            src='/assets/about/about-pic.jpg'
             alt="Profile picture"
             className="about-pic"
           />

@@ -16,7 +16,7 @@ interface Publication {
 
 const publications: Publication[] = [
   {
-    image: '/src/assets/publication/chi24.jpeg',
+    image: '/assets/publication/chi24.jpeg',
     title: 'Fair Machine Guidance to Enhance Fair Decision Making in Biased People',
     authors: '<span class="highlight-author">Mingzhe Yang</span>, Hiromi Arai, Naomi Yamashita and Yukino Baba',
     info: 'Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI\'24), 2024',
@@ -56,7 +56,7 @@ const publications: Publication[] = [
     ]
   },
   {
-    image: '/src/assets/publication/MIRU2023_thumnail.jpg',
+    image: '/assets/publication/MIRU2023_thumnail.jpg',
     title: '卓球映像からの打球の攻守推定',
     authors: '<span class="highlight-author">楊明哲</span>, 橋本敦史, 馬家昕, 本田秀仁, 田中 一敏',
     info: '画像の認識・理解シンポジウム (MIRU2023), 2023',
@@ -71,7 +71,7 @@ const publications: Publication[] = [
     authors: '今川涼平, 守山慧, <span class="highlight-author">楊明哲</span>, 馬場雪乃',
     info: '言語処理学会第30回年次大会(NLP2024), 2024',
     links: [
-      { label: 'Paper', url: '/src/assets/publication/A5-4.pdf' },
+      { label: 'Paper', url: '/assets/publication/A5-4.pdf' },
     ]
   },
 ];
