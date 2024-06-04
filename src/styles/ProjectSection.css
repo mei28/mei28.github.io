@@ -22,3 +22,8 @@
   color: black;
   border-color: rgb(163, 163, 163);
 }
+
+.project-description {
+  margin: 1rem 0;
+  color: #555;
+}

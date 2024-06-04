@@ -14,19 +14,19 @@ interface Skill {
 const Experience: React.FC = () => {
   // Define the frontend and backend skills arrays with the Skill type
   const frontendSkills: Skill[] = [
-    { name: 'HTML', level: 'Experienced' },
-    { name: 'CSS', level: 'Experienced' },
-    { name: 'SASS', level: 'Intermediate' },
-    { name: 'JavaScript', level: 'Basic' },
-    { name: 'TypeScript', level: 'Basic' },
-    { name: 'Material UI', level: 'Intermediate' }
+    // { name: 'HTML', level: 'Experienced' },
+    // { name: 'CSS', level: 'Experienced' },
+    // { name: 'SASS', level: 'Intermediate' },
+    // { name: 'JavaScript', level: 'Basic' },
+    // { name: 'TypeScript', level: 'Basic' },
+    // { name: 'Material UI', level: 'Intermediate' }
   ];
 
   const backendSkills: Skill[] = [
-    { name: 'PostgreSQL', level: 'Basic' },
-    { name: 'Node JS', level: 'Intermediate' },
-    { name: 'Express JS', level: 'Intermediate' },
-    { name: 'Git', level: 'Intermediate' }
+    // { name: 'PostgreSQL', level: 'Basic' },
+    // { name: 'Node JS', level: 'Intermediate' },
+    // { name: 'Express JS', level: 'Intermediate' },
+    // { name: 'Git', level: 'Intermediate' }
   ];
 
   // Define the renderSkills function with the appropriate type
@@ -48,6 +48,10 @@ const Experience: React.FC = () => {
     <section id="experience">
       <p className="section__text__p1">Explore My</p>
       <h1 className="title">Experience</h1>
+
+      <p className="section__text__p2" style={{ textAlign: 'center', margin: '2rem 0' }}>Coming Soon...</p>
+
+      {/*
       <div className="experience-details-container">
         <div className="about-containers">
           <div className="details-container">
@@ -64,6 +68,7 @@ const Experience: React.FC = () => {
           </div>
         </div>
       </div>
+      */}
 
       {nextSection && (
         <FontAwesomeIcon
