@@ -4,7 +4,7 @@ import '../styles/AboutSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
 import '../styles/Buttons.css';
-import { Sections, sectionTitles, getNextSection } from '../sections';
+import { Sections, getNextSection } from '../sections';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
@@ -88,10 +88,10 @@ const About: React.FC = () => {
       </div>
 
       {nextSection && (
-        <FontAwesomeIcon 
-          icon={faAnglesDown} 
-          className='icon arrow' 
-          onClick={() => window.location.href = `#${nextSection}`} 
+        <FontAwesomeIcon
+          icon={faAnglesDown}
+          className='icon arrow'
+          onClick={() => window.location.href = `#${nextSection}`}
         />
       )}
     </section>

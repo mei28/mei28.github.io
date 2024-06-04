@@ -3,7 +3,9 @@ import profilePic from '../assets/profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faXTwitter, faKaggle, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
 
-import { faAnglesDown, faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
+import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProfileSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
@@ -11,7 +13,7 @@ import '../styles/Buttons.css';
 
 // Define the type for account objects
 interface Account {
-  icon: any; // Use appropriate type for FontAwesome icons
+  icon: IconDefinition; // Use appropriate type for FontAwesome icons
   link: string;
 }
 

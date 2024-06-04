@@ -3,9 +3,10 @@ import '../styles/Contact.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faXTwitter, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface ContactInfo {
-  icon: any;
+  icon: IconDefinition;
   link?: string;
   text: string;
 }

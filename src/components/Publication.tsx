@@ -6,7 +6,7 @@ import { faBookmark, faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import { Sections, sectionTitles, getNextSection } from '../sections';
 
 interface Publication {
-  image?: any | null;
+  image?: string | null;
   icon?: IconDefinition | null;
   title: string;
   authors: string;

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import '../styles/FooterSection.css';
 import '../styles/Nav.css';
 
-import { Sections, sectionTitles, getNextSection } from '../sections';
+import { Sections, sectionTitles } from '../sections';
 
 const Footer: React.FC = () => {
-  const [thisYear, setThisYear] = useState<number>(new Date().getFullYear());
+  const [thisYear, _setThisYear] = useState<number>(new Date().getFullYear());
 
   return (
     <footer>
