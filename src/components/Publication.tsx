@@ -103,7 +103,7 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
               key={idx}
               className="btn btn-color-2 publication-btn"
               onClick={() => {
-                const url = link.url.startsWith('http') ? link.url : `${process.env.PUBLIC_URL}${link.url}`;
+                const url = link.url;
                 window.open(url, '_blank');
               }}
             >
