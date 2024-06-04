@@ -3,6 +3,7 @@ import '../styles/PublicationSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBookmark, faAnglesDown } from '@fortawesome/free-solid-svg-icons';
+import { Sections, sectionTitles, getNextSection } from '../sections';
 
 interface Publication {
   image?: any | null;
@@ -75,6 +76,8 @@ const publications: Publication[] = [
   },
 ];
 
+const nextSection = getNextSection(Sections.Publications);
+
 const renderPublicationItem = (publication: Publication, index: number): JSX.Element => (
   <div key={index} className="details-container color-container">
     <div className="publication-item">
@@ -113,7 +116,14 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
         </div>
       </div>
     </div>
-    <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#experience'} />
+
+    {nextSection && (
+      <FontAwesomeIcon
+        icon={faAnglesDown}
+        className='icon arrow'
+        onClick={() => window.location.href = `#${nextSection}`}
+      />
+    )}
   </div>
 );
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Sections, sectionTitles } from '../sections';
 import '../styles/Nav.css';
 import '../styles/App.css';
 import '../styles/Hamburger.css';
@@ -15,10 +16,9 @@ const Nav: React.FC = () => {
         <div className="logo">Mingzhe Yang</div>
         <div>
           <ul className="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {Object.values(Sections).map((section) => (
+              <li key={section}><a href={`#${section}`}>{sectionTitles[section]}</a></li>
+            ))}
           </ul>
         </div>
       </nav>
@@ -31,10 +31,9 @@ const Nav: React.FC = () => {
             <span></span>
           </div>
           <div className={`menu-links ${menuOpen ? 'open' : ''}`}>
-            <li><a href="#about" onClick={toggleMenu}>About</a></li>
-            <li><a href="#experience" onClick={toggleMenu}>Experience</a></li>
-            <li><a href="#projects" onClick={toggleMenu}>Projects</a></li>
-            <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
+            {Object.values(Sections).map((section) => (
+              <li key={section}><a href={`#${section}`} onClick={toggleMenu}>{sectionTitles[section]}</a></li>
+            ))}
           </div>
         </div>
       </nav>

@@ -4,6 +4,7 @@ import '../styles/AboutSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
 import '../styles/Buttons.css';
+import { Sections, sectionTitles, getNextSection } from '../sections';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
@@ -44,6 +45,7 @@ const interests: Interest[] = [
 ];
 
 const About: React.FC = () => {
+  const nextSection = getNextSection(Sections.About);
   return (
     <section id="about">
       <p className="section__text__p1">Get To Know More</p>
@@ -85,7 +87,13 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#experience'} />
+      {nextSection && (
+        <FontAwesomeIcon 
+          icon={faAnglesDown} 
+          className='icon arrow' 
+          onClick={() => window.location.href = `#${nextSection}`} 
+        />
+      )}
     </section>
   );
 }

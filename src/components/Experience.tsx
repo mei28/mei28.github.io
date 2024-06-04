@@ -3,6 +3,7 @@ import '../styles/ExperienceSection.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import checkmarkIcon from '../assets/checkmark.png';
+import { Sections, sectionTitles, getNextSection } from '../sections';
 
 // Define the Skill interface
 interface Skill {
@@ -41,6 +42,8 @@ const Experience: React.FC = () => {
     ))
   );
 
+  const nextSection = getNextSection(Sections.Experience);
+
   return (
     <section id="experience">
       <p className="section__text__p1">Explore My</p>
@@ -61,7 +64,14 @@ const Experience: React.FC = () => {
           </div>
         </div>
       </div>
-      <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#projects'} />
+
+      {nextSection && (
+        <FontAwesomeIcon
+          icon={faAnglesDown}
+          className='icon arrow'
+          onClick={() => window.location.href = `#${nextSection}`}
+        />
+      )}
     </section>
   );
 };

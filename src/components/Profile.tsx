@@ -2,7 +2,8 @@ import React from 'react';
 import profilePic from '../assets/profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faXTwitter, faKaggle, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
-import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+import { faAnglesDown, faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProfileSection.css';
 import '../styles/Sections.css';
 import '../styles/Icons.css';
@@ -11,7 +12,8 @@ import '../styles/Buttons.css';
 // Define the type for account objects
 interface Account {
   icon: any; // Use appropriate type for FontAwesome icons
-  link: string; }
+  link: string;
+}
 
 // Array of account objects
 const accounts: Account[] = [

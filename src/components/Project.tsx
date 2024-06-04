@@ -3,6 +3,10 @@ import '../styles/ProjectSection.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
+import { Sections, sectionTitles, getNextSection } from '../sections';
+
+const nextSection = getNextSection(Sections.Projects);
+
 const Project: React.FC = () => {
   return (
     <section id="projects">
@@ -84,7 +88,14 @@ const Project: React.FC = () => {
           </div>
         </div>
       </div>
-      <FontAwesomeIcon icon={faAnglesDown} className='icon arrow' onClick={() => window.location.href = './#contact'} />
+
+      {nextSection && (
+        <FontAwesomeIcon
+          icon={faAnglesDown}
+          className='icon arrow'
+          onClick={() => window.location.href = `#${nextSection}`}
+        />
+      )}
     </section>
   )
 };
