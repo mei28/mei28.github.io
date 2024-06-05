@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://mei28.github.io/",
-  "private": true,
   "compilerOptions": {
     "noUnusedLocals": false,
     "noUnusedParameters": false
@@ -25,7 +24,8 @@
     "gh-pages": "^6.1.1",
     "pdfjs-dist": "^4.3.136",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

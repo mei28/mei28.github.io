@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
   return (
     <header>
       <nav>
-        <div className="logo">Mingzhe Yang</div>
+        <div className="logo"><a href="/">Mingzhe Yang</a></div>
         <div className="nav-links-container">
           <ul className="nav-links">
             {Object.values(Sections).map((section) => (

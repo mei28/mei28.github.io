@@ -1,6 +1,7 @@
 #publications {
   position: relative;
   padding: 10px;
+  padding-top: 5rem; /* Add padding to the top to avoid overlap */
 }
 
 .experience-details-container {

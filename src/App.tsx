@@ -1,4 +1,5 @@
-import './styles/App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
 import About from './components/About';
@@ -12,19 +13,28 @@ import './styles/Sections.css';
 import './styles/Icons.css';
 import './styles/Buttons.css';
 
-function App() {
-  return (
-    <>
-      <Nav />
-      <Profile />
-      <About />
-      <Publication />
-      <Experience />
-      <Project />
-      <Contact />
-      <Footer />
-    </>
-  )
-}
+const Home: React.FC = () => (
+  <>
+    <Nav />
+    <Profile />
+    <About />
+    <Publication />
+    <Experience />
+    <Project />
+    <Contact />
+    <Footer />
+  </>
+);
 
-export default App
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
