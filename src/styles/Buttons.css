@@ -43,3 +43,45 @@
 .btn-container {
   gap: 1rem;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  .btn {
+    width: 7rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .btn {
+    width: 6rem;
+    padding: 0.7rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 5rem;
+    padding: 0.6rem;
+  }
+
+  .btn-container {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    width: 4.5rem;
+    padding: 0.5rem;
+  }
+
+  .btn-container {
+    gap: 0.3rem;
+  }
+}

@@ -11,7 +11,7 @@
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  background: rgb(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -26,13 +26,78 @@
 
 .contact-info-container p {
   font-size: larger;
+  margin: 0;
+  color: rgb(85, 85, 85); /* テキストの基本色 */
 }
 
-.contact-icon {
-  cursor: default;
+.contact-info-container a {
+  color: rgb(85, 85, 85); /* テキストの基本色と一致 */
+  text-decoration: none; /* 下線を消す */
+  transition: color 0.3s; /* ホバー時のトランジションを追加 */
+}
+
+.contact-info-container a:hover {
+  color: grey; /* ホバー時の色を変更 */
 }
 
 .email-icon {
   height: 2.5rem;
 }
 
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  .contact-info-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-info-upper-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .contact-info-container {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0.5rem;
+  }
+
+  .contact-info-container p {
+    font-size: 0.9rem;
+  }
+
+  .email-icon {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-container {
+    gap: 0.6rem;
+    margin: 0.5rem;
+  }
+
+  .contact-info-container p {
+    font-size: 0.8rem;
+  }
+
+  .email-icon {
+    height: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-info-container {
+    gap: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .contact-info-container p {
+    font-size: 0.75rem;
+  }
+
+  .email-icon {
+    height: 1.5rem;
+  }
+}

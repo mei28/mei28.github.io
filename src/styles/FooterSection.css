@@ -6,3 +6,44 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  footer {
+    height: 24vh;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  footer {
+    height: 22vh;
+    margin: 0 0.5rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: 20vh;
+    margin: 0 0.5rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    height: 18vh;
+    margin: 0 0.25rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+  }
+}

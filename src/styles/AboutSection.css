@@ -72,3 +72,90 @@
   margin: 0;
   font-weight: bold;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  .about-containers {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .details-container {
+    padding: 1rem;
+  }
+
+  .section-container {
+    gap: 3rem;
+  }
+
+  .section__pic-container {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-containers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .section-container {
+    gap: 2rem;
+    height: auto;
+  }
+
+  .section__pic-container {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 2rem;
+  }
+
+  .about-containers {
+    gap: 1rem;
+  }
+
+  .details-container {
+    padding: 0.5rem;
+  }
+
+  .section__pic-container {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-containers {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .details-container {
+    padding: 0.5rem;
+  }
+
+  .section__pic-container {
+    height: 200px;
+    width: 200px;
+  }
+  .arrow {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 1.5rem;
+  }
+}

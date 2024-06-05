@@ -130,7 +130,7 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
 const Publications: React.FC = () => {
   return (
     <section id="publications">
-      <p className="section__text__p1">Explore My</p>
+      <p className="section__text__p1">Watch My</p>
       <h1 className="title">Publications</h1>
       <div className="experience-details-container">
         {publications.map(renderPublicationItem)}

@@ -27,3 +27,48 @@
   margin: 1rem 0;
   color: #555;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .color-container {
+    padding: 1rem;
+  }
+
+  .project-img {
+    width: 80%;
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .project-description {
+    font-size: 0.875rem;
+  }
+
+  .project-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

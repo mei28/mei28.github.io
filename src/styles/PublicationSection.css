@@ -78,32 +78,63 @@
   text-decoration: underline;
 }
 
-/* Media query for small screens */
-@media (max-width: 600px) {
-  .publication-item {
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: center; /* Center align items */
-    text-align: center; /* Center text on small screens */
-  }
-
+/* Responsive */
+@media (max-width: 768px) {
   .image-container {
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-    width: 100px; /* Reduce image width */
+    width: 120px; /* Adjust image container width for smaller screens */
   }
 
   .custom-icon,
   .default-icon {
-    width: 60px; /* Ensure icons have the same width as images on small screens */
-    height: 60px; /* Ensure icons have the same height as images on small screens */
+    width: 60px; /* Adjust icon size for smaller screens */
+    height: 60px;
   }
 
   .text-container {
-    text-align: center; /* Center text on small screens */
+    min-width: 150px; /* Adjust minimum width for text container */
+  }
+
+  .publication-title {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .authors,
+  .info {
+    font-size: 1rem; /* Adjust font size for smaller screens */
   }
 
   .publication-btn {
     width: 100%; /* Make buttons full width */
-    margin-bottom: 10px; /* Add bottom margin for spacing */
+    margin-top: 0.5rem; /* Add margin for spacing */
+  }
+}
+
+@media (max-width: 576px) {
+  .image-container {
+    width: 100px; /* Further adjust image container width */
+  }
+
+  .custom-icon,
+  .default-icon {
+    width: 50px; /* Further adjust icon size */
+    height: 50px;
+  }
+
+  .text-container {
+    min-width: 100px; /* Further adjust minimum width for text container */
+  }
+
+  .publication-title {
+    font-size: 1.25rem; /* Further adjust font size */
+  }
+
+  .authors,
+  .info {
+    font-size: 0.875rem; /* Further adjust font size */
+  }
+
+  .publication-btn {
+    width: 100%; /* Ensure buttons are full width */
+    margin-top: 0.5rem;
   }
 }

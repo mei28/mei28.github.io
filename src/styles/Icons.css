@@ -2,3 +2,21 @@
   cursor: pointer;
   height: 2rem;
 }
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .icon {
+    height: 1.5rem; /* Adjust icon size for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .icon {
+    height: 1.2rem; /* Further adjust icon size for even smaller screens */
+  }
+}
