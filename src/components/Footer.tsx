@@ -9,15 +9,6 @@ const Footer: React.FC = () => {
 
   return (
     <footer>
-      <nav>
-        <div className='nav-links-container'>
-          <ul className="nav-links">
-            {Object.values(Sections).map((section) => (
-              <li key={section}><a href={`#${section}`}>{sectionTitles[section]}</a></li>
-            ))}
-          </ul>
-        </div>
-      </nav>
       <p>Copyright &#169; <span className='thisYear'>{thisYear}</span> Mingzhe Yang. All Rights Reserved.</p>
     </footer>
   );
