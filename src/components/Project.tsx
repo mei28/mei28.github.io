@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/ProjectSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import { Sections, sectionTitles, getNextSection } from '../sections';
+import '../styles/common.css';
 
 interface Link {
   label: string;
@@ -52,17 +52,17 @@ const projectData: Project[] = [
 
 const ProjectItem: React.FC<Project> = ({ imgSrc, imgAlt, title, description, links }) => {
   return (
-    <div className="details-container color-container">
-      <div className="article-container">
-        <img src={imgSrc} alt={imgAlt} className="project-img" />
+    <div className="border border-gray-400 bg-gray-50 p-4 rounded-xl mb-6">
+      <div className="mb-4">
+        <img src={imgSrc} alt={imgAlt} className="rounded-2xl w-9/10 h-auto" />
       </div>
-      <h2 className="experience-sub-title project-title">{title}</h2>
-      <p className="project-description">{description}</p>
-      <div className="btn-container">
+      <h2 className="text-xl font-semibold mb-2 text-black">{title}</h2>
+      <p className="text-gray-600 mb-4">{description}</p>
+      <div className="flex flex-wrap gap-2">
         {links.map((link, index) => (
           <button
             key={index}
-            className="btn btn-color-2 project-btn"
+            className="px-4 py-2 border border-gray-400 rounded-full transition hover:bg-gray-200"
             onClick={() => window.location.href = link.url}
           >
             {link.label}
@@ -74,36 +74,26 @@ const ProjectItem: React.FC<Project> = ({ imgSrc, imgAlt, title, description, li
 };
 
 const Project: React.FC = () => {
-  const nextSection = getNextSection(Sections.Projects);
 
   return (
-    <section id={Sections.Projects}>
-      <p className="section__text__p1">Browse My Recent</p>
-      <h1 className="title">{sectionTitles[Sections.Projects]}</h1>
+    <section id={Sections.Projects} className="section-container bg-gray-50">
+      <p className="text-center text-xl mb-4">Browse My Recent</p>
+      <h1 className="text-center text-3xl font-bold mb-12">{sectionTitles[Sections.Projects]}</h1>
 
-      <p className="section__text__p2" style={{ textAlign: 'center', margin: '2rem 0' }}>Coming Soon...</p>
+      <p className="text-center my-8">Coming Soon...</p>
 
-      <div className="experience-details-container">
-        <div className="about-containers">
-          {projectData.map((project, index) => (
-            <ProjectItem
-              key={index}
-              imgSrc={project.imgSrc}
-              imgAlt={project.imgAlt}
-              title={project.title}
-              description={project.description}
-              links={project.links}
-            />
-          ))}
-        </div>
+      <div className="flex flex-col gap-6">
+        {projectData.map((project, index) => (
+          <ProjectItem
+            key={index}
+            imgSrc={project.imgSrc}
+            imgAlt={project.imgAlt}
+            title={project.title}
+            description={project.description}
+            links={project.links}
+          />
+        ))}
       </div>
-      {nextSection && (
-        <FontAwesomeIcon
-          icon={faAnglesDown}
-          className='icon arrow'
-          onClick={() => window.location.href = `#${nextSection}`}
-        />
-      )}
     </section>
   );
 };

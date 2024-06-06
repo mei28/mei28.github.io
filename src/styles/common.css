@@ -1,0 +1,21 @@
+.section-container {
+  @apply py-20 px-10;
+}
+
+.section-title {
+  @apply text-center text-4xl font-bold mb-12;
+}
+
+.section-subtitle {
+  @apply text-center text-xl text-gray-700;
+}
+
+.skip-button {
+  @apply absolute cursor-pointer bottom-10 text-gray-800 text-3xl;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.highlight-author {
+  @apply font-bold underline;
+}
