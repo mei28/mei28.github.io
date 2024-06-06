@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faXTwitter, faKaggle, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
+import { faGoogleScholar, faLinkedin, faGithub, faXTwitter, faKaggle, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
 
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -20,6 +20,7 @@ interface Account {
 const accounts: Account[] = [
   { icon: faGithub, link: 'https://github.com/mei28' },
   { icon: faXTwitter, link: 'https://x.com/_mei28_' },
+  { icon: faGoogleScholar, link: 'https://scholar.google.com/citations?user=0PIblkcAAAAJ' },
   { icon: faKaggle, link: 'https://www.kaggle.com/mei2828' },
   { icon: faSpeakerDeck, link: 'https://www.kaggle.com/mei2828' },
   { icon: faLinkedin, link: 'https://linkedin.com/' },
