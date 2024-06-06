@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/ExperienceSection.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import { Sections, getNextSection } from '../sections';
@@ -10,8 +9,9 @@ interface Skill {
   level: string;
 }
 
+import '../styles/common.css';
+
 const Experience: React.FC = () => {
-  // Define the frontend and backend skills arrays with the Skill type
   // const frontendSkills: Skill[] = [
   //   { name: 'HTML', level: 'Experienced' },
   //   { name: 'CSS', level: 'Experienced' },
@@ -28,55 +28,45 @@ const Experience: React.FC = () => {
   //   { name: 'Git', level: 'Intermediate' }
   // ];
 
-  // Define the renderSkills function with the appropriate type
   // const renderSkills = (skills: Skill[]) => (
   //   skills.map((skill, index) => (
-  //     <article key={index}>
-  //       <img src={checkmarkIcon} alt="Experience icon" className="icon" />
+  //     <article key={index} className="flex items-center gap-2 w-40">
+  //       <img src={checkmarkIcon} alt="Experience icon" className="h-5 w-5" />
   //       <div>
-  //         <h3>{skill.name}</h3>
-  //         <p>{skill.level}</p>
+  //         <h3 className="font-semibold">{skill.name}</h3>
+  //         <p className="text-gray-600">{skill.level}</p>
   //       </div>
   //     </article>
   //   ))
   // );
 
-  const nextSection = getNextSection(Sections.Experience);
 
   return (
-    <section id="experience">
-      <p className="section__text__p1">Explore My</p>
-      <h1 className="title">Experience</h1>
+    <section id="experience" className="section-container">
+      <p className="section-subtitle">Explore My</p>
+      <h1 className="section-title">Experience</h1>
 
-      <p className="section__text__p2" style={{ textAlign: 'center', margin: '2rem 0' }}>Coming Soon...</p>
+      <p className="text-center my-8">Coming Soon...</p>
 
       {/*
-      <div className="experience-details-container">
-        <div className="about-containers">
-          <div className="details-container">
-            <h2 className="experience-sub-title">Frontend Development</h2>
-            <div className="article-container">
+      <div className="flex flex-col items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center w-full gap-8">
+          <div className="flex flex-col items-center bg-white p-6 rounded-xl border border-gray-400 w-full md:w-1/2 mb-4">
+            <h2 className="text-xl font-semibold mb-4">Frontend Development</h2>
+            <div className="flex flex-wrap justify-around gap-6">
               {renderSkills(frontendSkills)}
             </div>
           </div>
-          <div className="details-container">
-            <h2 className="experience-sub-title">Backend Development</h2>
-            <div className="article-container">
+          <div className="flex flex-col items-center bg-white p-6 rounded-xl border border-gray-400 w-full md:w-1/2 mb-4">
+            <h2 className="text-xl font-semibold mb-4">Backend Development</h2>
+            <div className="flex flex-wrap justify-around gap-6">
               {renderSkills(backendSkills)}
             </div>
           </div>
         </div>
       </div>
       */}
-
-      {nextSection && (
-        <FontAwesomeIcon
-          icon={faAnglesDown}
-          className='icon arrow'
-          onClick={() => window.location.href = `#${nextSection}`}
-        />
-      )}
-    </section>
+    </section >
   );
 };
 

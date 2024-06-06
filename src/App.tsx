@@ -9,9 +9,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Publication from './components/Publication';
 
-import './styles/Sections.css';
-import './styles/Icons.css';
-import './styles/Buttons.css';
+import './styles/common.css';
+
 
 const Home: React.FC = () => (
   <>

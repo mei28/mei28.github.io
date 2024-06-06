@@ -1,9 +1,10 @@
 import React from 'react';
-import '../styles/Contact.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faXTwitter, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
+import '../styles/common.css';
 
 interface ContactInfo {
   icon: IconDefinition;
@@ -35,12 +36,12 @@ const contactInfo: ContactInfo[] = [
 
 const renderContactInfo = (contactInfo: ContactInfo[]): JSX.Element[] => {
   return contactInfo.map((info, index) => (
-    <div key={index} className="contact-info-container">
-      <FontAwesomeIcon icon={info.icon} className='icon contact-icon' />
+    <div key={index} className="flex items-center justify-center gap-2 p-4">
+      <FontAwesomeIcon icon={info.icon} className='text-xl' />
       {info.link ? (
-        <p><a href={info.link}>{info.text}</a></p>
+        <p><a href={info.link} className="text-gray-700 hover:text-gray-500">{info.text}</a></p>
       ) : (
-        <p>{info.text}</p>
+        <p className="text-gray-700">{info.text}</p>
       )}
     </div>
   ));
@@ -48,15 +49,15 @@ const renderContactInfo = (contactInfo: ContactInfo[]): JSX.Element[] => {
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact">
-      <p className="section__text__p1">Get in Touch</p>
-      <h1 className="title">Contact Me</h1>
-      <div className="contact-info-upper-container">
+    <section id="contact" className="section-container">
+      <p className="section-subtitle">Get in Touch</p>
+      <h1 className="section-title">Contact Me</h1>
+      <div className="flex flex-col md:flex-row justify-center items-center border border-gray-500 bg-gray-50 rounded-2xl my-8 p-4">
         {renderContactInfo(contactInfo)}
       </div>
     </section >
   )
 };
 
-
 export default Contact;
+

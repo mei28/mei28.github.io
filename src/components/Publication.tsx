@@ -1,9 +1,10 @@
 import React from 'react';
-import '../styles/PublicationSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBookmark, faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import { Sections, sectionTitles, getNextSection } from '../sections';
+
+import '../styles/common.css';
 
 interface Publication {
   image?: string | null;
@@ -76,35 +77,34 @@ const publications: Publication[] = [
   },
 ];
 
-const nextSection = getNextSection(Sections.Publications);
 
 const renderPublicationItem = (publication: Publication, index: number): JSX.Element => (
-  <div key={index} className="details-container color-container">
-    <div className="publication-item">
-      <div className="image-container">
+  <div key={index} className="bg-white border border-gray-300 p-4 rounded-lg mb-6">
+    <div className="flex flex-col md:flex-row items-center md:items-start">
+      <div className="md:mr-4 mb-4 md:mb-0 w-36 flex-shrink-0">
         {publication.image ? (
           <img
             src={publication.image}
             alt={publication.title}
-            className="publication-img"
+            className="rounded-lg w-full"
           />
         ) : publication.icon ? (
-          <FontAwesomeIcon icon={publication.icon} className="custom-icon" />
+          <FontAwesomeIcon icon={publication.icon} className="text-red-500 w-20 h-20" />
         ) : (
-          <FontAwesomeIcon icon={faBookmark} className="default-icon" />
+          <FontAwesomeIcon icon={faBookmark} className="text-red-500 w-20 h-20" />
         )}
       </div>
-      <div className="text-container">
-        <h3 className="publication-title">
+      <div className="flex-1">
+        <h3 className="text-xl font-semibold mb-2">
           {publication.title}
         </h3>
-        <p className="authors" dangerouslySetInnerHTML={{ __html: publication.authors }} />
-        <p className="info">{publication.info}</p>
-        <div className="btn-container">
+        <p className="text-gray-700 italic mb-2" dangerouslySetInnerHTML={{ __html: publication.authors }} />
+        <p className="text-gray-600 mb-4">{publication.info}</p>
+        <div className="flex flex-wrap gap-2">
           {publication.links.map((link, idx) => (
             <button
               key={idx}
-              className="btn btn-color-2 publication-btn"
+              className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition"
               onClick={() => {
                 const url = link.url;
                 window.open(url, '_blank');
@@ -116,23 +116,15 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
         </div>
       </div>
     </div>
-
-    {nextSection && (
-      <FontAwesomeIcon
-        icon={faAnglesDown}
-        className='icon arrow'
-        onClick={() => window.location.href = `#${nextSection}`}
-      />
-    )}
   </div>
 );
 
 const Publications: React.FC = () => {
   return (
-    <section id="publications">
-      <p className="section__text__p1">Watch My</p>
-      <h1 className="title">Publications</h1>
-      <div className="experience-details-container">
+    <section id="publications" className="section-container bg-gray-50">
+      <p className="section-subtitle">Watch My</p>
+      <h1 className="section-title">Publications</h1>
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         {publications.map(renderPublicationItem)}
       </div>
     </section>

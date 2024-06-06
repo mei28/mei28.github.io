@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Sections, sectionTitles } from '../sections';
-import '../styles/Nav.css';
-import '../styles/App.css';
 
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,26 +8,38 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <header>
-      <nav>
-        <div className="logo"><a href="/">Mingzhe Yang</a></div>
-        <div className="nav-links-container">
-          <ul className="nav-links">
+    <header className="fixed w-full top-0 left-0 bg-white z-50 shadow-md">
+      <nav className="flex justify-between items-center py-4 px-8">
+        <div className="text-2xl font-bold">
+          <a href="/" className="text-black no-underline hover:text-gray-600">Mingzhe Yang</a>
+        </div>
+        <div className="hidden md:flex md:items-center">
+          <ul className="flex gap-8 list-none text-lg">
             {Object.values(Sections).map((section) => (
-              <li key={section}><a href={`#${section}`}>{sectionTitles[section]}</a></li>
+              <li key={section}>
+                <a href={`#${section}`} className="text-black no-underline transition-colors duration-300 hover:text-gray-600">
+                  {sectionTitles[section]}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
-        <div className="hamburger-menu">
-          <div className={`hamburger-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
+        <div className="md:hidden">
+          <div className="cursor-pointer flex flex-col justify-between h-6 w-8" onClick={toggleMenu}>
+            <span className={`block h-0.5 bg-black transition-transform ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block h-0.5 bg-black transition-opacity ${menuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 bg-black transition-transform ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
           </div>
-          <div className={`menu-links ${menuOpen ? 'open' : ''}`}>
-            {Object.values(Sections).map((section) => (
-              <li key={section}><a href={`#${section}`} onClick={toggleMenu}>{sectionTitles[section]}</a></li>
-            ))}
+          <div className={`absolute top-full right-0 bg-white overflow-hidden transition-max-height duration-300 ${menuOpen ? 'max-h-60 shadow-md' : 'max-h-0'}`}>
+            <ul className="list-none">
+              {Object.values(Sections).map((section) => (
+                <li key={section}>
+                  <a href={`#${section}`} onClick={toggleMenu} className="block p-4 text-center text-lg text-black no-underline transition-colors duration-300 hover:text-gray-600">
+                    {sectionTitles[section]}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </nav>

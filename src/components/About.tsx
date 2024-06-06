@@ -1,14 +1,8 @@
 import React from 'react';
-import aboutPic from '/assets/about/about-pic.jpg';
-import '../styles/AboutSection.css';
-import '../styles/Sections.css';
-import '../styles/Icons.css';
-import '../styles/Buttons.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesDown, faMagnifyingGlass, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { Sections, getNextSection } from '../sections';
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import '../styles/common.css';
 
 interface Education {
   degree: string;
@@ -45,55 +39,48 @@ const interests: Interest[] = [
 ];
 
 const About: React.FC = () => {
-  const nextSection = getNextSection(Sections.About);
   return (
-    <section id="about">
-      <p className="section__text__p1">Get To Know More</p>
-      <h1 className="title">About Me</h1>
-      <div className="section-container">
-        <div className="section__pic-container">
+    <section id="about" className="section-container">
+      <p className="section-subtitle">Get To Know More</p>
+      <h1 className="section-title">About Me</h1>
+      <div className="flex flex-wrap lg:flex-nowrap justify-between items-stretch gap-16 lg:gap-12">
+        <div className="flex justify-center items-center flex-1 h-96 w-full lg:h-auto lg:w-1/3">
           <img
             src='/assets/about/about-pic.jpg'
             alt="Profile picture"
-            className="about-pic"
+            className="rounded-2xl object-cover w-full h-full"
           />
         </div>
-        <div className="about-details-container">
-          <div className="about-containers">
-            <div className="details-container">
-              <FontAwesomeIcon icon={faMagnifyingGlass} className='icon' />
-              <h3>Interests</h3>
-              {interests.map((interest, index) => (
-                <div key={index} className="interest-item">
-                  <li>{interest.item}</li>
-                </div>
-              ))}
+        <div className="flex flex-col lg:w-2/3 gap-8">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between items-start gap-8 w-full">
+            <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-gray-400 text-center flex-1 min-h-full">
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="text-2xl mb-4" />
+              <h3 className="text-xl font-semibold mb-4">Interests</h3>
+              <ul className="text-left flex-grow">
+                {interests.map((interest, index) => (
+                  <li key={index} className="mb-4 font-semibold">{interest.item}</li>
+                ))}
+              </ul>
             </div>
-            <div className="details-container">
-              <FontAwesomeIcon icon={faUserGroup} className='icon' />
-              <h3>Education</h3>
-              {educationDetails.map((edu, index) => (
-                <div key={index} className="education-item">
-                  <h4>{edu.degree}</h4>
-                  <p>@{edu.institution}, {edu.period}</p>
-                </div>
-              ))}
+
+            <div className="flex flex-col justify-between p-6 bg-white rounded-2xl border border-gray-400 text-center flex-1 min-h-full">
+              <FontAwesomeIcon icon={faUserGroup} className="text-2xl mb-4" />
+              <h3 className="text-xl font-semibold mb-4">Education</h3>
+              <ul className="text-left flex-grow">
+                {educationDetails.map((edu, index) => (
+                  <li key={index} className="mb-4">
+                    <h4 className="font-semibold">{edu.degree}</h4>
+                    <p className="text-gray-600">@{edu.institution}, {edu.period}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-          <div className="text-container">
-            <p>I am a Ph. D. student at the University of Tokyo in Japan.
-            </p>
+          <div className="text-center text-gray-800">
+            <p>I am a Ph. D. student at the University of Tokyo in Japan.</p>
           </div>
         </div>
       </div>
-
-      {nextSection && (
-        <FontAwesomeIcon
-          icon={faAnglesDown}
-          className='icon arrow'
-          onClick={() => window.location.href = `#${nextSection}`}
-        />
-      )}
     </section>
   );
 }
