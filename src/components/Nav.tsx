@@ -30,8 +30,8 @@ const Nav: React.FC = () => {
             <span className={`block h-0.5 bg-black transition-opacity ${menuOpen ? 'opacity-0' : ''}`}></span>
             <span className={`block h-0.5 bg-black transition-transform ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
           </div>
-          <div className={`absolute top-full right-0 bg-white overflow-hidden transition-max-height duration-300 ${menuOpen ? 'max-h-60 shadow-md' : 'max-h-0'}`}>
-            <ul className="list-none">
+          <div className={`absolute top-full right-0 w-full bg-white overflow-hidden transition-transform duration-300 ease-in-out ${menuOpen ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-full opacity-0'}`}>
+            <ul className="list-none p-0 m-0">
               {Object.values(Sections).map((section) => (
                 <li key={section}>
                   <a href={`#${section}`} onClick={toggleMenu} className="block p-4 text-center text-lg text-black no-underline transition-colors duration-300 hover:text-gray-600">
