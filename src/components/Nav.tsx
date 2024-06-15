@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sections, sectionTitles } from '../sections';
 
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
+
+  // クリックイベントのバブリングを防止
+  const toggleMenu = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setMenuOpen(!menuOpen);
   };
+
+  // メニュー外をクリックするとメニューを閉じる
+  useEffect(() => {
+    const closeMenu = () => {
+      if (menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', closeMenu);
+
+    return () => {
+      document.removeEventListener('click', closeMenu);
+    };
+  }, [menuOpen]);
 
   return (
     <header className="fixed w-full top-0 left-0 bg-white z-50 shadow-md">
@@ -30,17 +48,19 @@ const Nav: React.FC = () => {
             <span className={`block h-0.5 bg-black transition-opacity ${menuOpen ? 'opacity-0' : ''}`}></span>
             <span className={`block h-0.5 bg-black transition-transform ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
           </div>
-          <div className={`absolute top-full right-0 w-full bg-white overflow-hidden transition-transform duration-300 ease-in-out ${menuOpen ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-full opacity-0'}`}>
-            <ul className="list-none p-0 m-0">
-              {Object.values(Sections).map((section) => (
-                <li key={section}>
-                  <a href={`#${section}`} onClick={toggleMenu} className="block p-4 text-center text-lg text-black no-underline transition-colors duration-300 hover:text-gray-600">
-                    {sectionTitles[section]}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {menuOpen && (
+            <div className="absolute top-full right-0 w-full bg-white shadow-md">
+              <ul className="list-none p-0 m-0">
+                {Object.values(Sections).map((section) => (
+                  <li key={section} onClick={toggleMenu}>
+                    <a href={`#${section}`} className="block p-4 text-center text-lg text-black no-underline transition-colors duration-300 hover:text-gray-600">
+                      {sectionTitles[section]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
     </header>
