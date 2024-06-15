@@ -1,7 +1,7 @@
 import React from 'react';
 import { publications, Publication } from '../data/publicationsData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight, faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesLeft, faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 // 年ごとに出版物をグループ化する関数
 const groupPublicationsByYear = (publications: Publication[]) => {
@@ -64,7 +64,7 @@ const AllPublications: React.FC = () => {
       ))}
       <div className="text-center mt-8">
         <a href="/" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          Back to Home <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
+          Back to Home <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" />
         </a>
       </div>
     </section>

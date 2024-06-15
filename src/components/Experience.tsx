@@ -1,74 +1,40 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
-import { Sections, getNextSection } from '../sections';
+import { skills } from '../data/skillData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 
-// Define the Skill interface
-interface Skill {
-  name: string;
-  level: string;
-}
-
-import '../styles/common.css';
-
-const Experience: React.FC = () => {
-  // const frontendSkills: Skill[] = [
-  //   { name: 'HTML', level: 'Experienced' },
-  //   { name: 'CSS', level: 'Experienced' },
-  //   { name: 'SASS', level: 'Intermediate' },
-  //   { name: 'JavaScript', level: 'Basic' },
-  //   { name: 'TypeScript', level: 'Basic' },
-  //   { name: 'Material UI', level: 'Intermediate' }
-  // ];
-
-  // const backendSkills: Skill[] = [
-  //   { name: 'PostgreSQL', level: 'Basic' },
-  //   { name: 'Node JS', level: 'Intermediate' },
-  //   { name: 'Express JS', level: 'Intermediate' },
-  //   { name: 'Git', level: 'Intermediate' }
-  // ];
-
-  // const renderSkills = (skills: Skill[]) => (
-  //   skills.map((skill, index) => (
-  //     <article key={index} className="flex items-center gap-2 w-40">
-  //       <img src={checkmarkIcon} alt="Experience icon" className="h-5 w-5" />
-  //       <div>
-  //         <h3 className="font-semibold">{skill.name}</h3>
-  //         <p className="text-gray-600">{skill.level}</p>
-  //       </div>
-  //     </article>
-  //   ))
-  // );
-
+const SkillsOverview: React.FC = () => {
+  const mainSkills = skills.filter(skill => skill.isHome);
 
   return (
-    <section id="experience" className="section-container">
+    <section id="experience" className="section-container py-16">
       <p className="section-subtitle">Explore My</p>
       <h1 className="section-title">Experience</h1>
-
-      <p className="text-center my-8">Coming Soon...</p>
-
-      {/*
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col md:flex-row justify-between items-center w-full gap-8">
-          <div className="flex flex-col items-center bg-white p-6 rounded-xl border border-gray-400 w-full md:w-1/2 mb-4">
-            <h2 className="text-xl font-semibold mb-4">Frontend Development</h2>
-            <div className="flex flex-wrap justify-around gap-6">
-              {renderSkills(frontendSkills)}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+        {mainSkills.map((skill, index) => (
+          <div key={index} className="bg-white border border-gray-300 p-6 rounded-lg shadow-md text-center">
+            <div className="flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={skill.icon} className="text-4xl mr-2" />
+              <h3 className="text-xl font-semibold">{skill.name}</h3>
             </div>
-          </div>
-          <div className="flex flex-col items-center bg-white p-6 rounded-xl border border-gray-400 w-full md:w-1/2 mb-4">
-            <h2 className="text-xl font-semibold mb-4">Backend Development</h2>
-            <div className="flex flex-wrap justify-around gap-6">
-              {renderSkills(backendSkills)}
+            <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                className="bg-blue-600 h-2.5 rounded-full"
+                style={{ width: `${skill.level}%` }}
+              ></div>
             </div>
+            <p className="text-gray-600 mt-2">{skill.level}%</p>
           </div>
-        </div>
+        ))}
       </div>
-      */}
-    </section >
+      <div className="text-center mt-8">
+        <a href="/all-experiences" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
+          View My All Experiences! <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
+        </a>
+      </div>
+    </section>
   );
 };
 
-export default Experience;
+export default SkillsOverview;
 
