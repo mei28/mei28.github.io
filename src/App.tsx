@@ -8,6 +8,7 @@ import Project from './components/Project';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Publication from './components/Publication';
+import AllPublications from './components/AllPublications';
 
 import './styles/common.css';
 
@@ -30,6 +31,7 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/all-publications' element={<AllPublications />} />
       </Routes>
     </Router>
   );
