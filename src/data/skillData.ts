@@ -1,13 +1,13 @@
 // src/data/skillData.ts
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faJsSquare, faPython, faReact, faNodeJs, faGit, faDocker, faSass } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faJsSquare, faPython, faReact, faRust, faGit, faDocker, faCss3, faUnity, faHtml5, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faTable, faMoon, faDatabase, faPenToSquare, faFlask, faFire, faPaw, faTree } from '@fortawesome/free-solid-svg-icons';
 
 export interface Skill {
   name: string;
   level: number;
   type: 'language' | 'framework' | 'tool';
-  isHome: boolean;
+  isHome?: boolean;
   icon?: IconDefinition | null; // アイコンフィールドを追加
   description?: string | null; // 説明フィールドを追加
 }
@@ -16,7 +16,7 @@ export const skills: Skill[] = [
   // language
   {
     name: 'Python',
-    level: 90,
+    level: 95,
     type: 'language',
     isHome: true,
     icon: faPython,
@@ -28,67 +28,116 @@ export const skills: Skill[] = [
     type: 'language',
     isHome: true,
     icon: faJsSquare,
-    description: 'Experience platform, homepage',
+    description: 'Experience platform, Homepage',
   },
   {
     name: 'Rust',
     level: 60,
     type: 'language',
     isHome: true,
-    icon: null,
-    description: null,
+    icon: faRust,
+    description: 'CLI tool, Backend',
+  },
+  {
+    name: 'Lua',
+    level: 70,
+    type: 'language',
+    icon: faMoon,
+    description: 'Neovim, Hammerspoon, Wezterm',
+  },
+  {
+    name: 'C#',
+    level: 70,
+    type: 'language',
+    description: 'Unity',
+  },
+  {
+    name: 'C++',
+    level: 70,
+    type: 'language',
   },
 
   //frame work
   {
-    name: 'React',
-    level: 85,
+    name: 'PyTorch',
+    level: 80,
     type: 'framework',
-    isHome: false,
-    icon: faReact,
-    description: 'A JavaScript library for building user interfaces.',
+    isHome: true,
+    icon: faFire,
   },
   {
-    name: 'Node.js',
-    level: 75,
+    name: 'Polars/Pandas',
+    level: 90,
     type: 'framework',
-    isHome: false,
-    icon: faNodeJs,
-    description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine.',
+    icon: faPaw,
   },
   {
-    name: 'Sass',
+    name: 'Numpy',
+    level: 90,
+    type: 'framework',
+  },
+  {
+    name: 'Flask',
     level: 70,
     type: 'framework',
-    isHome: false,
-    icon: faSass,
-    description: 'A CSS preprocessor that extends CSS with variables and nested rules.',
+    icon: faFlask,
+  },
+  {
+    name: 'React',
+    level: 70,
+    type: 'framework',
+    isHome: true,
+    icon: faReact,
+  },
+  {
+    name: 'LightGBM/XGBoost',
+    level: 70,
+    icon: faTree,
+    type: 'framework',
+  },
+  {
+    name: 'HTML',
+    level: 80,
+    type: 'framework',
+    icon: faHtml5,
+  },
+  {
+    name: 'CSS/SCSS',
+    level: 70,
+    type: 'framework',
+    icon: faCss3,
+  },
+  {
+    name: 'Unity',
+    level: 80,
+    type: 'framework',
+    icon: faUnity,
   },
 
-  //toollfjalfjajfa
+  //tool
   {
     name: 'Git',
     level: 90,
     type: 'tool',
-    isHome: false,
-    icon: faGit,
-    description: 'A distributed version control system.',
+    icon: faGitAlt
   },
   {
     name: 'Docker',
-    level: 60,
+    level: 80,
     type: 'tool',
-    isHome: false,
     icon: faDocker,
-    description: 'A platform for developing, shipping, and running applications in containers.',
+  },
+  {
+    name: 'Neovim/Vim',
+    level: 80,
+    type: 'tool',
+    icon: faPenToSquare,
   },
   {
     name: 'PostgreSQL',
     level: 50,
     type: 'tool',
-    isHome: false,
     icon: faDatabase,
-    description: 'A powerful, open-source object-relational database system.',
   },
 ];
 
