@@ -14,7 +14,7 @@ const SkillsOverview: React.FC = () => {
         {mainSkills.map((skill, index) => (
           <div key={index} className="bg-white border border-gray-300 p-6 rounded-lg shadow-md text-center">
             <div className="flex items-center justify-center mb-4">
-              <FontAwesomeIcon icon={skill.icon} className="text-4xl mr-2" />
+              {skill.icon && (<FontAwesomeIcon icon={skill.icon} className="text-4xl mr-2" />)}
               <h3 className="text-xl font-semibold">{skill.name}</h3>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5">
