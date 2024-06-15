@@ -33,7 +33,7 @@ const renderAccountIcons = (accounts: Account[]): JSX.Element[] => {
 
 const Profile: React.FC = () => {
   return (
-    <section id="profile" className="flex flex-col items-center gap-8 py-16 md:flex-row md:gap-20 md:h-screen max-w-screen-lg mx-auto">
+    <section id="profile" className="flex flex-col items-center gap-8 py-16 md:flex-row md:gap-20 h-screen bg-gray-50 justify-center">
       <div className="w-64 h-64 flex justify-center items-center md:w-80 md:h-80">
         <img src="/assets/profile.png" alt="profile" className="rounded-full w-full h-full object-cover" />
       </div>
@@ -64,6 +64,5 @@ const Profile: React.FC = () => {
     </section>
   );
 };
-
 export default Profile;
 

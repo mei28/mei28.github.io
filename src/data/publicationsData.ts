@@ -77,7 +77,7 @@ export const publications: Publication[] = [
     image: null,
     title: '卓球の得点予測における重要要素の分析',
     authors: '<span class="highlight-author">楊明哲</span>, 橋本敦史, 馬家昕, 本田秀仁, 田中 一敏',
-    info: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), 2024',
+    info: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM\'24), 2024',
     links: [
       { label: 'Paper', url: '/assets/publication/T5-A-9-02.pdf' },
       { label: 'Slides', url: 'https://speakerdeck.com/mei28/deim2024-zhuo-qiu-node-dian-yu-ce-niokeruzhong-yao-yao-su-nofen-xi' },
@@ -85,6 +85,18 @@ export const publications: Publication[] = [
     ],
     pickup: true,
     year: 2024,
+  },
+  {
+    image: null,
+    title: 'SwipeGANSpace: 潜在空間の関心次元探索によるスワイプ操作に基づく嗜好画像生成',
+    authors: '中島柚斗, <span class="highlight-author">楊明哲</span>, 馬場雪乃',
+    info: '第31回インタラクティブシステムとソフトウェアに関するワークショップ(WISS\'23), 2023',
+    links: [
+      { label: 'Paper', url: 'https://www.wiss.org/WISS2023Proceedings/data/19.pdf' },
+      { label: 'Demo', url: 'https://www.wiss.org/WISS2023Proceedings/data/19.mp4' }
+    ],
+    pickup: false,
+    year: 2023,
   },
   {
     image: '/assets/publication/MIRU2023_thumnail.jpg',
@@ -98,6 +110,40 @@ export const publications: Publication[] = [
     pickup: false,
     year: 2023,
   },
+  {
+    image: null,
+    title: 'スワイプ操作を用いた潜在的空間の探索による嗜好画像生成',
+    authors: '中島柚斗, <span class="highlight-author">楊明哲</span>, 馬場雪乃',
+    info: '第37回人工知能学会全国大会 (JSAI\'23), 2023',
+    links: [
+      { label: 'Paper', url: 'https://www.jstage.jst.go.jp/article/pjsai/JSAI2023/0/JSAI2023_2K1GS903/_article/-char/ja' },
+      { label: 'Slide', url: 'https://speakerdeck.com/yutonakashima/swipegan-preference-image-generation-by-latent-space-exploration-using-swipe-operation' }
+    ],
+    pickup: false,
+    year: 2023,
+  },
+  {
+    image: null,
+    title: '機械教示と公平性配慮型機械学習を用いた無意識バイアスの矯正',
+    authors: '<span class="highlight-author">楊明哲</span>, 荒井ひろみ, 馬場雪乃',
+    info: '第35回人工知能学会全国大会 (JSAI\'21), 2021',
+    links: [
+      { label: 'Paper', url: 'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_2C3OS9a03/_article/-char/ja/' },
+    ],
+    pickup: false,
+    year: 2021,
+  },
+  {
+    image: null,
+    title: 'Iterative Machine Teaching without Teachers',
+    authors: '<span class="highlight-author">Mingzhe Yang</span> and Yukino Baba',
+    info: 'arXiv preprint arXiv:2006.15339, 2020',
+    links: [
+      { label: 'Paper', url: 'https://arxiv.org/abs/2006.15339' },
+    ],
+    pickup: false,
+    year: 2020,
+  }
 ];
 
 

@@ -25,13 +25,21 @@ const Home: React.FC = () => (
     <Footer />
   </>
 );
+const AllPub: React.FC = () => (
+  <>
+    <Nav />
+    <AllPublications />
+    <Footer />
+  </>
+
+);
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/all-publications' element={<AllPublications />} />
+        <Route path='/all-publications' element={<AllPub />} />
       </Routes>
     </Router>
   );
