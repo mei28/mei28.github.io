@@ -28,7 +28,7 @@ const SkillsOverview: React.FC = () => {
         ))}
       </div>
       <div className="text-center mt-8">
-        <a href="/all-experiences" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
+        <a href="/#/all-experiences" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
           View My All Experiences! <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
         </a>
       </div>
