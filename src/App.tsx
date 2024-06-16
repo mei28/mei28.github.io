@@ -45,10 +45,9 @@ const AllExp: React.FC = () => (
 );
 
 const App: React.FC = () => {
-
-  const basename = process.env.NODE_ENV === 'development' ? '/' : process.env.PUBLIC_URL;
   return (
-    <Router basename={basename}>
+
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/all-publications' element={<AllPub />} />
