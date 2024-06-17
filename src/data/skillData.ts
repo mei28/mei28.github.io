@@ -1,7 +1,7 @@
 // src/data/skillData.ts
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faJsSquare, faPython, faReact, faRust, faGit, faDocker, faCss3, faUnity, faHtml5, faGitAlt } from '@fortawesome/free-brands-svg-icons';
-import { faTable, faMoon, faDatabase, faPenToSquare, faFlask, faFire, faPaw, faTree } from '@fortawesome/free-solid-svg-icons';
+import { faLaptop, faTable, faC, faHashtag, faMoon, faDatabase, faPenToSquare, faFlask, faFire, faPaw, faTree } from '@fortawesome/free-solid-svg-icons';
 
 export interface Skill {
   name: string;
@@ -32,7 +32,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'Rust',
-    level: 60,
+    level: 70,
     type: 'language',
     isHome: true,
     icon: faRust,
@@ -50,11 +50,14 @@ export const skills: Skill[] = [
     level: 70,
     type: 'language',
     description: 'Unity',
+    icon: faHashtag
   },
   {
     name: 'C++',
-    level: 70,
+    level: 60,
     type: 'language',
+    description: 'Competitive Programming',
+    icon: faC
   },
 
   //frame work
@@ -66,15 +69,23 @@ export const skills: Skill[] = [
     icon: faFire,
   },
   {
+    name: 'LightGBM/XGBoost',
+    level: 80,
+    icon: faTree,
+    type: 'framework',
+  },
+  {
     name: 'Polars/Pandas',
     level: 90,
     type: 'framework',
     icon: faPaw,
+    isHome: true
   },
   {
     name: 'Numpy',
     level: 90,
     type: 'framework',
+    icon: faTable,
   },
   {
     name: 'Flask',
@@ -83,17 +94,17 @@ export const skills: Skill[] = [
     icon: faFlask,
   },
   {
+    name: 'Django',
+    level: 70,
+    type: 'framework',
+    icon: faLaptop,
+  },
+  {
     name: 'React',
     level: 70,
     type: 'framework',
     isHome: true,
     icon: faReact,
-  },
-  {
-    name: 'LightGBM/XGBoost',
-    level: 70,
-    icon: faTree,
-    type: 'framework',
   },
   {
     name: 'HTML',
@@ -109,7 +120,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'Unity',
-    level: 80,
+    level: 70,
     type: 'framework',
     icon: faUnity,
   },

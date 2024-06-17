@@ -11,6 +11,8 @@ export interface Publication {
   links: { label: string; url: string }[];
   pickup: boolean;
   year: number;
+  tags?: string[];
+  notes?: string
 }
 
 
@@ -26,6 +28,7 @@ export const publications: Publication[] = [
     ],
     pickup: true,
     year: 2024,
+    tags: ['First author', 'Explainable AI', 'Trust AI'],
   },
   {
     image: '/assets/publication/chi24.jpeg',
@@ -39,6 +42,8 @@ export const publications: Publication[] = [
     ],
     pickup: true,
     year: 2024,
+    tags: ['First author', 'Peer-reviewed', 'Fairness', 'Human-AI Decision Making'],
+    notes: '<span class="text-green-600">Acceptance rate = 1060/4028 (26.3%)</span>'
   },
   {
     image: null,
@@ -50,6 +55,7 @@ export const publications: Publication[] = [
     ],
     pickup: false,
     year: 2024,
+    tags: ['First author', 'Peer-reviewed', 'Fairness',],
   },
   {
     image: null,
@@ -61,6 +67,8 @@ export const publications: Publication[] = [
     ],
     pickup: true,
     year: 2024,
+    tags: ['GAN', 'Bayesian Optimization'],
+    notes: '<span class="text-green-600">Acceptance rate = 65/250 (26%)</span>'
   },
   {
     image: null,
@@ -72,6 +80,7 @@ export const publications: Publication[] = [
     ],
     pickup: false,
     year: 2024,
+    tags: ['NLP', 'LLM'],
   },
   {
     image: null,
@@ -84,6 +93,7 @@ export const publications: Publication[] = [
       { label: 'Poster', url: '/assets/publication/deim_poster.pdf' } // Updated URL for local PDF
     ],
     pickup: true,
+    tags: ['First author', 'Sports Analytics'],
     year: 2024,
   },
   {
@@ -97,6 +107,8 @@ export const publications: Publication[] = [
     ],
     pickup: false,
     year: 2023,
+    tags: ['Peer-reviewed', 'GAN', 'Bayesian Optimization'],
+
   },
   {
     image: '/assets/publication/MIRU2023_thumnail.jpg',
@@ -109,6 +121,7 @@ export const publications: Publication[] = [
     ],
     pickup: false,
     year: 2023,
+    tags: ['First author', 'Sports Analytics'],
   },
   {
     image: null,
@@ -121,6 +134,19 @@ export const publications: Publication[] = [
     ],
     pickup: false,
     year: 2023,
+    tags: ['GAN', 'Bayesian Optimization'],
+  },
+  {
+    image: null,
+    title: 'インタラクティブなスポーツにおけるプレースタイルの変化～卓球の試合における得点パターンを用いた分析～',
+    authors: '本田秀仁, <span class="highlight-author">楊明哲</span>, 橋本敦史, 馬家昕, 田中 一敏, 白砂大',
+    info: 'HCGシンポジウム2022, 2022',
+    links: [
+      // { label: 'Paper', url: 'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_2C3OS9a03/_article/-char/ja/' },
+    ],
+    pickup: false,
+    tags: ['Sports Analytics'],
+    year: 2022,
   },
   {
     image: null,
@@ -131,6 +157,7 @@ export const publications: Publication[] = [
       { label: 'Paper', url: 'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_2C3OS9a03/_article/-char/ja/' },
     ],
     pickup: false,
+    tags: ['First author', 'Fairness'],
     year: 2021,
   },
   {
@@ -143,6 +170,7 @@ export const publications: Publication[] = [
     ],
     pickup: false,
     year: 2020,
+    tags: ['First author', 'Machine Teaching'],
   }
 ];
 
