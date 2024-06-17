@@ -15,7 +15,7 @@ const groupPublicationsByYear = (publications: Publication[]) => {
 };
 
 // リンクの種類に応じてアイコンを返す関数
-const getLinkIcon = (label: string) => {
+export const getLinkIcon = (label: string) => {
   switch (label.toLowerCase()) {
     case 'paper':
       return faFilePdf;

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import { Sections, sectionTitles, getNextSection } from '../sections';
 import { publications, Publication } from '../data/publicationsData';
+import {getLinkIcon} from '../components/AllPublications';
 import '../styles/common.css';
 
 
@@ -38,6 +39,7 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
                 window.open(url, '_blank');
               }}
             >
+              <FontAwesomeIcon icon={getLinkIcon(link.label)} className="mr-2" />
               {link.label}
             </button>
           ))}
