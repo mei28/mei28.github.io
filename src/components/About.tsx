@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesDown, faMagnifyingGlass, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesRight, faAnglesDown, faMagnifyingGlass, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { Sections, getNextSection } from '../sections';
 import '../styles/common.css';
 
@@ -78,6 +78,12 @@ const About: React.FC = () => {
           </div>
           <div className="text-center text-gray-800">
             <p>I am a Ph. D. student at the University of Tokyo in Japan.</p>
+          </div>
+
+          <div className="text-center mt-8">
+            <a href="/#/all-about" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
+              View My Profiles! <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
+            </a>
           </div>
         </div>
       </div>
