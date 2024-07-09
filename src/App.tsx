@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect, ReactNode } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
 import About from './components/About';
@@ -11,10 +11,21 @@ import Publication from './components/Publication';
 import AllPublications from './components/AllPublications';
 import SkillsDetail from './components/AllExperiences';
 import AllAbouts from './components/AllAbout';
-
-
+import { initGA, logPageView } from './analytics';
 import './styles/common.css';
 
+// Define the type for the AnalyticsWrapper props
+interface AnalyticsWrapperProps {
+  children: ReactNode;
+}
+
+// Mapping of paths to titles
+const pathTitles: { [key: string]: string } = {
+  '/': 'Home',
+  '/all-publications': 'All Publications',
+  '/all-experiences': 'All Experiences',
+  '/all-about': 'All About',
+};
 
 const Home: React.FC = () => (
   <>
@@ -36,6 +47,7 @@ const AllAbout: React.FC = () => (
     <Footer />
   </>
 );
+
 const AllPub: React.FC = () => (
   <>
     <Nav />
@@ -52,16 +64,32 @@ const AllExp: React.FC = () => (
   </>
 );
 
+const AnalyticsWrapper: React.FC<AnalyticsWrapperProps> = ({ children }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    const title = pathTitles[location.pathname] || 'Unknown Page';
+    logPageView(title);
+  }, [location]);
+
+  return <>{children}</>;
+};
+
 const App: React.FC = () => {
   return (
-
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/all-publications' element={<AllPub />} />
-        <Route path='/all-experiences' element={<AllExp />} />
-        <Route path='/all-about' element={<AllAbout />} />
-      </Routes>
+      <AnalyticsWrapper>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/all-publications" element={<AllPub />} />
+          <Route path="/all-experiences" element={<AllExp />} />
+          <Route path="/all-about" element={<AllAbout />} />
+        </Routes>
+      </AnalyticsWrapper>
     </Router>
   );
 };

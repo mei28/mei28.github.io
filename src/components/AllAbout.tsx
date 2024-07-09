@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faKaggle, faAtlassian, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
+import ReactGA from 'react-ga4';
 
 // Profile Component
 const Profile: React.FC = () => (
@@ -210,6 +211,11 @@ const Qualifications: React.FC = () => (
 );
 
 const AllAbouts: React.FC = () => {
+  ReactGA.send({
+    hintType: 'pageview',
+    page: '/all-about',
+    title: 'about page'
+  })
   return (
     <section id="all-about" className="my-8 px-4 py-16 bg-gray-50">
       <h1 className="text-3xl font-bold text-center mb-12">About Me</h1>
@@ -225,7 +231,7 @@ const AllAbouts: React.FC = () => {
 
       <div className="text-center mt-8">
         <a href="/" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          Back to Home <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" />
+          <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" /> Back to Home
         </a>
       </div>
     </section>

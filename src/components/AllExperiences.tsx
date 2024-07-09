@@ -2,8 +2,15 @@ import React from 'react';
 import { skills, Skill } from '../data/skillData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
+import ReactGA from 'react-ga4';
 
 const SkillsDetail: React.FC = () => {
+
+  ReactGA.send({
+    hintType: 'pageview',
+    page: '/all-experiences',
+    title: 'skill page'
+  })
   return (
     <section id="skills-detail" className="section-container bg-gray-50 py-16">
       <h1 className="text-3xl font-bold text-center mb-12">All Skills</h1>
@@ -14,7 +21,7 @@ const SkillsDetail: React.FC = () => {
       </div>
       <div className="text-center mt-8">
         <a href="/" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          Back to Home <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" />
+          <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" /> Back to Home
         </a>
       </div>
     </section>

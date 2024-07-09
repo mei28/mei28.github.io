@@ -52,8 +52,17 @@ const Profile: React.FC = () => {
           </button>
           <button
             className="bg-black text-white font-semibold py-2 px-4 rounded-full hover:bg-gray-800 transition-all"
-            onClick={() => (window.location.href = '#contact')}
-          >
+            onClick={() => {
+              const section = 'contact';
+              if (location.pathname === '/') {
+                const element = document.getElementById(section);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              } else {
+                window.location.href = `/#${section}`;
+              }
+            }}          >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> Contact Info
           </button>
         </div>
@@ -61,7 +70,7 @@ const Profile: React.FC = () => {
           {renderAccountIcons(accounts)}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 export default Profile;
