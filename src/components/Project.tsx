@@ -2,23 +2,10 @@ import React from 'react';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Sections, sectionTitles } from '../sections';
-import { projectsData } from '../data/projectsData';
+import { ProjectData, projectsData } from '../data/projectsData';
 import '../styles/common.css';
 
-interface Link {
-  label: string;
-  url: string;
-}
-
-interface Project {
-  imgSrc: string | null;
-  imgAlt: string;
-  title: string;
-  description: string;
-  links: Link[];
-}
-
-const ProjectItem: React.FC<Project> = ({ imgSrc, imgAlt, title, description, links }) => {
+const ProjectItem: React.FC<ProjectData> = ({ imgSrc, imgAlt, title, description, links }) => {
   const isExternalLink = (url: string) => {
     return url.startsWith('http://') || url.startsWith('https://');
   };
@@ -28,7 +15,7 @@ const ProjectItem: React.FC<Project> = ({ imgSrc, imgAlt, title, description, li
       return null;
     }
 
-    const imageUrl = isExternalLink(src) ? src : process.env.PUBLIC_URL + src;
+    const imageUrl = isExternalLink(src) ? src : `${process.env.PUBLIC_URL}${src}`;
 
     return <img src={imageUrl} alt={alt} className="rounded-2xl w-9/10 h-auto" />;
   };
@@ -47,6 +34,7 @@ const ProjectItem: React.FC<Project> = ({ imgSrc, imgAlt, title, description, li
             className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition"
             onClick={() => window.location.href = link.url}
           >
+            {link.icon && <FontAwesomeIcon icon={link.icon} className="mr-2" />}
             {link.label}
           </button>
         ))}
@@ -55,7 +43,7 @@ const ProjectItem: React.FC<Project> = ({ imgSrc, imgAlt, title, description, li
   );
 };
 
-const Project: React.FC = () => {
+const ProjectList: React.FC = () => {
   return (
     <section id={Sections.Projects} className="section-container bg-gray-50">
       <p className="text-center text-xl mb-4">Browse My Recent</p>
@@ -83,5 +71,5 @@ const Project: React.FC = () => {
   );
 };
 
-export default Project;
+export default ProjectList;
 

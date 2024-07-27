@@ -1,13 +1,15 @@
-// import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-// import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
 import '../styles/common.css';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faAndroid, faAppStoreIos } from "@fortawesome/free-brands-svg-icons";
 
 interface Link {
   label: string;
   url: string;
+  icon?: IconDefinition;
 }
 
-interface Project {
+export interface ProjectData {
   imgSrc: string | null;
   imgAlt: string;
   title: string;
@@ -15,16 +17,28 @@ interface Project {
   links: Link[];
 }
 
-export const projectsData: Project[] = [
+export const projectsData: ProjectData[] = [
   {
     imgSrc: "http://www.disaster-medutainment.jp/wp/wp-content/themes/theme_pc/images/learn_disaster_medicine/title.jpg",
     imgAlt: "災害医療タッチ",
     title: "災害医療タッチ",
     description: "いつでもどこでも災害医療を学ぶためのアプリ",
     links: [
-      { label: "HP", url: "http://www.disaster-medutainment.jp/learn_the_disaster_medical/" },
-      { label: "iOS", url: "https://apps.apple.com/jp/app/%E7%81%BD%E5%AE%B3%E5%8C%BB%E7%99%82%E3%82%BF%E3%83%83%E3%83%81/id1139091258" },
-      { label: "Android", url: "https://play.google.com/store/apps/details?id=go.aist.DMTouch" }
+      {
+        label: "HP",
+        url: "http://www.disaster-medutainment.jp/learn_the_disaster_medical/",
+        icon: faGlobe,
+      },
+      {
+        label: "iOS",
+        url: "https://apps.apple.com/jp/app/%E7%81%BD%E5%AE%B3%E5%8C%BB%E7%99%82%E3%82%BF%E3%83%83%E3%83%81/id1139091258",
+        icon: faAppStoreIos,
+      },
+      {
+        label: "Android",
+        url: "https://play.google.com/store/apps/details?id=go.aist.DMTouch",
+        icon: faAndroid,
+      }
     ]
   },
   {
@@ -33,9 +47,21 @@ export const projectsData: Project[] = [
     title: "災害医療クエスト",
     description: "ゲーム感覚でこどもにも災害医療教育のためのアプリ",
     links: [
-      { label: "HP", url: "http://www.disaster-medutainment.jp/teaching_materials_for_junior/" },
-      { label: "iOS", url: "" },
-      { label: "Android", url: "https://play.google.com/store/apps/details?id=go.aist.DMQuest" },
+      {
+        label: "HP",
+        url: "http://www.disaster-medutainment.jp/teaching_materials_for_junior/",
+        icon: faGlobe,
+      },
+      {
+        label: "iOS",
+        url: "https://apps.apple.com/jp/app/%E7%81%BD%E5%AE%B3%E5%8C%BB%E7%99%82quest/id1139119937",
+        icon: faAppStoreIos,
+      },
+      {
+        label: "Android",
+        url: "https://play.google.com/store/apps/details?id=go.aist.DMQuest",
+        icon: faAndroid,
+      },
     ]
   },
   {
@@ -44,7 +70,11 @@ export const projectsData: Project[] = [
     title: "ジェスチャーミュージック",
     description: "ジェスチャーインターフェースのための音楽演奏ゲーム",
     links: [
-      { label: "HP", url: "http://gesture-interface.jp/download/gesture_music/" },
+      {
+        label: "HP",
+        url: "http://gesture-interface.jp/download/gesture_music/",
+        icon: faGlobe,
+      },
     ]
   },
   {
@@ -53,7 +83,11 @@ export const projectsData: Project[] = [
     title: "Hobeeeeee!!",
     description: "新しい趣味を見つけたい・広めたいという人の願望を叶えるWeb サービス",
     links: [
-      { label: "HP", url: "https://hobeeeeee.netlify.app/" },
+      {
+        label: "HP",
+        url: "https://hobeeeeee.netlify.app/",
+        icon: faGlobe,
+      },
     ]
   },
 ];
