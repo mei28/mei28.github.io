@@ -34,7 +34,7 @@ const educationDetails: Education[] = [
 
 const interests: Interest[] = [
   { item: 'Human-AI Collaboration' },
-  { item: 'Explainable AI' },
+  { item: 'Explainable AI / Trust AI' },
   { item: 'Human-Computer Interaction' }
 ];
 

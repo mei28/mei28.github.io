@@ -15,9 +15,7 @@ const ProjectItem: React.FC<ProjectData> = ({ imgSrc, imgAlt, title, description
       return null;
     }
 
-    const imageUrl = isExternalLink(src) ? src : `${process.env.PUBLIC_URL}${src}`;
-
-    return <img src={imageUrl} alt={alt} className="rounded-2xl w-9/10 h-auto" />;
+    return <img src={src} alt={alt} className="rounded-2xl w-9/10 h-auto" />;
   };
 
   return (
@@ -62,11 +60,11 @@ const ProjectList: React.FC = () => {
         ))}
       </div>
 
-      // <div className="text-center mt-8">
-      //   <a href="/#/all-projects" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-      //     View My All Projects! <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
-      //   </a>
-      // </div>
+      <div className="text-center mt-8">
+        <a href="/#/all-projects" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
+          View My All Projects! <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
+        </a>
+      </div>
     </section>
   );
 };

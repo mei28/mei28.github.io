@@ -19,7 +19,7 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    imgSrc: "http://www.disaster-medutainment.jp/wp/wp-content/themes/theme_pc/images/learn_disaster_medicine/title.jpg",
+    imgSrc: "/assets/project/touch.jpg",
     imgAlt: "災害医療タッチ",
     title: "災害医療タッチ",
     description: "いつでもどこでも災害医療を学ぶためのアプリ",
@@ -42,7 +42,7 @@ export const projectsData: ProjectData[] = [
     ]
   },
   {
-    imgSrc: "http://www.disaster-medutainment.jp/wp/wp-content/themes/theme_pc/images/textbook_to_junior/title.jpg",
+    imgSrc: "/assets/project/quest.jpg",
     imgAlt: "災害医療クエスト",
     title: "災害医療クエスト",
     description: "ゲーム感覚でこどもにも災害医療教育のためのアプリ",
@@ -65,7 +65,7 @@ export const projectsData: ProjectData[] = [
     ]
   },
   {
-    imgSrc: "http://gesture-interface.jp/wp/wp-content/uploads/2018/09/%E9%87%8D%E5%BA%A6%E9%81%8B%E5%8B%95%E6%A9%9F%E8%83%BD%E9%9A%9C%E5%AE%B3%E8%80%85%E6%94%AF%E6%8F%B4_top-2.png",
+    imgSrc: "/assets/project/gesture-music.png",
     imgAlt: "ジェスチャーミュージック",
     title: "ジェスチャーミュージック",
     description: "ジェスチャーインターフェースのための音楽演奏ゲーム",
