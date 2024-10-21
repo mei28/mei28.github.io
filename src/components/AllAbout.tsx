@@ -10,7 +10,7 @@ const Profile: React.FC = () => (
   <div className="bg-white p-8 rounded-lg shadow-md mb-8">
     <h2 className="text-2xl font-semibold mb-4">Profile</h2>
     <ul className="list-disc list-inside text-gray-700">
-      <li>東京大学 総合文化研究科 広域科学専攻 広域システム科学系 博士後期課程 1年</li>
+      <li>東京大学 総合文化研究科 広域科学専攻 広域システム科学系 博士後期課程 3年</li>
       <li>東京大学 馬場研究室</li>
       <li>mail: <span className="font-mono">mingzhe-yang [at] g.ecc.u-tokyo.ac.jp</span></li>
     </ul>

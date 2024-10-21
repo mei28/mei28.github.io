@@ -18,6 +18,19 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    image: '/assets/publication/ACMMM.png',
+    title: 'Audio-Visual Self-Supervision for Frame-Level Player-wise Offensive Shot Detection in Table Tennis Matches',
+    authors: 'Shinji Tsuji, Atsushi Hashimoto, <span class="highlight-author">Mingzhe Yang</span>, Jiaxin Ma, Hidehito Honda, Kazutoshi Tanaka',
+    info: 'Workshop on Multimedia Content Analysis in Sports (MMSports\'24), 2024',
+    links: [
+      { label: 'Paper', url: 'https://dl.acm.org/doi/abs/10.1145/3689061.3689064' },
+      { label: 'HP', url: 'https://omron-sinicx.github.io/audio_visual_self_supervision/' }
+    ],
+    pickup: true,
+    year: 2024,
+    tags: ['Peer-reviewed', 'Sports Analytics', 'Audio-Visual']
+  },
+  {
     image: null,
     title: '人間の判断根拠は文脈によって異なるのか？〜信頼されるXAIに向けた人間の判断根拠理解〜',
     authors: '<span class="highlight-author">楊 明哲</span>, 香川 璃奈, 馬場 雪乃',
@@ -92,7 +105,7 @@ export const publications: Publication[] = [
       { label: 'Slides', url: 'https://speakerdeck.com/mei28/deim2024-zhuo-qiu-node-dian-yu-ce-niokeruzhong-yao-yao-su-nofen-xi' },
       { label: 'Poster', url: '/assets/publication/deim_poster.pdf' } // Updated URL for local PDF
     ],
-    pickup: true,
+    pickup: false,
     tags: ['First author', 'Sports Analytics'],
     year: 2024,
   },

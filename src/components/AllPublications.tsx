@@ -2,7 +2,7 @@
 import React from 'react';
 import { publications, Publication } from '../data/publicationsData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesLeft, faBookmark, faFilePdf, faImage, faPlay, faVideo, faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
+import { faAnglesLeft, faBookmark, faFilePdf, faImage, faPlay, faVideo, faPersonChalkboard, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import ReactGA from 'react-ga4';
 
 // 年ごとに出版物をグループ化する関数
@@ -28,6 +28,8 @@ export const getLinkIcon = (label: string) => {
       return faPersonChalkboard;
     case 'video':
       return faVideo;
+    case 'hp':
+      return faGlobe
     default:
       return faBookmark; // デフォルトアイコン
   }
