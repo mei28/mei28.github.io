@@ -1,11 +1,11 @@
-// src/components/AllPublications.tsx
 import React from 'react';
-import { publications, Publication } from '../data/publicationsData';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box, Button, Icon, Image, Text, VStack, HStack, Grid, Link as UILink, useColorModeValue } from '@yamada-ui/react';
 import { faAnglesLeft, faBookmark, faFilePdf, faImage, faPlay, faVideo, faPersonChalkboard, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactGA from 'react-ga4';
+import { publications, Publication } from '../data/publicationsData';
 
-// 年ごとに出版物をグループ化する関数
+// Group publications by year
 const groupPublicationsByYear = (publications: Publication[]) => {
   return publications.reduce((acc: Record<number, Publication[]>, publication) => {
     const { year } = publication;
@@ -15,133 +15,90 @@ const groupPublicationsByYear = (publications: Publication[]) => {
   }, {});
 };
 
-// リンクの種類に応じてアイコンを返す関数
+// Get icon based on link label
 export const getLinkIcon = (label: string) => {
   switch (label.toLowerCase()) {
-    case 'paper':
-      return faFilePdf;
-    case 'poster':
-      return faImage;
-    case 'demo':
-      return faPlay;
-    case 'slides':
-      return faPersonChalkboard;
-    case 'video':
-      return faVideo;
-    case 'hp':
-      return faGlobe
-    default:
-      return faBookmark; // デフォルトアイコン
+    case 'paper': return faFilePdf;
+    case 'poster': return faImage;
+    case 'demo': return faPlay;
+    case 'slides': return faPersonChalkboard;
+    case 'video': return faVideo;
+    case 'hp': return faGlobe;
+    default: return faBookmark;
   }
 };
 
-// タグの内容に応じて色を返す関数
-const getTagColor = (tag: string) => {
-  switch (tag.toLowerCase()) {
-    // bg-foo-100, text-foo-800
-    case 'first author':
-      return 'bg-green-100 text-green-800';
-    case 'peer-reviewed':
-      return 'bg-blue-100 text-blue-800';
-    default:
-      return 'bg-gray-100 text-gray-800'; // デフォルトの色
-  }
+// Render each publication item
+const renderPublicationItem = (publication: Publication, index: number) => {
+  const bg = useColorModeValue('white', 'gray.800');
+  const borderColor = useColorModeValue('gray.300', 'gray.600');
+  const textColor = useColorModeValue('gray.700', 'gray.300');
+
+  return (
+    <Box key={index} bg={bg} border="1px" borderColor={borderColor} p="6" rounded="lg" shadow="sm">
+      <Grid templateColumns={{ base: '2fr 4fr 1fr 1fr' }} gap={4} alignItems="start">
+        {/* Image or Icon */}
+        <Box display="flex" justifyContent="center" alignItems="center">
+          {publication.image ? (
+            <Image src={publication.image} alt={publication.title} borderRadius="lg" maxW="full" maxH="48" />
+          ) : (
+            <Icon as={FontAwesomeIcon} icon={publication.icon || faBookmark} boxSize="12" color="red.500" />
+          )}
+        </Box>
+
+        {/* Publication Info */}
+        <VStack align="start" gap={2}>
+          <Text fontSize="xl" fontWeight="semibold" mb="1">{publication.title}</Text>
+          <Text fontSize="sm" color={textColor} fontStyle="italic" dangerouslySetInnerHTML={{ __html: publication.authors }} />
+          <Text fontSize="sm" color="gray.600">{publication.info}</Text>
+          {publication.notes && (
+            <Text color="gray.600" dangerouslySetInnerHTML={{ __html: publication.notes }} />
+          )}
+        </VStack>
+
+        {/* Links */}
+        <HStack wrap="wrap" justifyContent="center" gap={2}>
+          {publication.links.map((link, idx) => (
+            <Button key={idx} size="sm" colorScheme="gray" onClick={() => window.open(link.url, '_blank')}>
+              <Icon as={FontAwesomeIcon} icon={getLinkIcon(link.label)} mr="2" />
+              {link.label}
+            </Button>
+          ))}
+        </HStack>
+
+        {/* Tags */}
+        <HStack wrap="wrap" justifyContent="center" gap={2}>
+          {publication.tags?.map((tag, idx) => (
+            <Box key={idx} px={4} py={1} borderRadius="full" bg="gray.100" color="gray.800" fontSize="sm">
+              {tag}
+            </Box>
+          ))}
+        </HStack>
+      </Grid>
+    </Box>
+  );
 };
-
-// 特定のキーワードの色を変更する関数
-const highlightKeywords = (text: string, keywords: string[]) => {
-  let highlightedText = text;
-  keywords.forEach(keyword => {
-    const regex = new RegExp(`(${keyword})`, 'gi');
-    highlightedText = highlightedText.replace(regex, '<span class="text-red-500">$1</span>');
-  });
-  return highlightedText;
-};
-
-const renderPublicationItem = (publication: Publication, index: number) => (
-  <div key={index} className="bg-white border border-gray-300 p-4 rounded-lg shadow-md">
-    <div className="grid grid-cols-1 lg:grid-cols-8 gap-4 items-start">
-      {/* 画像 */}
-      <div className="lg:col-span-2 flex justify-center items-center">
-        {publication.image ? (
-          <img
-            src={publication.image}
-            alt={publication.title}
-            className="rounded-lg max-w-full max-h-48 object-cover"
-          />
-        ) : publication.icon ? (
-          <FontAwesomeIcon icon={publication.icon} className="text-red-500 w-20 h-20" />
-        ) : (
-          <FontAwesomeIcon icon={faBookmark} className="text-red-500 w-20 h-20" />
-        )}
-      </div>
-
-      {/* 論文情報 */}
-      <div className="lg:col-span-4 flex flex-col justify-center">
-        <h3 className="text-xl font-semibold mb-2">{publication.title}</h3>
-        <p className="text-gray-700 italic mb-2" dangerouslySetInnerHTML={{ __html: publication.authors }} />
-        <p className="text-gray-600 mb-4">{publication.info}</p>
-        {publication.notes && (
-          <p className="text-gray-600 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: highlightKeywords(publication.notes, []) }}></p> // notesを複数行対応し、特定のキーワードをハイライト
-        )}
-      </div>
-
-      {/* 各種リンク */}
-      <div className="lg:col-span-1 flex flex-wrap justify-center gap-2 mb-4 lg:mb-0">
-        {publication.links.map((link, idx) => (
-          <button
-            key={idx}
-            className="flex items-center px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-            onClick={() => window.open(link.url, '_blank')}
-          >
-            <FontAwesomeIcon icon={getLinkIcon(link.label)} className="mr-2" />
-            {link.label}
-          </button>
-        ))}
-      </div>
-
-      {/* タグ */}
-      <div className="lg:col-span-1 flex flex-wrap justify-center gap-2">
-        {publication.tags && (
-          <div className="flex flex-wrap justify-center gap-2 mb-2">
-            {publication.tags.map((tag, idx) => (
-              <span key={idx} className={`px-4 py-1 rounded-full text-sm ${getTagColor(tag)}`}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  </div>
-);
 
 const AllPublications: React.FC = () => {
   const groupedPublications = groupPublicationsByYear(publications);
 
-  ReactGA.send({
-    hintType: 'pageview',
-    page: '/all-publications',
-    title: 'publications page'
-  })
+  ReactGA.send({ hitType: 'pageview', page: '/all-publications', title: 'publications page' });
 
   return (
-    <section id="all-publications" className="my-8 px-4 py-16 bg-gray-50">
-      <h1 className="text-3xl font-bold text-center mb-12">All Publications</h1>
+    <Box as="section" id="all-publications" py="16" px="4" bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Text as="h1" fontSize="3xl" fontWeight="bold" textAlign="center" mb="12">All Publications</Text>
       {Object.entries(groupedPublications).sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)).map(([year, pubs]) => (
-        <div key={year} className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">{year}</h2>
-          <div className="grid gap-4">
+        <Box key={year} mb="12">
+          <Text as="h2" fontSize="2xl" fontWeight="bold" mb="6">{year}</Text>
+          <Grid gap={4}>
             {pubs.map(renderPublicationItem)}
-          </div>
-        </div>
+          </Grid>
+        </Box>
       ))}
-      <div className="text-center mt-8">
-        <a href="/" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" /> Back to Home
-        </a>
-      </div>
-    </section>
+      <UILink href="/" display="inline-block" mt="8">
+        <Button colorScheme="gray" leftIcon={<Icon as={FontAwesomeIcon} icon={faAnglesLeft} />}>Back to Home</Button>
+      </UILink>
+    </Box>
   );
 };
 
