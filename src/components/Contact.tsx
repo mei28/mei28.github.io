@@ -1,63 +1,85 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faXTwitter, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-
-import '../styles/common.css';
+import { Box, Text, Flex, Link as UILink, useColorModeValue, Icon } from '@yamada-ui/react';
+import { Mail, Twitter, X, Linkedin } from '@yamada-ui/lucide';
 
 interface ContactInfo {
-  icon: IconDefinition;
+  icon: any;
   link?: string;
   text: string;
 }
 
 const contactInfo: ContactInfo[] = [
   {
-    icon: faEnvelope,
+    icon: Mail,
     text: 'mingzhe-yang [at] g.ecc.u-tokyo.ac.jp'
   },
   {
-    icon: faXTwitter,
+    icon: Twitter,
     link: 'https://x.com/_mei28_',
     text: 'Twitter (JP)'
   },
   {
-    icon: faSquareXTwitter,
+    icon: X,
     link: 'https://x.com/_me_i28',
     text: 'Twitter (EN)'
   },
   {
-    icon: faLinkedin,
+    icon: Linkedin,
     link: 'https://www.linkedin.com/in/mingzhe-yang-3669242bb/',
     text: 'LinkedIn'
   }
 ];
 
 const renderContactInfo = (contactInfo: ContactInfo[]): JSX.Element[] => {
+  const textColor = useColorModeValue('gray.700', 'gray.300');
+  const hoverColor = useColorModeValue('gray.500', 'gray.400');
+
   return contactInfo.map((info, index) => (
-    <div key={index} className="flex items-center justify-center gap-2 p-4">
-      <FontAwesomeIcon icon={info.icon} className='text-xl' />
+    <Flex key={index} align="center" justify="center" gap="2" p="4">
+      <Icon as={info.icon} boxSize="6" />
       {info.link ? (
-        <p><a href={info.link} className="text-gray-700 hover:text-gray-500">{info.text}</a></p>
+        <UILink href={info.link} color={textColor} _hover={{ color: hoverColor }} isExternal>
+          {info.text}
+        </UILink>
       ) : (
-        <p className="text-gray-700">{info.text}</p>
+        <Text color={textColor}>{info.text}</Text>
       )}
-    </div>
+    </Flex>
   ));
 };
 
 const Contact: React.FC = () => {
+  const bg = useColorModeValue('gray.50', 'gray.700');
+  const borderColor = useColorModeValue('gray.500', 'gray.600');
+
   return (
-    <section id="contact" className="section-container">
-      <p className="section-subtitle">Get in Touch</p>
-      <h1 className="section-title">Contact Me</h1>
-      <div className="flex flex-col md:flex-row justify-center items-center border border-gray-500 bg-gray-50 rounded-2xl my-8 p-4">
+    <Box
+      as="section"
+      id="contact"
+      textAlign="center"
+      my="8"
+      mx={{ base: '4', md: '8', lg: '16', xl: '24' }} // Adjusted responsive margin
+    >
+      <Text fontSize="lg" color="gray.600" mb="2">
+        Get in Touch
+      </Text>
+      <Text as="h1" fontSize="3xl" fontWeight="bold" mb="6">
+        Contact Me
+      </Text>
+      <Flex
+        direction={{ base: 'column', md: 'row' }}
+        justify="center"
+        align="center"
+        border="1px solid"
+        borderColor={borderColor}
+        bg={bg}
+        rounded="2xl"
+        p="4"
+      >
         {renderContactInfo(contactInfo)}
-      </div>
-    </section >
-  )
+      </Flex>
+    </Box>
+  );
 };
 
 export default Contact;
-
