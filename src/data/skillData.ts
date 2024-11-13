@@ -1,6 +1,6 @@
 // src/data/skillData.ts
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faJsSquare, faPython, faReact, faRust, faGit, faDocker, faCss3, faUnity, faHtml5, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faJsSquare, faPython, faReact, faRust, faGitAlt, faDocker, faCss3, faUnity, faHtml5, faGit } from '@fortawesome/free-brands-svg-icons';
 import { faLaptop, faTable, faC, faHashtag, faMoon, faDatabase, faPenToSquare, faFlask, faFire, faPaw, faTree } from '@fortawesome/free-solid-svg-icons';
 
 export interface Skill {
@@ -8,8 +8,8 @@ export interface Skill {
   level: number;
   type: 'language' | 'framework' | 'tool';
   isHome?: boolean;
-  icon?: IconDefinition | null; // アイコンフィールドを追加
-  description?: string | null; // 説明フィールドを追加
+  icon?: IconDefinition | null;
+  description?: string | null;
 }
 
 export const skills: Skill[] = [
@@ -50,17 +50,17 @@ export const skills: Skill[] = [
     level: 70,
     type: 'language',
     description: 'Unity',
-    icon: faHashtag
+    icon: faHashtag,
   },
   {
     name: 'C++',
     level: 60,
     type: 'language',
     description: 'Competitive Programming',
-    icon: faC
+    icon: faC,
   },
 
-  //frame work
+  // framework
   {
     name: 'PyTorch',
     level: 80,
@@ -79,7 +79,7 @@ export const skills: Skill[] = [
     level: 90,
     type: 'framework',
     icon: faPaw,
-    isHome: true
+    isHome: true,
   },
   {
     name: 'Numpy',
@@ -125,12 +125,12 @@ export const skills: Skill[] = [
     icon: faUnity,
   },
 
-  //tool
+  // tool
   {
     name: 'Git',
     level: 90,
     type: 'tool',
-    icon: faGitAlt
+    icon: faGitAlt,
   },
   {
     name: 'Docker',
