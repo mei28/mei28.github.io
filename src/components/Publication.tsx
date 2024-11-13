@@ -37,7 +37,7 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
               />
             ) : (
               <Icon
-                as={publication.icon ? publication.icon : Bookmark}
+                as={Bookmark}
                 boxSize="24" // Increased icon size to match larger image area
                 color={iconColor}
               />
