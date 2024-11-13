@@ -43,7 +43,7 @@ const About: React.FC = () => {
   const titleColor = useColorModeValue('gray.800', 'white');
   const buttonBg = useColorModeValue('gray.500', 'gray.700');
   const buttonHoverBg = useColorModeValue('gray.700', 'gray.500');
-  const boxMinHeight = "xl";
+  const boxMinHeight = "lg";
 
   return (
     <Box as="section" id="about" py="16" px="8" textAlign="center">
@@ -68,6 +68,7 @@ const About: React.FC = () => {
             objectFit="cover"
             w="full"
             maxW="sm"
+            minH= {boxMinHeight}
           />
         </GridItem>
 
@@ -86,10 +87,13 @@ const About: React.FC = () => {
               w="full"
               minH={boxMinHeight}
             >
-              <Icon as={Search} boxSize="6" color={titleColor} />
-              <Text fontSize="xl" fontWeight="semibold" color={titleColor}>
-                Interests
-              </Text>
+
+              <HStack justify={'center'}>
+                <Icon as={Search} boxSize="6" color={titleColor} />
+                <Text fontSize="xl" fontWeight="semibold" color={titleColor}>
+                  Interests
+                </Text>
+              </HStack>
               <VStack align="start" gap="4" w="full">
                 {interests.map((interest, index) => (
                   <Text key={index} fontWeight="semibold">
@@ -111,10 +115,12 @@ const About: React.FC = () => {
               w="full"
               minH={boxMinHeight}
             >
-              <Icon as={Users} boxSize="6" color={titleColor} />
-              <Text fontSize="xl" fontWeight="semibold" color={titleColor}>
-                Education
-              </Text>
+              <HStack justify={'center'}>
+                <Icon as={Users} boxSize="6" color={titleColor} />
+                <Text fontSize="xl" fontWeight="semibold" color={titleColor}>
+                  Education
+                </Text>
+              </HStack>
               <VStack align="start" gap="4" w="full">
                 {educationDetails.map((edu, index) => (
                   <Box key={index} textAlign="left">
