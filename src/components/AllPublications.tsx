@@ -110,9 +110,11 @@ const AllPublications: React.FC = () => {
           </Grid>
         </Box>
       ))}
-      <UILink href="/" display="inline-block" mt="8">
-        <Button colorScheme="gray" leftIcon={<Icon as={ArrowLeft} />}>Back to Home</Button>
-      </UILink>
+      <HStack justify={'center'}>
+        <UILink href="/" display="inline-block" mt="8">
+          <Button colorScheme="gray" leftIcon={<Icon as={ArrowLeft} />}>Back to Home</Button>
+        </UILink>
+      </HStack>
     </Box>
   );
 };
