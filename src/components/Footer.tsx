@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { Box, Text } from '@yamada-ui/react';
 
 const Footer: React.FC = () => {
-  const [thisYear, _setThisYear] = useState<number>(new Date().getFullYear());
+  const [thisYear] = useState<number>(new Date().getFullYear());
 
   return (
-    <footer className="h-64 mx-4 md:h-56 lg:h-52 xl:h-48 xl:mx-2.5 text-center">
-      <p className="text-center text-base sm:text-sm md:text-xs lg:text-base xl:text-sm">
-        Copyright &#169; <span className='thisYear'>{thisYear}</span> Mingzhe Yang. All Rights Reserved.
-      </p>
-    </footer>
+    <Box as="footer" h={{ base: '64', md: '56', lg: '52', xl: '48' }} mx={{ base: '4', xl: '2.5' }} textAlign="center">
+      <Text fontSize={{ base: 'base', sm: 'sm', md: 'xs', lg: 'base', xl: 'sm' }}>
+        &copy; {thisYear} Mingzhe Yang. All Rights Reserved.
+      </Text>
+    </Box>
   );
 };
 
