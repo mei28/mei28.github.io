@@ -1,9 +1,11 @@
 import React from 'react';
-import { Box, Text, VStack, HStack, Button, Grid, useColorModeValue, Image, Card, CardBody, CardFooter } from '@yamada-ui/react';
+import { Link as UILink, Icon, Box, Text, VStack, HStack, Button, Grid, useColorModeValue, Image, Card, CardBody, CardFooter } from '@yamada-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import { Sections, sectionTitles } from '../sections';
 import { ProjectData, projectsData } from '../data/projectsData';
+import { ArrowRight } from '@yamada-ui/lucide';
+
 
 const ProjectItem: React.FC<ProjectData> = ({ imgSrc, imgAlt, title, description, links }) => {
   const cardBg = useColorModeValue('white', 'gray.800');
@@ -44,6 +46,9 @@ const ProjectItem: React.FC<ProjectData> = ({ imgSrc, imgAlt, title, description
 };
 
 const ProjectList: React.FC = () => {
+  const buttonBg = useColorModeValue('gray.500', 'gray.700');
+  const buttonHoverBg = useColorModeValue('gray.700', 'gray.500');
+
   return (
     <Box as="section" id={Sections.Projects} py="16" px="4" bg={useColorModeValue('gray.50', 'gray.900')}>
       <Text fontSize="lg" textAlign="center" color={useColorModeValue('gray.700', 'gray.300')} mb="2">
@@ -67,9 +72,20 @@ const ProjectList: React.FC = () => {
       </Grid>
 
       <Box textAlign="center" mt="8">
-        <Button as="a" href="/#/all-projects" colorScheme="gray" rightIcon={<FontAwesomeIcon icon={faAnglesRight} />}>
-          View All Projects
-        </Button>
+        <UILink href="/#/all-project" mt="10" display="inline-block" >
+          <Button
+            bg={buttonBg}
+            color="white"
+            _hover={{ bg: buttonHoverBg }}
+            size="lg"
+            rightIcon={<Icon as={ArrowRight} />}
+            rounded="lg"
+            shadow="md"
+            transition="all 0.3s"
+          >
+            View All Experiences
+          </Button>
+        </UILink>
       </Box>
     </Box>
   );
