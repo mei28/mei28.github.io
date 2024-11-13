@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
       my="8"
       mx={{ base: '4', md: '8', lg: '16', xl: '24' }} // Adjusted responsive margin
     >
-      <Text fontSize="lg" color="gray.600" mb="2">
+      <Text fontSize="lg" mb="2">
         Get in Touch
       </Text>
       <Text as="h1" fontSize="3xl" fontWeight="bold" mb="6">

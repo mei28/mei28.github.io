@@ -13,7 +13,7 @@ import SkillsDetail from './components/AllExperiences';
 import AllAbouts from './components/AllAbout';
 import { initGA, logPageView } from './analytics';
 import './styles/common.css';
-import { UIProvider } from '@yamada-ui/react';
+import { UIProvider, extendTheme } from '@yamada-ui/react';
 
 // Define the type for the AnalyticsWrapper props
 interface AnalyticsWrapperProps {
@@ -27,6 +27,11 @@ const pathTitles: { [key: string]: string } = {
   '/all-experiences': 'All Experiences',
   '/all-about': 'All About',
 };
+
+const theme = extendTheme({
+  initialColorMode: 'system', // Defaults to the user's system preference
+  useSystemColorMode: true,
+});
 
 const Home: React.FC = () => (
   <>

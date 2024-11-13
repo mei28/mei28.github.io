@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Sections, sectionTitles } from '../sections';
 import { Link, useLocation } from 'react-router-dom';
-import { Box, Text, Flex, IconButton, VStack, HStack, useColorModeValue } from '@yamada-ui/react';
-import { Menu, X } from '@yamada-ui/lucide';
+import { Box, Text, Flex, IconButton, VStack, HStack, useColorMode, useColorModeValue } from '@yamada-ui/react';
+import { Menu, X, Sun, Moon } from '@yamada-ui/lucide';
 
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { colorMode, toggleColorMode } = useColorMode(); // Dark mode control
   const location = useLocation();
   const bg = useColorModeValue('white', 'gray.800');
   const color = useColorModeValue('black', 'white');
@@ -46,7 +47,7 @@ const Nav: React.FC = () => {
         </Text>
 
         {/* Desktop Menu (Visible on larger screens) */}
-        <HStack display={{ base: "flex", md: "none" }} gap="8">
+        <HStack display={{ base: "none", md: "flex" }} gap="8">
           {Object.values(Sections).map((section) => (
             <Link
               key={section}
@@ -59,10 +60,25 @@ const Nav: React.FC = () => {
               </Text>
             </Link>
           ))}
+          {/* Dark Mode Toggle (Visible on larger screens) */}
+          <IconButton
+            aria-label="Toggle Color Mode"
+            icon={colorMode === 'light' ? <Moon /> : <Sun />}
+            onClick={toggleColorMode}
+            variant="ghost"
+            color={color}
+          />
         </HStack>
 
         {/* Mobile Menu Toggle (Visible on smaller screens) */}
-        <Box display={{ base: "none", md: "block" }}>
+        <HStack display={{ base: "flex", md: "none" }} gap="2">
+          <IconButton
+            aria-label="Toggle Color Mode"
+            icon={colorMode === 'light' ? <Moon /> : <Sun />}
+            onClick={toggleColorMode}
+            variant="ghost"
+            color={color}
+          />
           <IconButton
             aria-label="Toggle Menu"
             icon={menuOpen ? <X /> : <Menu />}
@@ -70,7 +86,7 @@ const Nav: React.FC = () => {
             variant="outline"
             color={color}
           />
-        </Box>
+        </HStack>
       </Flex>
 
       {/* Mobile Menu (Dropdown) */}
@@ -83,7 +99,7 @@ const Nav: React.FC = () => {
           bg={bg}
           boxShadow="md"
           gap="0"
-          display={{ base: "none", md: "flex" }} // Only show on mobile
+          display={{ base: "flex", md: "none" }}
         >
           {Object.values(Sections).map((section) => (
             <Link
