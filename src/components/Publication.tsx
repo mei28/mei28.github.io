@@ -67,7 +67,7 @@ const renderPublicationItem = (publication: Publication, index: number): JSX.Ele
               size="sm"
               bg="gray.200"
               _hover={{ bg: 'gray.300' }}
-              leftIcon={<FontAwesomeIcon icon={getLinkIcon(link.label)} />}
+              leftIcon={<Icon as={getLinkIcon(link.label)} color={iconColor} />}
               onClick={() => window.open(link.url, '_blank')}
               variant="ghost"
               colorScheme="gray"

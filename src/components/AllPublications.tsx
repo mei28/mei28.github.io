@@ -47,7 +47,7 @@ const renderPublicationItem = (publication: Publication, index: number) => {
 
   return (
     <Box key={index} bg={bg} border="1px" borderColor={borderColor} p="6" rounded="lg" shadow="sm">
-      <Grid templateColumns={{ base: '2fr 4fr 1fr 1fr' }} gap={4} alignItems="start">
+      <Grid templateColumns={{ base: '1fr 2fr 1fr 1fr' }} gap={4} alignItems="start">
         {/* Image or Icon */}
         <Box display="flex" justifyContent="center" alignItems="center">
           {publication.image ? (
@@ -96,7 +96,7 @@ const AllPublications: React.FC = () => {
   ReactGA.send({ hitType: 'pageview', page: '/all-publications', title: 'publications page' });
 
   return (
-    <Box as="section" id="all-publications" py="16" px="4" bg={useColorModeValue('gray.50', 'gray.900')}>
+    <Box as="section" id="all-publications" py="24" px="4" bg={useColorModeValue('gray.50', 'gray.900')}>
       <Text as="h1" fontSize="3xl" fontWeight="bold" textAlign="center" mb="12" color={useColorModeValue('gray.800', 'white')}>
         All Publications
       </Text>
