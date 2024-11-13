@@ -1,66 +1,78 @@
 import React from 'react';
-import { skills, Skill } from '../data/skillData';
+import { Box, Text, VStack, HStack, Progress, Button, Icon, Grid, useColorModeValue } from '@yamada-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import ReactGA from 'react-ga4';
+import { skills } from '../data/skillData';
 
 const SkillsDetail: React.FC = () => {
+  ReactGA.send({ hintType: 'pageview', page: '/all-experiences', title: 'skill page' });
 
-  ReactGA.send({
-    hintType: 'pageview',
-    page: '/all-experiences',
-    title: 'skill page'
-  })
   return (
-    <section id="skills-detail" className="section-container bg-gray-50 py-16">
-      <h1 className="text-3xl font-bold text-center mb-12">All Skills</h1>
-      <div className="flex flex-col items-center gap-8">
+    <VStack as="section" id="skills-detail" py="24" px="4" bg={useColorModeValue('gray.50', 'gray.900')} align="center" gap="8">
+      <Text fontSize="3xl" fontWeight="bold" textAlign="center" color={useColorModeValue('gray.800', 'white')}>
+        All Skills
+      </Text>
+
+      <VStack gap={8} w="full" maxW="6xl" align="center">
         <SkillSection title="Programming Languages" type="language" />
         <SkillSection title="Frameworks" type="framework" />
         <SkillSection title="Tools" type="tool" />
-      </div>
-      <div className="text-center mt-8">
-        <a href="/" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          <FontAwesomeIcon icon={faAnglesLeft} className="ml-2" /> Back to Home
-        </a>
-      </div>
-    </section>
+      </VStack>
+
+      <Box textAlign="center" mt="8">
+        <Button as="a" href="/" colorScheme="gray" leftIcon={<FontAwesomeIcon icon={faAnglesLeft} />}>
+          Back to Home
+        </Button>
+      </Box>
+    </VStack>
   );
 };
 
-const SkillSection: React.FC<{ title: string, type: string }> = ({ title, type }) => {
+const SkillSection: React.FC<{ title: string; type: string }> = ({ title, type }) => {
   const filteredSkills = skills.filter(skill => skill.type === type);
+  const bg = useColorModeValue('white', 'gray.800');
+  const borderColor = useColorModeValue('gray.300', 'gray.600');
+  const textColor = useColorModeValue('gray.700', 'gray.300');
 
   return (
-    <div className="w-full max-w-4xl">
-      <h2 className="text-2xl font-bold mb-6">{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <Box w="full">
+      <Text fontSize="2xl" fontWeight="bold" mb="6" color={useColorModeValue('gray.800', 'white')} textAlign="center">
+        {title}
+      </Text>
+
+      <Grid templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(2, 1fr)' }} gap={4} justifyContent="center">
         {filteredSkills.map((skill, index) => (
-          <div key={index} className="bg-white border border-gray-300 p-4 rounded-lg shadow-md text-center flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-center mb-4">
-                {skill.icon && (<FontAwesomeIcon icon={skill.icon} className="text-4xl mr-2" />)}
-                <h3 className="text-xl font-semibold">{skill.name}</h3>
-              </div>
-              {skill.description && (
-                <p className="text-gray-700 mb-4">
-                  {skill.description}
-                </p>
-              )}
-            </div>
-            <div>
-              <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-                <div
-                  className="bg-blue-600 h-2.5 rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
-              <p className="text-gray-600">{skill.level}%</p>
-            </div>
-          </div>
+          <VStack
+            key={index}
+            bg={bg}
+            border="1px"
+            borderColor={borderColor}
+            p="4"
+            rounded="lg"
+            shadow="md"
+            gap={4}
+            textAlign="center"
+          >
+            <HStack justifyContent="center" mb="4">
+              {skill.icon && <FontAwesomeIcon icon={skill.icon} size="2x" className="text-blue-600" />}
+              <Text fontSize="xl" fontWeight="semibold" color={textColor}>{skill.name}</Text>
+            </HStack>
+
+            {skill.description && (
+              <Text color={textColor} mb="4">
+                {skill.description}
+              </Text>
+            )}
+
+            <Box w="full">
+              <Progress value={skill.level} colorScheme="blue" rounded="full" h="2.5" bg="gray.200" mb="2" />
+              <Text color={textColor}>{skill.level}%</Text>
+            </Box>
+          </VStack>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 };
 
