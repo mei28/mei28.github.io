@@ -13,6 +13,7 @@ import SkillsDetail from './components/AllExperiences';
 import AllAbouts from './components/AllAbout';
 import { initGA, logPageView } from './analytics';
 import './styles/common.css';
+import { UIProvider } from '@yamada-ui/react';
 
 // Define the type for the AnalyticsWrapper props
 interface AnalyticsWrapperProps {
@@ -81,16 +82,18 @@ const AnalyticsWrapper: React.FC<AnalyticsWrapperProps> = ({ children }) => {
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <AnalyticsWrapper>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/all-publications" element={<AllPub />} />
-          <Route path="/all-experiences" element={<AllExp />} />
-          <Route path="/all-about" element={<AllAbout />} />
-        </Routes>
-      </AnalyticsWrapper>
-    </Router>
+    <UIProvider>
+      <Router>
+        <AnalyticsWrapper>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/all-publications" element={<AllPub />} />
+            <Route path="/all-experiences" element={<AllExp />} />
+            <Route path="/all-about" element={<AllAbout />} />
+          </Routes>
+        </AnalyticsWrapper>
+      </Router>
+    </UIProvider>
   );
 };
 
