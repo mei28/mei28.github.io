@@ -1,53 +1,59 @@
 import React from 'react';
-import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { Box, Text, VStack, HStack, Button, Grid, useColorModeValue, Image, Card, CardBody, CardFooter } from '@yamada-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import { Sections, sectionTitles } from '../sections';
 import { ProjectData, projectsData } from '../data/projectsData';
-import '../styles/common.css';
 
 const ProjectItem: React.FC<ProjectData> = ({ imgSrc, imgAlt, title, description, links }) => {
-  const isExternalLink = (url: string) => {
-    return url.startsWith('http://') || url.startsWith('https://');
-  };
-
-  const renderImage = (src: string | null, alt: string) => {
-    if (!src) {
-      return null;
-    }
-
-    return <img src={src} alt={alt} className="rounded-2xl w-9/10 h-auto" />;
-  };
+  const cardBg = useColorModeValue('white', 'gray.800');
+  const borderColor = useColorModeValue('gray.300', 'gray.600');
+  const textColor = useColorModeValue('gray.700', 'gray.300');
+  const isExternalLink = (url: string) => url.startsWith('http://') || url.startsWith('https://');
 
   return (
-    <div className="border border-gray-400 bg-gray-50 p-4 rounded-xl mb-6">
-      <div className="mb-4">
-        {renderImage(imgSrc, imgAlt)}
-      </div>
-      <h2 className="text-xl font-semibold mb-2 text-black">{title}</h2>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <div className="flex flex-wrap gap-2">
-        {links.map((link, index) => (
-          <button
-            key={index}
-            className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-            onClick={() => window.location.href = link.url}
-          >
-            {link.icon && <FontAwesomeIcon icon={link.icon} className="mr-2" />}
-            {link.label}
-          </button>
-        ))}
-      </div>
-    </div>
+    <Card bg={cardBg} shadow="md" rounded="xl" border="1px" borderColor={borderColor} overflow="hidden">
+      {imgSrc && (
+        <Image src={imgSrc} alt={imgAlt} w="100%" h="auto" objectFit="cover" />
+      )}
+      <CardBody p="6">
+        <Text fontSize="xl" fontWeight="semibold" color={textColor} mb="2">
+          {title}
+        </Text>
+        <Text color={useColorModeValue('gray.600', 'gray.400')} mb="4">{description}</Text>
+      </CardBody>
+      <CardFooter p="6">
+        <HStack gap={2} wrap="wrap">
+          {links.map((link, index) => (
+            <Button
+              key={index}
+              as="a"
+              href={link.url}
+              target={isExternalLink(link.url) ? '_blank' : '_self'}
+              variant="outline"
+              colorScheme="gray"
+              leftIcon={link.icon && <FontAwesomeIcon icon={link.icon} />}
+            >
+              {link.label}
+            </Button>
+          ))}
+        </HStack>
+      </CardFooter>
+    </Card>
   );
 };
 
 const ProjectList: React.FC = () => {
   return (
-    <section id={Sections.Projects} className="section-container bg-gray-50">
-      <p className="text-center text-xl mb-4">Browse My Recent</p>
-      <h1 className="text-center text-3xl font-bold mb-12">{sectionTitles[Sections.Projects]}</h1>
+    <Box as="section" id={Sections.Projects} py="16" px="4" bg={useColorModeValue('gray.50', 'gray.900')}>
+      <Text fontSize="lg" textAlign="center" color={useColorModeValue('gray.700', 'gray.300')} mb="2">
+        Browse My Recent
+      </Text>
+      <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb="12" color={useColorModeValue('gray.800', 'white')}>
+        {sectionTitles[Sections.Projects]}
+      </Text>
 
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
+      <Grid templateColumns={{ md: '1fr', base: 'repeat(2, 1fr)' }} gap={6} mx="auto" maxW="6xl">
         {projectsData.map((project, index) => (
           <ProjectItem
             key={index}
@@ -58,14 +64,14 @@ const ProjectList: React.FC = () => {
             links={project.links}
           />
         ))}
-      </div>
+      </Grid>
 
-      <div className="text-center mt-8">
-        <a href="/#/all-projects" className="inline-block px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700">
-          View My All Projects! <FontAwesomeIcon icon={faAnglesRight} className="ml-2" />
-        </a>
-      </div>
-    </section>
+      <Box textAlign="center" mt="8">
+        <Button as="a" href="/#/all-projects" colorScheme="gray" rightIcon={<FontAwesomeIcon icon={faAnglesRight} />}>
+          View All Projects
+        </Button>
+      </Box>
+    </Box>
   );
 };
 
