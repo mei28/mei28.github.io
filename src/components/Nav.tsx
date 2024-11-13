@@ -47,7 +47,7 @@ const Nav: React.FC = () => {
         </Text>
 
         {/* Desktop Menu (Visible on larger screens) */}
-        <HStack display={{ base: "none", md: "flex" }} gap="8">
+        <HStack display={{ base: "flex", md: "none" }} gap="8">
           {Object.values(Sections).map((section) => (
             <Link
               key={section}
@@ -71,7 +71,7 @@ const Nav: React.FC = () => {
         </HStack>
 
         {/* Mobile Menu Toggle (Visible on smaller screens) */}
-        <HStack display={{ base: "flex", md: "none" }} gap="2">
+        <HStack display={{ base: "none", md: "flex" }} gap="2">
           <IconButton
             aria-label="Toggle Color Mode"
             icon={colorMode === 'light' ? <Moon /> : <Sun />}
@@ -99,7 +99,7 @@ const Nav: React.FC = () => {
           bg={bg}
           boxShadow="md"
           gap="0"
-          display={{ base: "flex", md: "none" }}
+          display={{ base: "none", md: "flex" }}
         >
           {Object.values(Sections).map((section) => (
             <Link
