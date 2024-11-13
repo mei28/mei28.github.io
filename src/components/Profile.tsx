@@ -34,7 +34,7 @@ const Profile: React.FC = () => {
   const buttonTextColor = useColorModeValue('white', 'black');
 
   return (
-    <Box as="section" id="profile" bg={bg} minH="50vh" display="flex" justifyContent="center" alignItems="center" py="16">
+    <Box as="section" id="profile" bg={bg} minH="50vh" display="flex" justifyContent="center" alignItems="center" py="24">
       <Flex direction={{ base: 'row', md: 'column' }} align="center" gap="10">
         {/* Profile Image */}
         <Image
