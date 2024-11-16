@@ -42,9 +42,9 @@ const renderContactInfo = (contactInfo: ContactInfo[]): JSX.Element[] => {
           {info.text}
         </UILink>
       ) : (
-        <Text color={textColor}>{info.text}</Text>
+        <Text color={textColor} lineClamp={2}>{info.text}</Text>
       )}
-    </Flex>
+    </Flex >
   ));
 };
 
