@@ -18,6 +18,21 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    image: null,
+    title: 'Do Expressions Change Decisions? Exploring the Impact of AI\'s Explanation Tone on Decision-Making',
+    authors: 'Ayano Okoso, <span class="highlight-author">Mingzhe Yang</span> and Yukino Baba',
+    info: 'Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI\'25), 2025',
+    links: [
+      { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3706598.3713744' },
+      // { label: 'Slides', url: '' },
+      // { label: 'Video', url: '' },
+    ],
+    pickup: true,
+    year: 2025,
+    tags: ['Peer-reviewed', 'Expression', 'Human-AI Decision Making'],
+    // notes: '<span class="text-green-600">Acceptance rate = 1060/4028 (26.3%)</span>'
+  },
+  {
     image: '/assets/publication/ACMMM.png',
     title: 'Audio-Visual Self-Supervision for Frame-Level Player-wise Offensive Shot Detection in Table Tennis Matches',
     authors: 'Shinji Tsuji, Atsushi Hashimoto, <span class="highlight-author">Mingzhe Yang</span>, Jiaxin Ma, Hidehito Honda, Kazutoshi Tanaka',
@@ -39,7 +54,7 @@ export const publications: Publication[] = [
       { label: 'Paper', url: 'https://www.jstage.jst.go.jp/article/pjsai/JSAI2024/0/JSAI2024_2T5OS5b03/_article/-char/ja/' },
       { label: 'Slides', url: 'https://speakerdeck.com/mei28/jsai24-ren-jian-nopan-duan-gen-ju-hawen-mo-niyotuteyi-narunoka-xin-lai-sareruxainixiang-ketaren-jian-nopan-duan-gen-ju-li-jie' },
     ],
-    pickup: true,
+    pickup: false,
     year: 2024,
     tags: ['First author', 'Explainable AI', 'Trust AI'],
   },
