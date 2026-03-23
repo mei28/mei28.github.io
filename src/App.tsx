@@ -13,25 +13,17 @@ import SkillsDetail from './components/AllExperiences';
 import AllAbouts from './components/AllAbout';
 import { initGA, logPageView } from './analytics';
 import './styles/common.css';
-import { UIProvider, extendTheme } from '@yamada-ui/react';
 
-// Define the type for the AnalyticsWrapper props
 interface AnalyticsWrapperProps {
   children: ReactNode;
 }
 
-// Mapping of paths to titles
 const pathTitles: { [key: string]: string } = {
   '/': 'Home',
   '/all-publications': 'All Publications',
   '/all-experiences': 'All Experiences',
   '/all-about': 'All About',
 };
-
-const theme = extendTheme({
-  initialColorMode: 'system', // Defaults to the user's system preference
-  useSystemColorMode: true,
-});
 
 const Home: React.FC = () => (
   <>
@@ -87,20 +79,17 @@ const AnalyticsWrapper: React.FC<AnalyticsWrapperProps> = ({ children }) => {
 
 const App: React.FC = () => {
   return (
-    <UIProvider>
-      <Router>
-        <AnalyticsWrapper>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/all-publications" element={<AllPub />} />
-            <Route path="/all-experiences" element={<AllExp />} />
-            <Route path="/all-about" element={<AllAbout />} />
-          </Routes>
-        </AnalyticsWrapper>
-      </Router>
-    </UIProvider>
+    <Router>
+      <AnalyticsWrapper>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/all-publications" element={<AllPub />} />
+          <Route path="/all-experiences" element={<AllExp />} />
+          <Route path="/all-about" element={<AllAbout />} />
+        </Routes>
+      </AnalyticsWrapper>
+    </Router>
   );
 };
 
 export default App;
-

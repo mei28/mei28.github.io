@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Sections, sectionTitles } from '../sections';
 import { Link, useLocation } from 'react-router-dom';
-import { Box, Text, Flex, IconButton, VStack, HStack, useColorMode, useColorModeValue } from '@yamada-ui/react';
-import { Menu, X, Sun, Moon } from '@yamada-ui/lucide';
+import { Button } from '@heroui/react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode(); // Dark mode control
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
-  const bg = useColorModeValue('white', 'gray.800');
-  const color = useColorModeValue('black', 'white');
 
   const toggleMenu = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -37,70 +36,62 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <Box as="header" w="full" pos="fixed" top="0" left="0" bg={bg} zIndex="50" boxShadow="md">
-      <Flex as="nav" justify="space-between" align="center" py="4" px="8">
-        {/* Logo */}
-        <Text fontSize="2xl" fontWeight="bold" color={color}>
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+    <header className="w-full fixed top-0 left-0 bg-background z-50 shadow-md">
+      <nav className="flex justify-between items-center py-4 px-8">
+        <span className="text-2xl font-bold text-foreground">
+          <Link to="/" className="no-underline text-inherit">
             Mingzhe Yang
           </Link>
-        </Text>
+        </span>
 
-        {/* Desktop Menu (Visible on larger screens) */}
-        <HStack display={{ base: "flex", md: "none" }} gap="8">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
           {Object.values(Sections).map((section) => (
             <Link
               key={section}
               to={`/#${section}`}
               onClick={() => handleLinkClick(section)}
-              style={{ textDecoration: 'none' }}
+              className="no-underline"
             >
-              <Text color={color} _hover={{ color: "gray.600" }}>
+              <span className="text-foreground hover:text-foreground/60 transition-colors">
                 {sectionTitles[section]}
-              </Text>
+              </span>
             </Link>
           ))}
-          {/* Dark Mode Toggle (Visible on larger screens) */}
-          <IconButton
-            aria-label="Toggle Color Mode"
-            icon={colorMode === 'light' ? <Moon /> : <Sun />}
-            onClick={toggleColorMode}
+          <Button
+            isIconOnly
             variant="ghost"
-            color={color}
-          />
-        </HStack>
+            aria-label="Toggle Color Mode"
+            onPress={toggleTheme}
+          >
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </Button>
+        </div>
 
-        {/* Mobile Menu Toggle (Visible on smaller screens) */}
-        <HStack display={{ base: "none", md: "flex" }} gap="2">
-          <IconButton
-            aria-label="Toggle Color Mode"
-            icon={colorMode === 'light' ? <Moon /> : <Sun />}
-            onClick={toggleColorMode}
+        {/* Mobile Menu Toggle */}
+        <div className="flex md:hidden items-center gap-2">
+          <Button
+            isIconOnly
             variant="ghost"
-            color={color}
-          />
-          <IconButton
-            aria-label="Toggle Menu"
-            icon={menuOpen ? <X /> : <Menu />}
-            onClick={toggleMenu}
+            aria-label="Toggle Color Mode"
+            onPress={toggleTheme}
+          >
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </Button>
+          <Button
+            isIconOnly
             variant="outline"
-            color={color}
-          />
-        </HStack>
-      </Flex>
+            aria-label="Toggle Menu"
+            onPress={() => setMenuOpen(prev => !prev)}
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </Button>
+        </div>
+      </nav>
 
       {/* Mobile Menu (Dropdown) */}
       {menuOpen && (
-        <VStack
-          pos="absolute"
-          top="100%"
-          right="0"
-          w="full"
-          bg={bg}
-          boxShadow="md"
-          gap="0"
-          display={{ base: "none", md: "flex" }}
-        >
+        <div className="absolute top-full right-0 w-full bg-background shadow-md flex md:hidden flex-col">
           {Object.values(Sections).map((section) => (
             <Link
               key={section}
@@ -109,20 +100,19 @@ const Nav: React.FC = () => {
                 e.stopPropagation();
                 handleLinkClick(section);
               }}
-              style={{ textDecoration: 'none' }}
+              className="no-underline"
             >
-              <Box py="4" textAlign="center">
-                <Text color={color} _hover={{ color: "gray.600" }}>
+              <div className="py-4 text-center">
+                <span className="text-foreground hover:text-foreground/60 transition-colors">
                   {sectionTitles[section]}
-                </Text>
-              </Box>
+                </span>
+              </div>
             </Link>
           ))}
-        </VStack>
+        </div>
       )}
-    </Box>
+    </header>
   );
 };
 
 export default Nav;
-

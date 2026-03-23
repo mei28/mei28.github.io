@@ -1,74 +1,50 @@
 import React from 'react';
-import { Box, Button, Icon, Image, VStack, HStack, Text, useColorModeValue, Flex } from '@yamada-ui/react';
-import { Github, Twitter, Linkedin, FileText, Mail, GraduationCap } from '@yamada-ui/lucide';
+import { Button } from '@heroui/react';
+import { FileText, Mail } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKaggle } from '@fortawesome/free-brands-svg-icons';
+import { accounts, Account } from '../data/profileData';
+import { getLucideIcon } from '../utils/icons';
 
-interface Account {
-  icon: React.ReactNode;
-  link: string;
-}
-
-const accounts: Account[] = [
-  { icon: <Icon as={Github} boxSize="8" />, link: 'https://github.com/mei28' },
-  { icon: <Icon as={Twitter} boxSize="8" />, link: 'https://x.com/_mei28_' },
-  { icon: <Icon as={GraduationCap} boxSize="8" />, link: 'https://scholar.google.com/citations?user=0PIblkcAAAAJ' },
-  { icon: <FontAwesomeIcon icon={faKaggle} size="2x" />, link: 'https://www.kaggle.com/mei2828' },
-  { icon: <Icon as={FileText} boxSize="8" />, link: 'https://speakerdeck.com/mei28' },
-  { icon: <Icon as={Linkedin} boxSize="8" />, link: 'https://linkedin.com/' },
-];
-
-const renderAccountIcons = (accounts: Account[]): JSX.Element[] => {
-  return accounts.map((account, index) => (
-    <Box as="a" href={account.link} target="_blank" key={index} cursor="pointer">
-      {account.icon}
-    </Box>
-  ));
+const AccountIcon: React.FC<{ account: Account }> = ({ account }) => {
+  if (account.iconType === 'fontawesome') {
+    return <FontAwesomeIcon icon={faKaggle} size="2x" />;
+  }
+  const Icon = getLucideIcon(account.iconName);
+  return Icon ? <Icon size={32} /> : null;
 };
 
 const Profile: React.FC = () => {
-  const bg = useColorModeValue('gray.50', 'gray.900');
-  const textColor = useColorModeValue('black', 'white');
-  const buttonBg = useColorModeValue('black', 'white');
-  const buttonHoverBg = useColorModeValue('gray.800', 'gray.300');
-  const buttonTextColor = useColorModeValue('white', 'black');
-
   return (
-    <Box as="section" id="profile" bg={bg} minH="50vh" display="flex" justifyContent="center" alignItems="center" py="24">
-      <Flex direction={{ base: 'row', md: 'column' }} align="center" gap="10">
-        {/* Profile Image */}
-        <Image
+    <section
+      id="profile"
+      className="bg-background min-h-[50vh] flex justify-center items-center py-24"
+    >
+      <div className="flex flex-col md:flex-row items-center gap-10">
+        <img
           src="/assets/profile.png"
           alt="profile"
-          boxSize={{ base: '64', md: '80' }}
-          borderRadius="full"
-          objectFit="cover"
+          className="w-80 h-80 md:w-64 md:h-64 rounded-full object-cover"
         />
 
-        {/* Profile Text and Buttons */}
-        <VStack gap="6" align={{ base: 'center', md: 'start' }} textAlign={{ base: 'center', md: 'left' }}>
-          <Box>
-            <Text fontSize="lg" fontWeight="semibold">Hello, I'm</Text>
-            <Text fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold" color={textColor}>Mingzhe Yang</Text>
-            <Text fontSize={{ base: 'xl', md: '2xl' }} fontWeight="semibold" my="4">
+        <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
+          <div>
+            <p className="text-lg font-semibold">Hello, I'm</p>
+            <p className="text-4xl md:text-3xl font-bold text-foreground">Mingzhe Yang</p>
+            <p className="text-2xl md:text-xl font-semibold my-4">
               Ph.D. student <br />@The University of Tokyo
-            </Text>
-          </Box>
-          <HStack gap="4" justify="center">
+            </p>
+          </div>
+          <div className="flex gap-4 justify-center">
             <Button
               variant="outline"
-              colorScheme="black"
-              leftIcon={<Icon as={FileText} />}
-              onClick={() => window.open('/path/to/resume.pdf', '_blank')}
+              onPress={() => window.open('/path/to/resume.pdf', '_blank')}
             >
-              Download CV
+              <FileText size={18} /> Download CV
             </Button>
             <Button
-              bg={buttonBg}
-              color={buttonTextColor}
-              _hover={{ bg: buttonHoverBg }}
-              leftIcon={<Icon as={Mail} />}
-              onClick={() => {
+              className="bg-foreground text-background hover:opacity-80"
+              onPress={() => {
                 const section = 'contact';
                 if (location.pathname === '/') {
                   const element = document.getElementById(section);
@@ -80,17 +56,20 @@ const Profile: React.FC = () => {
                 }
               }}
             >
-              Contact Info
+              <Mail size={18} /> Contact Info
             </Button>
-          </HStack>
-          <HStack gap="4" mt="4" justify="center">
-            {renderAccountIcons(accounts)}
-          </HStack>
-        </VStack>
-      </Flex>
-    </Box>
+          </div>
+          <div className="flex gap-4 mt-4 justify-center">
+            {accounts.map((account, index) => (
+              <a key={index} href={account.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-foreground hover:text-foreground/70 transition-colors">
+                <AccountIcon account={account} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default Profile;
-

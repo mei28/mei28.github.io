@@ -1,4 +1,3 @@
-import '../styles/common.css';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faAndroid, faAppStoreIos } from "@fortawesome/free-brands-svg-icons";

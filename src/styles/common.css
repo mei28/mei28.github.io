@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .section-container {
   @apply py-20 px-10;
 }
@@ -7,13 +9,9 @@
 }
 
 .section-subtitle {
-  @apply text-center text-xl text-gray-700;
-}
-
-.skip-button {
-  @apply absolute cursor-pointer bottom-10 text-gray-800 text-3xl;
-  right: 50%;
-  transform: translateX(50%);
+  @apply text-center text-xl;
+  color: var(--color-foreground);
+  opacity: 0.7;
 }
 
 .highlight-author {

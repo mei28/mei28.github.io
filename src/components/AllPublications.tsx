@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, Button, Icon, Image, Text, VStack, HStack, Grid, Link as UILink, Tag, useColorModeValue } from '@yamada-ui/react';
-import { Bookmark, ArrowLeft, FileText, Image as LucideImage, Play, Video, Globe, Presentation } from '@yamada-ui/lucide';
+import React, { useEffect } from 'react';
+import { Button, Chip } from '@heroui/react';
+import { Bookmark, ArrowLeft } from 'lucide-react';
 import ReactGA from 'react-ga4';
 import { publications, Publication } from '../data/publicationsData';
+import { getLinkIcon } from '../utils/icons';
 
-// Group publications by year
 const groupPublicationsByYear = (publications: Publication[]) => {
   return publications.reduce((acc: Record<number, Publication[]>, publication) => {
     const { year } = publication;
@@ -14,110 +14,99 @@ const groupPublicationsByYear = (publications: Publication[]) => {
   }, {});
 };
 
-// Get icon based on link label
-export const getLinkIcon = (label: string) => {
-  switch (label.toLowerCase()) {
-    case 'paper': return FileText;
-    case 'poster': return LucideImage;
-    case 'demo': return Play;
-    case 'slides': return Presentation;
-    case 'video': return Video;
-    case 'hp': return Globe;
-    default: return Bookmark;
-  }
-};
-
-// Get tag color scheme
-const getTagColorScheme = (tag: string) => {
+const getTagColor = (tag: string): "success" | "accent" | "default" => {
   switch (tag.toLowerCase()) {
-    case 'first author': return 'emerald';
-    case 'peer-reviewed': return 'blue';
-    case 'sports analytics': return 'purple';
-    default: return 'gray';
+    case 'first author': return 'success';
+    case 'peer-reviewed': return 'accent';
+    case 'sports analytics': return 'accent';
+    default: return 'default';
   }
 };
 
-// Render each publication item
-const renderPublicationItem = (publication: Publication, index: number) => {
-  const bg = useColorModeValue('white', 'gray.700');
-  const borderColor = useColorModeValue('gray.300', 'gray.500');
-  const titleColor = useColorModeValue('gray.800', 'white');
-  const textColor = useColorModeValue('gray.700', 'gray.300');
-  const iconColor = useColorModeValue('red.500', 'red.300');
-
+const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }) => {
   return (
-    <Box key={index} bg={bg} border="1px" borderColor={borderColor} p="6" rounded="lg" shadow="sm">
-      <Grid templateColumns={{ base: '1fr 2fr 1fr 1fr' }} gap={4} alignItems="start">
-        {/* Image or Icon */}
-        <Box display="flex" justifyContent="center" alignItems="center">
+    <div className="bg-surface border border-border p-6 rounded-lg shadow-sm">
+      <div className="grid grid-cols-1 md:grid-cols-[auto_2fr_auto_auto] gap-4 items-start">
+        <div className="flex justify-center items-center">
           {publication.image ? (
-            <Image src={publication.image} alt={publication.title} borderRadius="lg" maxW="full" maxH="48" />
+            <img src={publication.image} alt={publication.title} className="rounded-lg max-w-full max-h-48" />
           ) : (
-            <Icon as={Bookmark} boxSize="24" color={iconColor} />
+            <Bookmark size={64} className="text-red-500 dark:text-red-300" />
           )}
-        </Box>
+        </div>
 
-        {/* Publication Info */}
-        <VStack align="start" gap={2}>
-          <Text fontSize="xl" fontWeight="semibold" color={titleColor} mb="1">{publication.title}</Text>
-          <Text fontSize="sm" color={textColor} fontStyle="italic" dangerouslySetInnerHTML={{ __html: publication.authors }} />
-          <Text fontSize="sm" color={textColor}>{publication.info}</Text>
+        <div className="flex flex-col items-start gap-2">
+          <h3 className="text-xl font-semibold text-foreground mb-1">{publication.title}</h3>
+          <p
+            className="text-sm text-foreground/70 italic"
+            dangerouslySetInnerHTML={{ __html: publication.authors }}
+          />
+          <p className="text-sm text-foreground/70">{publication.info}</p>
           {publication.notes && (
-            <Text color={textColor} dangerouslySetInnerHTML={{ __html: publication.notes }} />
+            <p className="text-foreground/70" dangerouslySetInnerHTML={{ __html: publication.notes }} />
           )}
-        </VStack>
+        </div>
 
-        {/* Links */}
-        <HStack wrap="wrap" justifyContent="center" gap={2}>
-          {publication.links.map((link, idx) => (
-            <Button key={idx} size="sm" colorScheme="gray" onClick={() => window.open(link.url, '_blank')}>
-              <Icon as={getLinkIcon(link.label)} mr="2" color={iconColor} />
-              {link.label}
-            </Button>
-          ))}
-        </HStack>
+        <div className="flex flex-wrap justify-center gap-2">
+          {publication.links.map((link, idx) => {
+            const IconComp = getLinkIcon(link.label);
+            return (
+              <Button
+                key={idx}
+                size="sm"
+                variant="ghost"
+                onPress={() => window.open(link.url, '_blank')}
+              >
+                <IconComp size={16} className="text-red-500 dark:text-red-300" />
+                {link.label}
+              </Button>
+            );
+          })}
+        </div>
 
-        {/* Tags */}
-        <HStack wrap="wrap" justifyContent="center" gap={2}>
+        <div className="flex flex-wrap justify-center gap-2">
           {publication.tags?.map((tag, idx) => (
-            <Tag key={idx} px={4} py={1} borderRadius="full" colorScheme={getTagColorScheme(tag)} fontSize="sm">
+            <Chip key={idx} color={getTagColor(tag)} variant="soft" size="sm">
               {tag}
-            </Tag>
+            </Chip>
           ))}
-        </HStack>
-      </Grid>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 
 const AllPublications: React.FC = () => {
   const groupedPublications = groupPublicationsByYear(publications);
 
-  ReactGA.send({ hitType: 'pageview', page: '/all-publications', title: 'publications page' });
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: '/all-publications', title: 'publications page' });
+  }, []);
 
   return (
-    <Box as="section" id="all-publications" py="24" px="4" bg={useColorModeValue('gray.50', 'gray.900')}>
-      <Text as="h1" fontSize="3xl" fontWeight="bold" textAlign="center" mb="12" color={useColorModeValue('gray.800', 'white')}>
-        All Publications
-      </Text>
-      {Object.entries(groupedPublications).sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)).map(([year, pubs]) => (
-        <Box key={year} mb="12">
-          <Text as="h2" fontSize="2xl" fontWeight="bold" mb="6" color={useColorModeValue('gray.800', 'white')}>
-            {year}
-          </Text>
-          <Grid gap={4}>
-            {pubs.map(renderPublicationItem)}
-          </Grid>
-        </Box>
-      ))}
-      <HStack justify={'center'}>
-        <UILink href="/" display="inline-block" mt="8">
-          <Button colorScheme="gray" leftIcon={<Icon as={ArrowLeft} />}>Back to Home</Button>
-        </UILink>
-      </HStack>
-    </Box>
+    <section id="all-publications" className="py-24 px-4">
+      <h1 className="text-3xl font-bold text-center mb-12 text-foreground">All Publications</h1>
+      {Object.entries(groupedPublications)
+        .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+        .map(([year, pubs]) => (
+          <div key={year} className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-foreground">{year}</h2>
+            <div className="grid gap-4">
+              {pubs.map((pub, index) => (
+                <PublicationItem key={index} publication={pub} />
+              ))}
+            </div>
+          </div>
+        ))}
+      <div className="flex justify-center">
+        <a href="/" className="inline-block mt-8">
+          <Button variant="ghost">
+            <ArrowLeft size={18} /> Back to Home
+          </Button>
+        </a>
+      </div>
+    </section>
   );
 };
 
 export default AllPublications;
-

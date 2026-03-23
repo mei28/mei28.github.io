@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@heroui/styles";
+@import "./styles/theme.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Hanken Grotesk', sans-serif;
+  --text-xs: 1rem;
+  --text-sm: 1.125rem;
+}
