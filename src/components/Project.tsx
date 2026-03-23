@@ -1,64 +1,52 @@
 import React from 'react';
-import { Link as UILink, Icon, Box, Text, VStack, HStack, Button, Grid, useColorModeValue, Image, Card, CardBody, CardFooter } from '@yamada-ui/react';
+import { Button, Card } from '@heroui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { ArrowRight } from 'lucide-react';
 import { Sections, sectionTitles } from '../sections';
 import { ProjectData, projectsData } from '../data/projectsData';
-import { ArrowRight } from '@yamada-ui/lucide';
-
 
 const ProjectItem: React.FC<ProjectData> = ({ imgSrc, imgAlt, title, description, links }) => {
-  const cardBg = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.300', 'gray.600');
-  const textColor = useColorModeValue('gray.700', 'gray.300');
   const isExternalLink = (url: string) => url.startsWith('http://') || url.startsWith('https://');
 
   return (
-    <Card bg={cardBg} shadow="md" rounded="xl" border="1px" borderColor={borderColor} overflow="hidden">
+    <Card className="shadow-md rounded-xl border border-border overflow-hidden">
       {imgSrc && (
-        <Image src={imgSrc} alt={imgAlt} w="100%" h="auto" objectFit="cover" />
+        <img src={imgSrc} alt={imgAlt} className="w-full h-auto object-cover" />
       )}
-      <CardBody p="6">
-        <Text fontSize="xl" fontWeight="semibold" color={textColor} mb="2">
-          {title}
-        </Text>
-        <Text color={useColorModeValue('gray.600', 'gray.400')} mb="4">{description}</Text>
-      </CardBody>
-      <CardFooter p="6">
-        <HStack gap={2} wrap="wrap">
+      <Card.Content className="p-6">
+        <h3 className="text-xl font-semibold text-foreground/70 mb-2">{title}</h3>
+        <p className="text-foreground/60 mb-4">{description}</p>
+      </Card.Content>
+      <Card.Footer className="p-6 pt-0">
+        <div className="flex gap-2 flex-wrap">
           {links.map((link, index) => (
-            <Button
+            <a
               key={index}
-              as="a"
               href={link.url}
               target={isExternalLink(link.url) ? '_blank' : '_self'}
-              variant="outline"
-              colorScheme="gray"
-              leftIcon={link.icon && <FontAwesomeIcon icon={link.icon} />}
+              rel={isExternalLink(link.url) ? 'noopener noreferrer' : undefined}
             >
-              {link.label}
-            </Button>
+              <Button variant="outline">
+                {link.icon && <FontAwesomeIcon icon={link.icon} />}
+                {link.label}
+              </Button>
+            </a>
           ))}
-        </HStack>
-      </CardFooter>
+        </div>
+      </Card.Footer>
     </Card>
   );
 };
 
 const ProjectList: React.FC = () => {
-  const buttonBg = useColorModeValue('gray.500', 'gray.700');
-  const buttonHoverBg = useColorModeValue('gray.700', 'gray.500');
-
   return (
-    <Box as="section" id={Sections.Projects} py="16" px="4" bg={useColorModeValue('gray.50', 'gray.900')}>
-      <Text fontSize="lg" textAlign="center" color={useColorModeValue('gray.700', 'gray.300')} mb="2">
-        Browse My Recent
-      </Text>
-      <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb="12" color={useColorModeValue('gray.800', 'white')}>
+    <section id={Sections.Projects} className="py-16 px-4 border-b border-border">
+      <p className="text-lg text-center text-muted-foreground mb-2">Browse My Recent</p>
+      <h1 className="text-3xl font-bold text-center mb-12 text-foreground">
         {sectionTitles[Sections.Projects]}
-      </Text>
+      </h1>
 
-      <Grid templateColumns={{ md: '1fr', base: 'repeat(2, 1fr)' }} gap={6} mx="auto" maxW="6xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto max-w-6xl">
         {projectsData.map((project, index) => (
           <ProjectItem
             key={index}
@@ -69,27 +57,20 @@ const ProjectList: React.FC = () => {
             links={project.links}
           />
         ))}
-      </Grid>
+      </div>
 
-      <Box textAlign="center" mt="8">
-        <UILink href="/#/all-project" mt="10" display="inline-block" >
+      <div className="text-center mt-8">
+        <a href="/#/all-project" className="inline-block">
           <Button
-            bg={buttonBg}
-            color="white"
-            _hover={{ bg: buttonHoverBg }}
+            variant="primary"
             size="lg"
-            rightIcon={<Icon as={ArrowRight} />}
-            rounded="lg"
-            shadow="md"
-            transition="all 0.3s"
           >
-            View All Experiences
+            View All Experiences <ArrowRight size={18} />
           </Button>
-        </UILink>
-      </Box>
-    </Box>
+        </a>
+      </div>
+    </section>
   );
 };
 
 export default ProjectList;
-

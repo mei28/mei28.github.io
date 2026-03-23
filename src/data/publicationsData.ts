@@ -1,6 +1,4 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
-import '../styles/common.css';
 
 export interface Publication {
   image?: string | null;

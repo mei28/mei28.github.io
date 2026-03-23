@@ -1,160 +1,69 @@
 import React from 'react';
-import { Box, Button, Icon, Image, VStack, HStack, Text, Grid, GridItem, useColorModeValue } from '@yamada-ui/react';
-import { Search, Users, ArrowRight } from '@yamada-ui/lucide';
-
-interface Education {
-  degree: string;
-  period: string;
-  institution: string;
-}
-
-interface Interest {
-  item: string;
-}
-
-const educationDetails: Education[] = [
-  {
-    degree: 'B.Sc. in Information Engineering',
-    period: '2016 - 2020',
-    institution: 'University of Tsukuba'
-  },
-  {
-    degree: 'M.Sc. in Engineering',
-    period: '2020 - 2022',
-    institution: 'University of Tsukuba'
-  },
-  {
-    degree: 'Ph.D. in Arts and Sciences',
-    period: '2022 - now',
-    institution: 'The University of Tokyo'
-  }
-];
-
-const interests: Interest[] = [
-  { item: 'Human-AI Collaboration' },
-  { item: 'Explainable AI / Trust AI' },
-  { item: 'Human-Computer Interaction' }
-];
+import { Button } from '@heroui/react';
+import { Search, Users, ArrowRight } from 'lucide-react';
+import { educationDetails, interests } from '../data/aboutData';
 
 const About: React.FC = () => {
-  const cardBg = useColorModeValue('white', 'gray.700');
-  const borderColor = useColorModeValue('gray.400', 'gray.600');
-  const subtitleColor = useColorModeValue('gray.500', 'gray.300');
-  const titleColor = useColorModeValue('gray.800', 'white');
-  const buttonBg = useColorModeValue('gray.500', 'gray.700');
-  const buttonHoverBg = useColorModeValue('gray.700', 'gray.500');
-  const boxMinHeight = "lg";
-
   return (
-    <Box as="section" id="about" py="16" px="8" textAlign="center">
-      <Text fontSize="lg" color={subtitleColor} mb="2">
-        Get To Know More
-      </Text>
-      <Text as="h1" fontSize="3xl" fontWeight="bold" color={titleColor} mb="12">
-        About Me
-      </Text>
-      <Grid
-        w="full"
-        templateColumns={{ base: '1fr 2fr', lg: '1fr' }}
-        gap="8"
-        alignItems="start"
-      >
-        {/* Profile Image */}
-        <GridItem colSpan={1} w="full" h="full" display="flex" justifyContent="center">
-          <Image
+    <section id="about" className="py-16 px-8 text-center border-b border-border">
+      <p className="text-lg text-muted-foreground mb-2">Get To Know More</p>
+      <h1 className="text-3xl font-bold text-foreground mb-12">About Me</h1>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 items-start w-full">
+        <div className="flex justify-center w-full h-full">
+          <img
             src="/assets/about/about-pic.jpg"
             alt="Profile picture"
-            borderRadius="2xl"
-            objectFit="cover"
-            w="full"
-            maxW="sm"
-            minH= {boxMinHeight}
+            className="rounded-2xl object-cover w-full max-w-sm min-h-[20rem]"
           />
-        </GridItem>
+        </div>
 
-        {/* Text Content */}
-        <GridItem colSpan={1} w="full" h="full">
-          <HStack gap="8" align="start">
-            {/* Interests Card */}
-            <VStack
-              bg={cardBg}
-              border="1px solid"
-              borderColor={borderColor}
-              borderRadius="2xl"
-              p="6"
-              gap="4"
-              textAlign="center"
-              w="full"
-              minH={boxMinHeight}
-            >
+        <div className="flex flex-col md:flex-row gap-8 items-start w-full h-full">
+          <div className="bg-surface border border-border rounded-2xl p-6 flex flex-col gap-4 text-center w-full min-h-[20rem]">
+            <div className="flex justify-center gap-2">
+              <Search size={24} className="text-foreground" />
+              <span className="text-xl font-semibold text-foreground">Interests</span>
+            </div>
+            <div className="flex flex-col items-start gap-4 w-full">
+              {interests.map((interest, index) => (
+                <span key={index} className="font-semibold">{interest.item}</span>
+              ))}
+            </div>
+          </div>
 
-              <HStack justify={'center'}>
-                <Icon as={Search} boxSize="6" color={titleColor} />
-                <Text fontSize="xl" fontWeight="semibold" color={titleColor}>
-                  Interests
-                </Text>
-              </HStack>
-              <VStack align="start" gap="4" w="full">
-                {interests.map((interest, index) => (
-                  <Text key={index} fontWeight="semibold">
-                    {interest.item}
-                  </Text>
-                ))}
-              </VStack>
-            </VStack>
+          <div className="bg-surface border border-border rounded-2xl p-6 flex flex-col gap-4 text-center w-full min-h-[20rem]">
+            <div className="flex justify-center gap-2">
+              <Users size={24} className="text-foreground" />
+              <span className="text-xl font-semibold text-foreground">Education</span>
+            </div>
+            <div className="flex flex-col items-start gap-4 w-full">
+              {educationDetails.map((edu, index) => (
+                <div key={index} className="text-left">
+                  <span className="font-semibold">{edu.degree}</span>
+                  <p className="text-muted-foreground text-sm">
+                    @{edu.institution}, {edu.period}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
-            {/* Education Card */}
-            <VStack
-              bg={cardBg}
-              border="1px solid"
-              borderColor={borderColor}
-              borderRadius="2xl"
-              p="6"
-              gap="4"
-              textAlign="center"
-              w="full"
-              minH={boxMinHeight}
-            >
-              <HStack justify={'center'}>
-                <Icon as={Users} boxSize="6" color={titleColor} />
-                <Text fontSize="xl" fontWeight="semibold" color={titleColor}>
-                  Education
-                </Text>
-              </HStack>
-              <VStack align="start" gap="4" w="full">
-                {educationDetails.map((edu, index) => (
-                  <Box key={index} textAlign="left">
-                    <Text fontWeight="semibold">{edu.degree}</Text>
-                    <Text color={subtitleColor} fontSize="sm">
-                      @{edu.institution}, {edu.period}
-                    </Text>
-                  </Box>
-                ))}
-              </VStack>
-            </VStack>
-          </HStack>
-        </GridItem>
-      </Grid>
-
-      <Text color={titleColor} mt="8">
+      <p className="text-foreground mt-8">
         I am a Ph.D. student at the University of Tokyo in Japan.
-      </Text>
+      </p>
 
-      <Button
-        as="a"
-        href="/#/all-about"
-        bg={buttonBg}
-        color="white"
-        _hover={{ bg: buttonHoverBg }}
-        mt="8"
-        size="lg"
-        rightIcon={<Icon as={ArrowRight} />}
-      >
-        View My Profiles!
-      </Button>
-    </Box>
+      <a href="/#/all-about" className="inline-block mt-8">
+        <Button
+          variant="primary"
+          size="lg"
+        >
+          View My Profiles! <ArrowRight size={18} />
+        </Button>
+      </a>
+    </section>
   );
 };
 
 export default About;
-

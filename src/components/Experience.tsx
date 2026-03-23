@@ -1,69 +1,48 @@
 import React from 'react';
-import { Box, Text, VStack, HStack, Progress, Button, Icon, Grid, useColorModeValue, Link as UILink } from '@yamada-ui/react';
-import { ArrowRight } from '@yamada-ui/lucide';
+import { Button, ProgressBar } from '@heroui/react';
+import { ArrowRight } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { skills } from '../data/skillData';
 
 const SkillsOverview: React.FC = () => {
   const mainSkills = skills.filter(skill => skill.isHome);
-  const bg = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.300', 'gray.600');
-  const textColor = useColorModeValue('gray.700', 'gray.300');
-  const buttonBg = useColorModeValue('gray.500', 'gray.700');
-  const buttonHoverBg = useColorModeValue('gray.700', 'gray.500');
 
   return (
-    <Box as="section" id="experience" py="16" px="4" textAlign='center'>
-      <Text fontSize="lg" color={textColor} mb="2" textAlign="center">Explore My</Text>
-      <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb="8" color={useColorModeValue('gray.800', 'white')}>
-        Experience
-      </Text>
+    <section id="experience" className="py-16 px-4 text-center border-b border-border">
+      <p className="text-lg text-muted-foreground mb-2 text-center">Explore My</p>
+      <h1 className="text-3xl font-bold text-center mb-8 text-foreground">Experience</h1>
 
-      <Grid templateColumns={{ md: 'repeat(2, 1fr)', base: 'repeat(3, 1fr)' }} gap={6}>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {mainSkills.map((skill, index) => (
-          <VStack
+          <div
             key={index}
-            bg={bg}
-            border="1px"
-            borderColor={borderColor}
-            p="6"
-            rounded="lg"
-            shadow="md"
-            textAlign="center"
+            className="bg-surface border border-border p-6 rounded-lg shadow-md text-center flex flex-col items-center gap-2"
           >
-            <HStack gap={2} mb="4" alignItems="center" justifyContent="center">
+            <div className="flex gap-2 mb-4 items-center justify-center">
               {skill.icon && <FontAwesomeIcon icon={skill.icon} size="2x" className="text-blue-600" />}
-              <Text fontSize="xl" fontWeight="semibold">{skill.name}</Text>
-            </HStack>
-
-            <Progress
+              <span className="text-xl font-semibold">{skill.name}</span>
+            </div>
+            <ProgressBar
               value={skill.level}
-              colorScheme={'blue'}
-              rounded="full"
-              h="2.5"
+              maxValue={100}
+              className="w-full"
+              aria-label={`${skill.name} skill level`}
             />
-            <Text color={textColor} mt="2">{skill.level}%</Text>
-          </VStack>
+            <span className="text-muted-foreground mt-2">{skill.level}%</span>
+          </div>
         ))}
-      </Grid>
+      </div>
 
-      <UILink href="/#/all-experiences" mt="10" display="inline-block" >
+      <a href="/#/all-experiences" className="inline-block mt-10">
         <Button
-          bg={buttonBg}
-          color="white"
-          _hover={{ bg: buttonHoverBg }}
+          variant="primary"
           size="lg"
-          rightIcon={<Icon as={ArrowRight} />}
-          rounded="lg"
-          shadow="md"
-          transition="all 0.3s"
         >
-          View All Experiences
+          View All Experiences <ArrowRight size={18} />
         </Button>
-      </UILink>
-    </Box>
+      </a>
+    </section>
   );
 };
 
 export default SkillsOverview;
-
