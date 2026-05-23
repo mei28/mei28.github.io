@@ -6,7 +6,7 @@ import {
   User,
 } from 'lucide-react';
 
-const lucideIconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const lucideIconMap: Record<string, React.ComponentType<{ size?: string | number; className?: string }>> = {
   Github,
   Twitter,
   Linkedin,

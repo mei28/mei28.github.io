@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Publication from './components/Publication';
 import AllPublications from './components/AllPublications';
+import AllProjects from './components/AllProjects';
 import SkillsDetail from './components/AllExperiences';
 import AllAbouts from './components/AllAbout';
 import { initGA, logPageView } from './analytics';
@@ -21,6 +22,7 @@ interface AnalyticsWrapperProps {
 const pathTitles: { [key: string]: string } = {
   '/': 'Home',
   '/all-publications': 'All Publications',
+  '/all-projects': 'All Projects',
   '/all-experiences': 'All Experiences',
   '/all-about': 'All About',
 };
@@ -50,6 +52,14 @@ const AllPub: React.FC = () => (
   <>
     <Nav />
     <AllPublications />
+    <Footer />
+  </>
+);
+
+const AllProj: React.FC = () => (
+  <>
+    <Nav />
+    <AllProjects />
     <Footer />
   </>
 );
@@ -84,6 +94,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all-publications" element={<AllPub />} />
+          <Route path="/all-projects" element={<AllProj />} />
           <Route path="/all-experiences" element={<AllExp />} />
           <Route path="/all-about" element={<AllAbout />} />
         </Routes>
