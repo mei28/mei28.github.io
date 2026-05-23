@@ -21,11 +21,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <div className="bg-surface border border-border rounded-lg shadow-sm p-4 flex flex-col gap-2 h-full">
       {project.image && (
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-32 object-cover rounded-md"
-        />
+        <div className="w-full h-32 bg-foreground/5 rounded-md flex items-center justify-center overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
       )}
 
       <div className="flex items-start justify-between gap-2">

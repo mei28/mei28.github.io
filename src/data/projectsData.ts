@@ -46,6 +46,7 @@ export const projects: Project[] = [
     description: 'ブラウザ履歴のようにタブ移動を Back/Forward できる Chrome 拡張。Alt+[ / Alt+] やマウス戻る/進むに対応。',
     category: 'chrome-extension',
     isHome: true,
+    image: '/assets/project/tabyjourney.png',
     tags: ['TypeScript'],
     links: [
       { label: 'Web Store', url: 'https://chromewebstore.google.com/detail/tabyjourney/aodjblbpfcccjlljpcfknakknbbladhb' },
@@ -57,6 +58,7 @@ export const projects: Project[] = [
     description: 'Web ページ上のカラーコード (#fff, rgb(), hsl()) をその場で着色プレビュー。6 種類の表示モードを組合せ可能。',
     category: 'chrome-extension',
     isHome: true,
+    image: '/assets/project/inkling.png',
     tags: ['TypeScript'],
     links: [
       { label: 'GitHub', url: 'https://github.com/mei28/inkling' },
@@ -66,6 +68,7 @@ export const projects: Project[] = [
     name: 'quickdeck',
     description: 'SlideShare をプレゼンモードで開く Chrome 拡張。',
     category: 'chrome-extension',
+    image: '/assets/project/quickdeck.png',
     tags: ['JavaScript'],
     links: [
       { label: 'Web Store', url: 'https://chromewebstore.google.com/detail/pfibfibjnamhmjgaenlajeanecihncko' },
@@ -120,6 +123,7 @@ export const projects: Project[] = [
     name: 'SeeSS',
     description: 'リアルタイム HTML/CSS プレビューアプリ。Mobile/Tablet/Desktop ビューポート切替、CSS 分析機能付き。',
     category: 'web-app',
+    image: '/assets/project/seess.png',
     tags: ['TypeScript'],
     links: [
       { label: 'Web', url: 'https://mei28.github.io/SeeSS/' },
@@ -131,6 +135,7 @@ export const projects: Project[] = [
     description: '「あっち」だけを頼りに散歩する、ルート案内をしない地図 PWA。コンパス矢印で目的地方向を示す。',
     category: 'web-app',
     isHome: true,
+    image: '/assets/project/atchi.png',
     tags: ['TypeScript', 'PWA'],
     links: [
       { label: 'Web', url: 'https://mei28.github.io/Atchi/' },
@@ -141,6 +146,7 @@ export const projects: Project[] = [
     name: 'Yggdrasil',
     description: 'ディレクトリ構造をツリー形式で作成・可視化・エクスポートできる Web ツール。',
     category: 'web-app',
+    image: '/assets/project/yggdrasil.png',
     tags: ['TypeScript'],
     links: [
       { label: 'Web', url: 'https://yggdrasil-tree.vercel.app' },
@@ -171,6 +177,7 @@ export const projects: Project[] = [
     name: 'Tick-Tock-Toe',
     description: 'React フロントエンドと Rust バックエンドで作った三目並べ Web ゲーム。',
     category: 'web-app',
+    image: '/assets/project/tick-tock-toe.png',
     tags: ['TypeScript', 'Rust'],
     links: [
       { label: 'Web', url: 'https://tick-tock-toe.vercel.app' },
@@ -194,6 +201,7 @@ export const projects: Project[] = [
     description: 'アクティブウィンドウの周囲を蛍のような光のボーダーで縁取る macOS メニューバーアプリ。Tahoe (Liquid Glass) でのフォーカス把握を補助。',
     category: 'desktop-app',
     isHome: true,
+    image: '/assets/project/hotaru.png',
     tags: ['Swift', 'macOS'],
     links: [
       { label: 'GitHub', url: 'https://github.com/mei28/Hotaru' },
@@ -204,6 +212,7 @@ export const projects: Project[] = [
     description: 'Tauri (Rust + React) 製のフロータイムベース作業時間管理アプリ。',
     category: 'desktop-app',
     isHome: true,
+    image: '/assets/project/fathom.png',
     tags: ['Rust', 'TypeScript'],
     links: [
       { label: 'GitHub', url: 'https://github.com/mei28/Fathom' },
