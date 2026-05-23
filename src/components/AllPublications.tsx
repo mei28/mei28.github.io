@@ -26,7 +26,7 @@ const getTagColor = (tag: string): "success" | "accent" | "default" => {
 const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }) => {
   return (
     <div className="bg-surface border border-border p-6 rounded-lg shadow-sm">
-      <div className="grid grid-cols-1 md:grid-cols-[auto_2fr_auto_auto] gap-4 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-[auto_minmax(0,1fr)_auto] gap-4 items-start">
         <div className="flex justify-center items-center">
           {publication.image ? (
             <img src={publication.image} alt={publication.title} className="rounded-lg max-w-full max-h-48" />
@@ -47,29 +47,31 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
           )}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2">
-          {publication.links.map((link, idx) => {
-            const IconComp = getLinkIcon(link.label);
-            return (
-              <Button
-                key={idx}
-                size="sm"
-                variant="ghost"
-                onPress={() => window.open(link.url, '_blank')}
-              >
-                <IconComp size={16} className="text-red-500 dark:text-red-300" />
-                {link.label}
-              </Button>
-            );
-          })}
-        </div>
+        <div className="flex flex-col gap-3 md:items-end md:max-w-[180px]">
+          <div className="flex flex-wrap gap-2 md:justify-end">
+            {publication.links.map((link, idx) => {
+              const IconComp = getLinkIcon(link.label);
+              return (
+                <Button
+                  key={idx}
+                  size="sm"
+                  variant="ghost"
+                  onPress={() => window.open(link.url, '_blank')}
+                >
+                  <IconComp size={16} className="text-red-500 dark:text-red-300" />
+                  {link.label}
+                </Button>
+              );
+            })}
+          </div>
 
-        <div className="flex flex-wrap justify-center gap-2">
-          {publication.tags?.map((tag, idx) => (
-            <Chip key={idx} color={getTagColor(tag)} variant="soft" size="sm">
-              {tag}
-            </Chip>
-          ))}
+          <div className="flex flex-wrap gap-2 md:justify-end">
+            {publication.tags?.map((tag, idx) => (
+              <Chip key={idx} color={getTagColor(tag)} variant="soft" size="sm">
+                {tag}
+              </Chip>
+            ))}
+          </div>
         </div>
       </div>
     </div>

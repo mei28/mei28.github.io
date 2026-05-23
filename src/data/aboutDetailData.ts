@@ -82,6 +82,7 @@ export const educationDetails: EducationDetail[] = [
 ];
 
 export const workExperiences: WorkExperience[] = [
+  { role: 'リサーチインターン', organization: 'SB Intuitions R&D HCIチーム', period: '2026/05 - 現在' },
   { role: 'リサーチアシスタント', organization: '筑波大学', period: '2020/04 - 2022/06' },
   { role: '研究インターン', organization: 'オムロンサイニックエックス', period: '2021/12 - 現在' },
   { role: 'テクニカルスタッフ', organization: '産業技術総合研究所', period: '2018/07 - 2021/12' },
@@ -149,4 +150,5 @@ export const qualifications: Qualification[] = [
   { text: '日本語能力試験N1 満点合格, 2020/12' },
   { text: '実践的ITカリキュラム 修了, 2021/03' },
   { text: '乙種第4類危険物取扱者免状 取得, 2024/09' },
+  { text: 'J.C.Q.A.認定コーヒーインストラクター2級 取得, 2025/12' },
 ];

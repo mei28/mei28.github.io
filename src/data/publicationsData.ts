@@ -16,6 +16,19 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    image: '/assets/publication/FAccT2026.png',
+    title: 'Do User-Aligned Explanations Steer Human Decisions? Context-Dependent Influence and Ethical Implications',
+    authors: '<span class="highlight-author">Mingzhe Yang</span>, Rina Kagawa and Yukino Baba',
+    info: 'Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT\'26), 2026',
+    links: [
+      { label: 'Paper', url: 'https://doi.org/10.1145/3805689.3812288' },
+    ],
+    pickup: true,
+    year: 2026,
+    tags: ['First author', 'Peer-reviewed', 'Human-AI Decision Making']
+    // notes: '<span class="text-green-600">Acceptance rate = 1060/4028 (26.3%)</span>'
+  },
+  {
     image: null,
     title: 'Do Expressions Change Decisions? Exploring the Impact of AI\'s Explanation Tone on Decision-Making',
     authors: 'Ayano Okoso, <span class="highlight-author">Mingzhe Yang</span> and Yukino Baba',
