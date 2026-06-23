@@ -21,7 +21,7 @@ export const publications: Publication[] = [
     authors: '<span class="highlight-author">Mingzhe Yang</span>, Rina Kagawa and Yukino Baba',
     info: 'Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT\'26), 2026',
     links: [
-      { label: 'Paper', url: 'https://doi.org/10.1145/3805689.3812288' },
+      { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3805689.3812288' },
     ],
     pickup: true,
     year: 2026,
