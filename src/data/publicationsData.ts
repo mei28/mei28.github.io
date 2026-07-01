@@ -10,7 +10,8 @@ export interface Publication {
   pickup: boolean;
   year: number;
   tags?: string[];
-  notes?: string
+  notes?: string;
+  award?: { label: string; url: string };
 }
 
 
@@ -22,11 +23,16 @@ export const publications: Publication[] = [
     info: 'Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT\'26), 2026',
     links: [
       { label: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3805689.3812288' },
+      { label: 'Slides', url: 'https://speakerdeck.com/mei28/facct26-do-user-aligned-explanations-steer-human-decisions-context-dependent-influence-and-ethical-implications' },
     ],
     pickup: true,
     year: 2026,
-    tags: ['First author', 'Peer-reviewed', 'Human-AI Decision Making']
-    // notes: '<span class="text-green-600">Acceptance rate = 1060/4028 (26.3%)</span>'
+    tags: ['First author', 'Peer-reviewed', 'Human-AI Decision Making'],
+    notes: '<span class="text-green-600 text-sm">Acceptance rate = 325/985 (33.0%)</span>',
+    award: {
+      label: 'Best Paper Honorable Mention',
+      url: 'https://facct-blog.github.io/2026-06-25/best-papers#best-paper-honorable-mentions',
+    },
   },
   {
     image: null,

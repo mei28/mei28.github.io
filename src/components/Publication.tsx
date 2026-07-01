@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from '@heroui/react';
-import { Bookmark, ArrowRight } from 'lucide-react';
+import { Bookmark, ArrowRight, Trophy } from 'lucide-react';
 import { publications, Publication } from '../data/publicationsData';
 import { getLinkIcon } from '../utils/icons';
 
@@ -26,6 +26,19 @@ const PublicationItem: React.FC<{ publication: Publication }> = ({ publication }
             dangerouslySetInnerHTML={{ __html: publication.authors }}
           />
           <p className="text-sm text-muted-foreground">{publication.info}</p>
+          {publication.award && (
+            <a
+              href={publication.award.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-amber-50 dark:bg-amber-900/30 border border-amber-400 text-amber-700 dark:text-amber-300 font-semibold text-sm px-3 py-1 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/50 transition-colors"
+            >
+              <Trophy size={14} /> {publication.award.label}
+            </a>
+          )}
+          {publication.notes && (
+            <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: publication.notes }} />
+          )}
         </div>
       </Card.Header>
       <Card.Footer className="flex flex-wrap gap-2">
